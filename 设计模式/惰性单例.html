@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="button" value="登录" id="loginBtn">
+    <script>
+        //创建单个对象的函数
+        function getSingle(fn)
+        {
+            var result;
+            return function(){
+               return result || (result = fn.apply(this,arguments));
+            }
+        }
+        
+        //实现具体效果的函数
+        function createLoginLayer()
+        {
+            var div = document.createElement('div');
+            div.innerHTML = '我是登录框';
+            div.style.display = 'none';
+            document.body.appendChild( div );
+            return div;
+        }
+        
+        var createSingleLoginLayer = getSingle(createLoginLayer);
+        document.getElementById('loginBtn').addEventListener('click',function(){
+            var loginLayer = createSingleLoginLayer();
+            loginLayer.style.display = 'block';
+        })
+        
+    </script>
+</body>
+</html>
