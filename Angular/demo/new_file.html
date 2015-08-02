@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="hehe">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="angular.min.js"></script>
+		<script>
+			var m1=angular.module('hehe',[]);
+			m1.controller('myhehe',['$scope',function($scope){
+				$scope.action = [{'name':'唐培','age':22,'height':160},
+				{'name':'张艳','age':21,'height':166},
+				{'name':'YUB','age':25,'height':158}
+				];
+			}])
+		</script>
+	</head>
+	<body>
+		<div ng-controller="myhehe">
+			<p>{{action|orderBy:'height':true}}</p>
+		</div>
+	</body>
+</html>

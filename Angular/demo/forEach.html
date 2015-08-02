@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>run方法</title>
+    <script src="angular.min.js"></script>
+    <script>
+       var arr = ['apple','banana','orange'];
+       var obj = {fruit:'apple',food:'meat',drink:'water'};
+        var newArr = [];
+        angular.forEach(arr,function(value,i){
+            console.log(value + '---' + i);
+        })
+        angular.forEach(obj,function(value,key){
+            console.log(value + '---' + key);
+        })
+        angular.forEach(arr,function(vaule,i){
+            if(i == 2)
+            {
+                this.push(vaule);
+            }
+        },newArr)
+        console.log(newArr);
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
