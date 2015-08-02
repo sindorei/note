@@ -8,11 +8,11 @@
 ### ng-app
  开始启用AngularJS，标记ANgularJS的作用域
 ### angularjs中的mvc模式
- 1 作用域
+ 1. 作用域
    $scope对象是模板的域模型（domain model），也称为作用域实例。
    通过为其属性赋值，可以传递数据给模板渲染。
    从概念上，angularjs的作用域与MVVM模式的视图模型非常相似
- 2 控制器
+ 2. 控制器
    controller 主要负责初始化作用域实例
    在实践中，初始化逻辑分为：
      * 提供模型的初始值
