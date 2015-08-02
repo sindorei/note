@@ -55,7 +55,7 @@ stopPropagation() 阻止事件通过作用域层级冒泡，即它仅在事件�
 三个事件可以被向上分发：
  * $includeContentRequested
  * $includeContentLoaded
- * viewContentLoaded
+ * $viewContentLoaded
  
 七个事件可以被向下广播：
  * $locationChangeStart
@@ -67,3 +67,36 @@ stopPropagation() 阻止事件通过作用域层级冒泡，即它仅在事件�
  * $destroy
 
 **不要再angularjs中试图模仿DOM的基于事件的编程模型，大部分情况下，最好使用双向数据绑定**
+##### 作用域生命周期
+
+作用域提供独立的命名空间，避免变量的名称冲突。作用域在不需要后会被销毁，在其中暴露的模型和函数都会被垃圾回收
+
+作用域通常会依赖作用域创建指令而创建和销毁。
+
+也可以调用Scope类上的`$new()` 和 `$destory()` ，手动创建和销毁。 
+
+命令式编程风格专注于描述通向理想结果的步骤
+
+声明式编程风格专注于描述结果本身
+
+**永远不要再angularjs的控制器中操纵DOM元素。在控制器中获取对DOM元素的引用，操作元素的属性，预示着用命令式编程风格来构建UI，这背离了angularjs之道**
+
+### 模块与依赖注入
+
+#### 模块
+
+```javascript
+angular.module('hello',[]).controller('HelloCtrl',['$scope',function($scope){
+
+}])
+```
+module方法第一个参数传入模块的名称，第二个参数是依赖的其他模块
+
+返回新创建的模块实例
+
+ng-app 属性指定模块的名称
+
+#### 协作对象
+ 1. 依赖注入
+ 
+#### 注册服务
