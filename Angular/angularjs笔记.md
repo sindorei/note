@@ -22,3 +22,24 @@
  3. 模型
  普通的JavaScript对象。任何有效的对象或数组都可以。
  只需将模型指派给$scope
+ ### 深入作用域
+ 每个$scope都是Scope类的实例。Scope类拥有很多方法，用于控制作用域的生命周期、提供事件传播功能，以及支持模板的渲染等。
+ ##### 作用域层级
+ ```javascript
+ var HelloCtrl = function($scope){
+    $scope.name = 'World';
+ }
+ ```
+ $scope参数从何而来？
+   ng-controller 指令会调用scope对象的`$new()` 方法创建新的作用域$scope。
+   $rootScope 是其他所有作用域的父作用域，将在新应用启动时自动创建。
+   
+   ng-controller指令时作用域创建指令。当在DOM树种遇到作用域创建指令时，angularjs都会创建Scope类的心实例$scope。
+   新创建的作用域实例$scope会拥有$parent属性，并指向它的父作用域。
+   
+##### 作用域层级和继承
+作用域中定义的属性对所有子作用域是可见的，只要子作用域没有定义同名的属性。
+angularjs中的作用域继承和javascript中的原型继承遵循同样的规则。（沿继承树向上查找，直到找到为止。）
+##### 在作用域层级中继承的风险
+避免直接绑定变量给作用域属性
+对象属性的双向数据绑定是更好的方案
