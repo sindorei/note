@@ -43,3 +43,24 @@ angularjs中的作用域继承和javascript中的原型继承遵循同样的规�
 ##### 在作用域层级中继承的风险
 避免直接绑定变量给作用域属性
 对象属性的双向数据绑定是更好的方案
+##### 作用域层级与事件系统
+angularjs允许跨越作用域层级，传播带有信息的命名事件。
+事件可以从任何作用域开始分发，然后向上分发或向下传播。
+每个作用域实例都有 `$on` 方法，用于注册作用域事件的处理器。被分发的 event对象会作为第一个参数传入。
+event对象有 preventDefault() 和 stopPropagation()方法
+stopPropagation() 阻止事件通过作用域层级冒泡，即它仅在事件向上分发时有效
+*angularjs事件系统模仿DOM的事件系统，但他们传播机制完全独立，没有共通之处*
+三个事件可以被向上分发：
+* $includeContentRequested
+* $includeContentLoaded
+* viewContentLoaded
+七个事件可以被向下广播：
+* $locationChangeStart
+* $locationChangeSuccess
+* $routeUpdate
+* $routeChangeStart
+* $routeChangeSuccess
+* $routeChangeError
+* $destroy
+
+**不要再angularjs中试图模仿DOM的基于事件的编程模型，大部分情况下，最好使用双向数据绑定**
