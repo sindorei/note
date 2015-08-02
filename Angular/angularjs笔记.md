@@ -56,6 +56,7 @@ stopPropagation() 阻止事件通过作用域层级冒泡，即它仅在事件�
  * $includeContentRequested
  * $includeContentLoaded
  * viewContentLoaded
+ 
 七个事件可以被向下广播：
  * $locationChangeStart
  * $locationChangeSuccess
