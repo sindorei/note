@@ -6,17 +6,32 @@
 		<script src="angular.min.js"></script>
 		<script>
 			var m1=angular.module('hehe',[]);
-			m1.controller('myhehe',['$scope',function($scope){
-				$scope.action = [{'name':'唐培','age':22,'height':160},
-				{'name':'张艳','age':21,'height':166},
-				{'name':'YUB','age':25,'height':158}
+			m1.controller('myhehe',['$scope','$filter',function($scope,$filter){
+				$scope.action = [{'name':'820','age':28,'height':178},
+				{'name':'2009','age':21,'height':180},
+				{'name':'burning','age':25,'height':172}
 				];
+                
+                $scope.fnSort = function(arg){
+                    $scope.action = $filter('orderBy')($scope.action,arg);
+                }
+                $scope.num = 1999;
 			}])
 		</script>
 	</head>
 	<body>
-		<div ng-controller="myhehe">
-			<p>{{action|orderBy:'height':true}}</p>
-		</div>
+		<table ng-controller="myhehe" border="1">
+            <tr>
+            <th>姓名</th>
+            <th ng-click="fnSort('age')">年龄</th>
+            <th>身高</th>
+            </tr>
+		    <tr ng-repeat="item in action">
+		        <td>{{item.name}}</td>
+		        <td>{{item.age}}</td>
+		        <td>{{item.height}}</td>
+		    </tr>
+		</table>
+		<p ng-controller="myhehe">{{num|currency:"&yen;"}}</p>
 	</body>
 </html>
