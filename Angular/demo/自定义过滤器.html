@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myTest">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义过滤器</title>
+    <script src="angular.min.js"></script>
+    <script>
+        angular.module('myTest',[]).filter('firstUpper',function(){
+            return function(str,param){
+              return str.charAt(0).toUpperCase()+str.substring(1);
+            }
+        }).controller('hehe',['$scope','$filter',function($scope,$filter){
+            $scope.name = 'hello';
+            $scope.name2 = 'world';
+            $scope.name=$filter('firstUpper')($scope.name);
+        }])
+        
+    </script>
+</head>
+<body>
+    <p ng-controller="hehe">
+        {{name}}
+        {{name2 | firstUpper}}
+    </p>
+</body>
+</html>
