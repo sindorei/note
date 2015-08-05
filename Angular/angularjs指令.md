@@ -57,7 +57,19 @@ $filter('uppercase')('hello')
 # 数据显示指令
 * ng-bind
 * ng-bind-template 支持多表达式
-* ng-bind-html 
+* ng-bind-html 需要引入ngSanitize模块
+* ng-cloak 没解析完成display为none，解析完成变成block
+* ng-non-bindable 不解析表达式
+
+# 样式相关指令
+* ng-class 
+  
+  `ng-class="{red:true,yellow:true}"`
+  
+* ng-style  `ng-style="{{mystyle}}"`
+* ng-href
+* ng-src
+* ng-attr-(suffix) 如：ng-attr-title
 
 # 服务
 * $scope
