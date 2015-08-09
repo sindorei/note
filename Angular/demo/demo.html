@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myTest">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="angular.min.js"></script>
+<style>
+    .wrap { width: 500px; margin: 20px 0 0 20px; }    
+</style>
+</head>
+<body>
+<div class="wrap" ng-controller="search">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="word" ng-keyup="loadList(word)" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+    <div class="list-group">
+      <button type="button" class="list-group-item" ng-repeat="listItem in dataList">{{listItem}}</button>
+    </div> 
+</div>
+<script>
+    angular.module('myTest',[])
+        .controller('search',['$scope','$http',function($scope,$http){
+            $scope.loadList = function(word){
+            $http(
+                {
+                    method:'jsonp',
+                    url:'http://suggestion.baidu.com/su?wd='+word+'&cb=JSON_CALLBACK'
+                }
+                 ).success(function(data){
+                $scope.dataList = data.s;
+            })
+            }
+            
+    
+    }])
+</script>
+</body>
+</html>
