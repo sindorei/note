@@ -66,10 +66,50 @@ $filter('uppercase')('hello')
   
   `ng-class="{red:true,yellow:true}"`
   
-* ng-style  `ng-style="{{mystyle}}"`
+* ng-style  `ng-style="{{mystyle}}"` `ng-style="{color:red,background:yellow}"`
 * ng-href
 * ng-src
 * ng-attr-(suffix) 如：ng-attr-title
+
+# DOM相关指令
+* ng-show  true显示 false隐藏 实际就是设置css 的 display属性
+* ng-hide
+* ng-if   true添加标签，false删除标签
+* ng-switch 
+  * on
+  * ng-switch-default
+  * ng-switch-when
+* ng-open  `<details></details>`默认打开状态
+
+# 指令扩展
+* ng-init 初始化操作指令  嵌套循环时，定义初始变量
+* ng-include 引入模板
+* ng-model
+ * ng-model-options updateOn
+* ng-controller
+ * as 将构造函数实例化对象
+ 
+ # 标签指令
+ angular对一些原有html标签进行了扩展
+* a 标签 阻止默认行为
+* select  配合 ng-options、ng-model 指令填写下拉项 
+ * ng-options  for in
+
+# 表单验证
+* $valid 
+* $invalid
+* $pristine 原始值没修改过，true 
+* $dirty 修改过，true
+* $error
+
+* type
+ * email
+ * number
+ * url
+* required 为空 true 
+
+
+注意点：表单元素以 name的方式进行查找，且要写ng-model
 
 # 服务
 * $scope
