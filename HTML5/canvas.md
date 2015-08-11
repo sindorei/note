@@ -26,7 +26,7 @@ getContext('2d')
 * lineCap 端点样式  一条直线的2个端点
   * butt 默认
   * round 圆角
-  * square 高度多出为宽一半的值
+  * square 直线长度多出为宽一半的值
   
 # 绘制路径
 * beginPath 开始绘制路径
@@ -40,5 +40,12 @@ getContext('2d')
 * restore 恢复路径
 
 beginPath moveTo lineTo closePath stroke/fill
+
+# 绘制圆
+* arc(x,y,半径,起始弧度,结束弧度,旋转方向)
+ * x,y：起始位置
+ * 弧度与角度关系 弧度 = 角度 * Math.PI/180
+ * 旋转方向： 顺时针（默认 false） 逆时针 true
+ 
 
 
