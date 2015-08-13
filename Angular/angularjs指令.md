@@ -92,15 +92,19 @@ $filter('uppercase')('hello')
  # 标签指令
  angular对一些原有html标签进行了扩展
 * a 标签 阻止默认行为
-* select  配合 ng-options、ng-model 指令填写下拉项 
+* select  需配合 ng-options、ng-model 指令填写下拉项 
  * ng-options  for in
+* textarea
+* input
+* form
+ * novalidate 阻止表单的一些默认样式
 
 # 表单验证
-* $valid 
-* $invalid
+* $valid  表单验证通过为 true
+* $invalid 表单验证失败为 true
 * $pristine 原始值没修改过，true 
 * $dirty 修改过，true
-* $error
+* $error 验证失败的验证信息
 
 * type
  * email
@@ -111,6 +115,17 @@ $filter('uppercase')('hello')
 
 注意点：表单元素以 name的方式进行查找，且要写ng-model
 
+# 自定义指令
+angular.module
+* controller
+* run
+* filter
+* directive
+ * restrict 的四种定义方式
+ * replace
+ * template
+ * templateUrl
+ 
 # 服务
 * $scope
   * $watch
