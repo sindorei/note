@@ -128,7 +128,13 @@ angular.module
    * M 注释  `<!-- directive:hello -->` 要设置replace为true 模板替换所在注释位置
  * replace  模板是否可替换
  * template
- * templateUrl
+ * templateUrl 指定外部的文件页面作为模板
+ * scope 为true 独立作用域  {} 隔离作用域，里面可以定义属性
+ * controller
+ * link 回调函数 进行dom操作的
+   * scope
+   * element
+   * attr
  
  directive 方法 第一个参数 指令名称，第二个参数 回调函数
  ```javascript
@@ -139,6 +145,10 @@ angular.module
     };
  })
  ```
+  指令名用驼峰命名，HTML中指令标签或属性可以用 ‘-’ 连接，如 myHello  --> my-hello
+ 
+ 绑定策略： @ 普通字符串  = 数据 & 函数
+ 
 # 服务
 * $scope
   * $watch
