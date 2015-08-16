@@ -117,15 +117,28 @@ $filter('uppercase')('hello')
 
 # 自定义指令
 angular.module
-* controller
+* contruoller
 * run
 * filter
 * directive
- * restrict 的四种定义方式
- * replace
+ * restrict   约束的四种定义方式
+   * E 标签指令
+   * A 属性
+   * C class
+   * M 注释  `<!-- directive:hello -->` 要设置replace为true 模板替换所在注释位置
+ * replace  模板是否可替换
  * template
  * templateUrl
  
+ directive 方法 第一个参数 指令名称，第二个参数 回调函数
+ ```javascript
+ m1 = angular.module('myApp',[]).directive('hello',function(){
+    return {
+        restrict:'E', //可以组合使用，区分大小写
+        template:'<div>hello angular</div>'
+    };
+ })
+ ```
 # 服务
 * $scope
   * $watch
