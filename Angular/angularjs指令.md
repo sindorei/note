@@ -135,6 +135,11 @@ angular.module
    * scope
    * element
    * attr
+ * transclude 默认true  ng-transclude
+ * require 
+   *  ^
+   *  ?
+
  
  directive 方法 第一个参数 指令名称，第二个参数 回调函数
  ```javascript
