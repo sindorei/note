@@ -168,3 +168,85 @@ angular.module
   * url
   * success
   * error
+  
+```javascript
+  $http(
+    {
+        method:'GET',
+        url:''
+    }
+  ).success().error()
+  ```
+  JSONP 需配合 JSON_CALLBACK
+  
+* $location
+    * absUrl() 绝对地址
+    * path() 路径，有参数为设置，无参数获取。
+    * replace() 使path()添加的路径不添加加到历史记录
+    * hash()  hash值
+    * search() 查询字符串
+    * url()
+    * host()
+    * port()
+    * protocol()
+* $cacheFactory 参数 缓存id 配置：设置缓存size {capacity:2}
+  * put() 
+  * remove()
+* $log
+  * log()
+  * info()
+  * warn()
+  * error()
+  * debug()
+* $interpolate 差值服务
+* $q
+  * promise 的实现
+  * defer()
+  * resolve()
+  * reject()
+  * notify()
+  * then()
+  
+# angularJs 的供应商
+* 服务的相关初始配置操作
+* config
+  * provider
+  * $interpolateProvider
+   * startSymbol()
+   * endSymbol()
+  * $logProvider
+   * debugEnabled()
+  * $anchorScrollProvider
+   * disableAutoScrolling()
+   
+# 自定义服务
+factory() 
+```javascript
+m1.factory('myService',function{
+    return {
+        name:'return',
+        show:function(){
+        }
+    }
+})
+```
+provider()
+
+factory 和provider()区别
+
+* factory 定义的服务不能进行初始化操作
+
+* provider 定义的服务是可配置的 需用 $get
+  
+  ```javascript
+  m1.provider('myRandomNum',function{
+    return {
+        $get:function(){
+            
+        }
+    }
+  })
+  ```
+  
+
+
