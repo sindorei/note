@@ -97,3 +97,67 @@ char类型的字面量是用单引号括起来的，如`'a'`。如果把字符�
 # 预定义的引用类型
 - object System.Object 根类型，CTS中的其他类型都是从它派生出来的，包括值类型
 - string System.String Unicode字符串
+
+字符串是不可改变的
+
+# 流控制
+### 条件语句
+- if
+- switch
+### 循环
+- for循环
+- while循环
+- do while循环
+- foreach循环
+### 跳转语句
+- goto 
+```C#
+goto label;
+label:
+     int i = 0;
+```
+- break
+
+switch，while、do while、for循环中使用
+
+- continue
+- return
+
+# 枚举
+枚举是用户定义的整数类型。在声明一个枚举时，要指定该枚举的实例可以包含的一组可接受的值。
+
+使用枚举比使用无格式的整数至少有如下3个优势：
+- 枚举可以使代码更易于维护，有助于确保给变量指定合法的、期望的值
+- 枚举使代码更清晰，允许用描述性的名称表示整数值。而不是用含义模糊、变化多端的数来表示。
+- 枚举也使代码更易于键入。
+```C#
+public enum TimeOfDay
+{
+    Morning = 0,
+    Afternoon = 1,
+    Evening = 2
+}
+```
+
+枚举的真正强大之处是它们在后台会实例化为派生与基类System.Enum的结构。一旦编译好，枚举就成为基本类型，与int和float类似。
+
+从字符串中获取枚举值 `Enum.Parse()`
+
+# 名称空间
+可以给名称空间指定一个别名
+```c#
+using alias = NamespaceName;
+```
+
+ 别名修饰符 `::`，`Introduction::NamespaceExample NSEX = new Introduction::NamespaceExample`
+ 
+ # Main()方法
+ 
+ 多个Main()方法会报错，可以用`/main`选项，其后跟Main()方法所属类的全名（包括名称空间），明确告诉编译器把哪个方法作为程序的入口点：
+ ```C#
+ csc DoubleMain.cs /main:Wrox.MathExample
+ ```
+ 
+ Main()方法可以传递参数，此参数为字符串数组
+ 
+ 在启动程序时，程序可以使用这个数组，访问通过命令行传送过来的选项
