@@ -161,3 +161,12 @@ using alias = NamespaceName;
  Main()方法可以传递参数，此参数为字符串数组
  
  在启动程序时，程序可以使用这个数组，访问通过命令行传送过来的选项
+ 
+ # 控制台 I/O
+ 
+ - Console.ReadLine() 从控制台窗口读取一行文本
+ - Console.Write()  将制定的值写入控制台窗口
+ - Console.WriteLine() 和Console.Write() 类似，但在输出结果最后添加一个换行
+ 
+ # C#预处理器指令
+ 
