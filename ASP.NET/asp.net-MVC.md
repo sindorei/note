@@ -20,4 +20,4 @@ ViewBag.CurrentTime 等同于 ViewData["CurrentTime"]
 如果不想输入模型的完全限定类型名，可使用@using关键字声明
 对于视图中经常用的命名空间，可在Views目录下的web.config文件中声明
 
-# 视图模型
+`@Ajax.JavaScriptStringEncode`
