@@ -21,3 +21,25 @@ ViewBag.CurrentTime 等同于 ViewData["CurrentTime"]
 对于视图中经常用的命名空间，可在Views目录下的web.config文件中声明
 
 `@Ajax.JavaScriptStringEncode`
+
+# 注解
+- [Required]
+
+```C#
+[Required]
+public string FirstName {get; set;}
+```
+
+- [StringLength(160)]
+
+可选 MinimumLength 参数  [StringLength(160,MinimumLength)]
+
+- RegularExpression 正则表达式
+
+- Range 指定最小值和最大值
+
+[REange(30,40)]
+
+- Remote
+
+- Compare 确保模型对象的两个属性拥有相同的值
