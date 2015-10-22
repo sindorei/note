@@ -13,3 +13,21 @@
 host（域名或ip） 、 子域名 、 端口 、 协议
 ### 浏览器沙箱
 ### 恶意网址拦截
+
+
+# XSS
+
+跨站脚本攻击 Cross Site Script 
+
+- 反射型XSS
+- 存储型XSS
+- DOM Based XSS  通过DOM节点形成的XSS
+
+XSS Payload
+
+Cookie劫持  给关键Cookie植入HttpOnly标识 cookie和ip绑定 可以预防
+
+XSS 构建GET POST 请求
+
+- GET img标签的src
+- POST 创建表单提交 XMLHttpRequest
