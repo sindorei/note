@@ -170,3 +170,32 @@ using alias = NamespaceName;
  
  # C#预处理器指令
  
+ # Attribute
+ 特性
+ 
+ 方括号括起来
+ 
+ 内置Attribute
+ 
+  - Conditional("DEBUG") 
+  - Obsolete 废弃的
+  
+  自定义Attribute
+ 
+定义一个类继承 Attribute
+
+AttributeUsage 适用条件
+
+# 反射
+ - GetType()
+ - Type.GetType('类型名称',是否报异常,是否忽略大小写)
+ - typeof(string)
+ 
+ 方法、属性的放射
+ 
+ GetMethod()
+ 
+ GetFields() GetProperites()
+ 
+ ### 动态加载 推迟绑定
+ Assembly
