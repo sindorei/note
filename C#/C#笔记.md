@@ -199,3 +199,66 @@ AttributeUsage 适用条件
  
  ### 动态加载 推迟绑定
  Assembly
+ 
+ # Linq
+ 
+ 查询表达式必须以from子句开头，以select或group子句结束
+ 
+ 在这两个句子之间可以使用where、orderby、join、let和其他from子句
+ 
+ 定义LINQ扩展方法的磊哥类是System.Linq名称空间中的Enumerable。
+ 
+ 导入此命名空间，就打开了这个类的扩展方法的作用域
+ 
+ 迭代在Linq查询定义时不会执行，而是在执行每个foreach语句时进行
+ 
+ 注意调用扩展方法ToArray()、ToEnumerable()、ToList() 。
+ 
+ ### LINQ定义的标准查询操作符
+ - Where OfType<TResult>
+ 
+筛选操作符，定义了返回元素的条件。在Where查询操作符中可以使用谓词，例如lamda表达式中的谓词，来返布尔值。`OfType<TResult>` 根据类型筛选元素，只返回TResult类型的元素。
+
+
+- Select 和 SelectMany
+
+
+投射操作符，用于把对象转换为另一个类型的新对象。Select和SelectMany定义了根据选择器函数选择结果值的投射
+
+
+- OrderBy、ThenBy、OrderByDescending、ThenByDescending、Reverse
+ 
+ 排序操作符。 OrderBy升序 OrderByDescending 降序  ThenBy 进行第二次排序 Reverse反转
+ 
+- Join、GroupJoin
+ 
+ 连接运算符
+ 
+- GroupBy、ToLookup
+ 
+ 组合运算符，把数据放在组中。GroupBy操作符组合所以公共键的元素。ToLookup通过创建一个一对多字典，来组合元素。
+ 
+- Any、All、Contains
+ 
+ 限定操作符
+ 
+- Take、Skip、TakeWhile、SkipWhile
+
+分区操作符
+ 
+- Distinct、Union、Intersect、Except、Zip
+- First、FirstOrDefault、Last、LastOrDefault、ElementAt、ElementAtOrDefault、Single、SingleOrDefault
+ 
+ 返回一个满足条件的元素 指定返回的默认值
+ 
+- Count、Sum、Min、Max、Average、Aggregate
+ 
+ 聚合操作符
+ 
+- ToArray、ToEnumerable、ToList、ToDictionary、Cast<TResult>
+ 
+ 将集合转换为数组等
+ 
+- Empty、Range、Repeat
+
+返回一个新集合。Empty集合是空的。Range返回一系列数字。Repeat返回一个始终重复一个值的集合
