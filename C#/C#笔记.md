@@ -215,7 +215,7 @@ AttributeUsage 适用条件
  注意调用扩展方法ToArray()、ToEnumerable()、ToList() 。
  
  ### LINQ定义的标准查询操作符
- - Where OfType<TResult>
+ - `Where OfType<TResult>`
  
 筛选操作符，定义了返回元素的条件。在Where查询操作符中可以使用谓词，例如lamda表达式中的谓词，来返布尔值。`OfType<TResult>` 根据类型筛选元素，只返回TResult类型的元素。
 
@@ -255,7 +255,7 @@ AttributeUsage 适用条件
  
  聚合操作符
  
-- ToArray、ToEnumerable、ToList、ToDictionary、Cast<TResult>
+- ToArray、ToEnumerable、ToList、ToDictionary、`Cast<TResult>`
  
  将集合转换为数组等
  
