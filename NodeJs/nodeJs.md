@@ -53,6 +53,18 @@ require 返回值就是被加载对象的module.exports对象
   - 开启当前进程的绝对路径
 - env
   - 返回用户环境信息
--version
+- version  
 - pid 当前进程的pid
 - title
+- platform 返回当前操作系统平台
+- cwd() 返回当前进程的工作目录
+- chdir(directory) 改变当前进程的工作目录
+- memoryUsage() 返回node进程的内存使用情况，单位是byte
+- exit(code) 退出
+- kill(pid) 向进程发送信息
+
+- stdin 、stdout 标准输入输出 IO
+  - process.stdin.write()
+  - 默认输入流是关闭的，要监听处理输入流数据，要先开启输入流 process.stdin.resume()
+  
+  # Buffer 类
