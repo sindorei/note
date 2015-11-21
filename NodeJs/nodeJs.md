@@ -67,12 +67,12 @@ require 返回值就是被加载对象的module.exports对象
   - process.stdin.write()
   - 默认输入流是关闭的，要监听处理输入流数据，要先开启输入流 process.stdin.resume()
   
-  # Buffer 类
-  - new Buffer(size)
-    - size [Number] 创建一个Buffer对象，并为这个对象分配一个大小
-    - 分配空间大小后，不能再更改
-  - new Buffer(Array)
-    * 字节数组
-  - new Buffer(string,[encoding])
-    * 编码默认utf8
+# Buffer 类
+- new Buffer(size)
+- size [Number] 创建一个Buffer对象，并为这个对象分配一个大小
+- 分配空间大小后，不能再更改
+- new Buffer(Array)
+  * 字节数组
+- new Buffer(string,[encoding])
+  * 编码默认utf8
   
