@@ -69,10 +69,53 @@ require 返回值就是被加载对象的module.exports对象
   
 # Buffer 类
 - new Buffer(size)
-- size [Number] 创建一个Buffer对象，并为这个对象分配一个大小
-- 分配空间大小后，不能再更改
+  * size [Number] 创建一个Buffer对象，并为这个对象分配一个大小
+  * 分配空间大小后，不能再更改
 - new Buffer(Array)
   * 字节数组
 - new Buffer(string,[encoding])
-  * 编码默认utf8
-  
+  * 编码默认utf-8
+- length 属性 Buffer的bytes大小
+- buf[index] 
+  * 获取或者设置在指定index索引位置的8位字节内容
+- write() 方法
+  * 参数：
+    1.要写入的字符串
+    2.写入字符串的位置
+    3.写入字符串的长度
+    4.编码方式
+- toString([encoding],[start],[end])
+  * 根据encoding参数返回一个解码的string类型
+- toJSON()
+  * 返回一个JSON表示的BUffer实例
+  * JSON.stringify将会默认调用字符串序列化这个Buffer实例
+- slice([start],[end]) 截取
+  * 返回的新buffer与老的buffer引用相同的地址
+- copy(targetBuffer , [targetStart] , [sourceStart] , [sourceEnd])
+
+- Buffer类静态方法
+  * isEncoding() 是否是支持的编码
+  * isBuffer() 是否是一个Buffer对象
+  * byteLength(string,[encoding])
+    * 返回指定字符串的真是byte长度
+  * concat(list,[totalLength])
+    * 将字节数组拼接成一个buffer对象
+    
+# File
+需引入fs模块
+
+```
+var fs = require('fs');
+/*
+*  fs.open(path,flags, [mode] , callback)
+*  path : 要打开的文件的路径
+*  flags：打开文件的方式 读/写
+*  model：设置文件的模式 读/写/执行 
+*  callback：回调
+*          err ： 文件打开失败的错误
+*          fd ： 被打开文件的标识
+**/
+
+```
+
+
