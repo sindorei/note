@@ -109,7 +109,7 @@ var fs = require('fs');
 /*
 *  fs.open(path,flags, [mode] , callback)
 *  path : 要打开的文件的路径
-*  flags：打开文件的方式 读/写
+*  flags：打开文件的方式 读/写  r r+
 *  model：设置文件的模式 读/写/执行 
 *  callback：回调
 *          err ： 文件打开失败的错误
@@ -117,5 +117,62 @@ var fs = require('fs');
 **/
 
 ```
+- open()
+  * 打开一个文件（异步的）
+  
+- openSync()
+  * 打开一个文件（同步的）
+  
+- read()
+  * fd: 成功打开文件返回的编号
+  * buffer: buffer对象
+  * offset: 新内容添加到buffer中的起始位置
+  * length： 
+  * position
+  * callback
+  
+- readSync()
+  * 同步
+  * 返回bytesRead的个数
+  
+- write()
+  * fd 打开的文件
+  * buffer 要写入的数据
+  * offset 写入数据的起始位置
+  * length 写入数据的长度
+  * position fd的起始位置
+  * callback 回调
+  
+- write(fd,data[,position[,encoding]],callback)
 
+- close(fd,callback)
 
+- writeFile(filename,data,[options],callback)
+
+- appendFile()
+
+- exists(filename,callback)
+  * 文件是否存在
+  
+- readFile()
+  * 要读取的文件路径
+  * 回调函数
+    * 错误信息
+    * 读取的数据 buffer对象
+    
+- unlink()
+  * 删除文件
+  
+- rename(oldPath,newPath) 
+  * 重命名
+- stat(path,callback)
+  * 读取文件信息
+- watch(filename,[options],[listener])
+  * 观察指定路径的改变
+  * 不稳定的
+
+- mkdir() 创建文件夹
+
+- rmdir(） 删除文件夹
+
+- readdir() 
