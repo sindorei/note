@@ -186,6 +186,21 @@ using alias = NamespaceName;
 
 AttributeUsage 适用条件
 
+# 委托
+
+委托是一种数据类型，像类一样（可以声明委托类型变量）
+
+定义一个委托类型，使用时还需声明该类型变量
+
+`public delegate void T1Delegate();`
+
+委托使用步骤：
+
+- 定义委托
+- 通过委托类型申明一个变量
+
+委托是引用类型，而引用类型的默认值都是null，所以在使用委托变量之前要进行非空校验
+
 # 反射
  - GetType()
  - Type.GetType('类型名称',是否报异常,是否忽略大小写)
