@@ -17,6 +17,12 @@
                 }
                 $scope.num = 1999;
 			}])
+            m1.directive('hello',function(){
+                return {
+                    restrict:'EA',
+                    template:'<h1>你好啊</h1>'
+                }
+            })
 		</script>
 	</head>
 	<body>
@@ -34,5 +40,7 @@
 		    </tr>
 		</table>
 		<p ng-controller="myhehe">{{num|currency:"&yen;"}}</p>
+		<div hello ></div>
+		<hello></hello>
 	</body>
 </html>

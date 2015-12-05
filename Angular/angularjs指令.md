@@ -134,8 +134,9 @@ angular.module
    * A 属性
    * C class
    * M 注释  `<!-- directive:hello -->` 要设置replace为true 模板替换所在注释位置
- * replace  模板是否可替换
+ * replace  模板是否可替换 
  * template
+   - $templateCache.get()
  * templateUrl 指定外部的文件页面作为模板
  * scope 为true 独立作用域  {} 隔离作用域，里面可以定义属性
  * controller
@@ -143,7 +144,7 @@ angular.module
    * scope
    * element
    * attr
- * transclude 默认true  ng-transclude
+ * transclude 默认true  ng-transclude 让指令可嵌套
  * require 
    *  ^
    *  ?
