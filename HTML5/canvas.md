@@ -27,7 +27,7 @@ getContext('2d')
   * butt 默认
   * round 圆角
   * square 直线长度多出为宽一半的值
-  
+
 # 绘制路径
 * beginPath 开始绘制路径
 * closePath 结束绘制路径
@@ -46,6 +46,9 @@ beginPath moveTo lineTo closePath stroke/fill
  * x,y：起始位置
  * 弧度与角度关系 弧度 = 角度 * Math.PI/180
  * 旋转方向： 顺时针（默认 false） 逆时针 true
- 
 
-
+# drawImage()
+- 参数：
+  * 1.图片对象 2.目标位置起始点x轴坐标 3.目标位置起始点y轴坐标
+  * 1.图片对象 2.目标位置起始点x轴坐标 3.目标位置起始点y轴坐标 4.绘制图像的宽度 5.绘制图像的高度
+  * drawImage(image , sx , sy , sw , sh , dx , dy , dw , dh)
