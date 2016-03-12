@@ -62,8 +62,8 @@ for (i in man) {
     * 如果您检查您的自定义属性或方法已不存在——也许已经在代码的其他地方实现或已经是你支持的浏览器JavaScript引擎部分。
     * 你清楚地文档记录并和团队交流了变化。
 
-    ```javascript
-    if (typeof Object.protoype.myMethod !== "function") {
+```javascript
+if (typeof Object.protoype.myMethod !== "function") {
    Object.protoype.myMethod = function () {
       // 实现...
    };
@@ -93,3 +93,6 @@ for (i in man) {
   month = parseInt(month, 10);
   year = parseInt(year, 10);
   ```
+- 编码规范
+
+# 命名函数表达式
