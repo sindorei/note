@@ -264,3 +264,18 @@ as
     * 一开始假设所有对象都是垃圾
 - 除了内存资源外的其他资源怎么办？
  * Dispose()
+
+# 集合
+- 集合命名空间
+    * System.Collections 非泛型集合
+    * System.Collections.Generic 泛型集合
+- 常用集合
+    * 类似数组集合： ArraryList、List<T>
+    * 键值对集合：Hashtable、Dictionary<k,v>
+    * 堆栈集合: Stack、Stack<T>(LIFO)
+    * 队列集合： Queue、Queue<T>(FIFO)
+    * 可排序键值对集合：插入、检索没有哈希表集合高效
+        * SortedList、SortedList<K,V> 占用内存更少，可通过索引访问
+        * SortedDictionary<K,V> 占用内存更多，没有索引，但插入、删除元素的速度比SortedList快
+    * Set集合：无序、不重复。HashSet<T> 可以将HashSet类似为不包含值的Dictionary集合。与List<T>类似。SortedSet<T>(.net4.0支持，有序无重复集合)
+    * 双向链表集合：LinkedList<T> 增删速度快
