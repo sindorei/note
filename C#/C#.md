@@ -279,3 +279,29 @@ as
         * SortedDictionary<K,V> 占用内存更多，没有索引，但插入、删除元素的速度比SortedList快
     * Set集合：无序、不重复。HashSet<T> 可以将HashSet类似为不包含值的Dictionary集合。与List<T>类似。SortedSet<T>(.net4.0支持，有序无重复集合)
     * 双向链表集合：LinkedList<T> 增删速度快
+
+ - ArrayList
+    * Count 实际元素个数
+    * Capacity 表示容量  ， 不够时会翻倍
+        * Count 为0 Capacity为0 ， Count为1 Capacity 为4
+    * Add()
+    * AddRange()
+    * Insert()
+    * Clear() 长度不变，每个元素变成默认值，值类型为0，引用类型为null
+    * Remove()
+    * RemoveAt()
+    * Contains()
+    * ToArray()
+        * 返回Object数组
+    * Sort()
+      * 字符串 是按照 字母顺序
+      * 可实现IComparable 接口来定义改类型对象的比较规则
+      * 可自定义比较器定义比较规则比较器类（实现IComparer接口） 可定义不同的比较器来实现不同的比较
+ - HashTable
+    * Add(键,值)
+    * Remove(键)
+    * 遍历
+        - foreach
+            * DictionaryEntry
+  - List
+  - Dictionary
