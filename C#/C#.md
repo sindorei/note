@@ -295,6 +295,7 @@ as
         * 返回Object数组
     * Sort()
       * 字符串 是按照 字母顺序
+      * 调用CompareTo()方法排序 ， 此方法时IComparable接口中定义的
       * 可实现IComparable 接口来定义改类型对象的比较规则
       * 可自定义比较器定义比较规则比较器类（实现IComparer接口） 可定义不同的比较器来实现不同的比较
  - HashTable
@@ -305,3 +306,17 @@ as
             * DictionaryEntry
   - List
   - Dictionary
+
+# 文件操作
+- File
+    * 操作文件，静态类，对文件整体操作。拷贝、删除、剪切等。
+- Directory
+    * 操作目录（文件夹），静态类
+- DirectoryInfo
+    *  文件夹类 用来描述一个文件夹对象
+- FileInfo
+    * 文件类，用来描述一个文件对象。获取指定目录下的所有文件时，返回一个FileInfo数组
+- Path
+    * 对文件或目录的路径进行操作
+- Stream 文件流，抽象类
+    * 
