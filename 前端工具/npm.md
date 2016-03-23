@@ -2,7 +2,7 @@
 - node package manager
     * nodejs的包管理器
 - 命令
-    * `npm install <name> [-g] [--save-dev]
+    * `npm install <name> [-g] [--save-dev]`
         - `<name>` 插件名称 也可以是插件地址
         - `-g` 全局安装
             * 将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用；
