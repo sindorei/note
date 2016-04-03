@@ -1,7 +1,41 @@
 #canvas 标签
-默认宽300px 高 150px
+- 默认宽300px 高 150px
+- 直接设置属性实际是同时修改了元素本身的大小与元素绘图表面的大小
+- 设置css修改的是元素本身的大小，而不会影响绘图表面
+- 浏览器会自动缩放canvas（元素大小与canvas绘图表面大小不相符合时）
+## canvas 元素的属性
+- width
+    *  canvas元素绘图表面的宽度
+        * 默认浏览器会将canvas元素的大小设定成与绘图表面大小一致。如果在css中定义了元素大小，浏览器则会将绘图表面进行缩放，使之符合元素尺寸
+        * 取值： 有效范围内的任意非负整数。数值开头可以添加“+”与空格，但是按照规则，不能给数值加px
+        * 默认值： 300
+- height
+    * canvas元素绘图表面的高度。
+    * 默认值： 150
+## canvas 元素的方法
+- getContext()
+- toDataURL(type,quality)
+- toBlob(callback,tyupe,args)
 #绘制环境
 getContext('2d')
+
+CanvasRenderingContext2D
+    - canvas
+    - fillStyle
+    - font
+    - globalAlpha
+    - globalCompsiteOperation
+    - lineCap
+    - lineWidth
+    - lineJoin
+    - miterLimit
+    - shadowBlur
+    - shadowColor
+    - shadowOffsetX
+    - shadowOffsetY
+    - strokeStyle
+    - textAlign
+    - textBaseline
 #绘制方框
 * fillRect(L,T,W,H)
 
