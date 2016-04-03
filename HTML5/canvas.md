@@ -24,13 +24,28 @@ getContext('2d')
 CanvasRenderingContext2D
 
     - canvas
+        * 指向该绘图环境所属的canvas对象
+        * 获取canvas的宽度和高度  canvas.width cnavas.height
     - fillStyle
+        * 指定该绘图环境在后续的图形填充操作中所使用的颜色、渐变色或图案
     - font
+        * 设定在调用绘图环境对象的fillText() 或 strokeText()方法时，所使用的字体
     - globalAlpha
+        * 全局透明 0 ~ 1
     - globalCompsiteOperation
     - lineCap
+        * 线段的端点
+            * butt 默认
+            * round
+            * square
     - lineWidth
+        * 线段的宽度
+            * 默认 1
     - lineJoin
+        * 两条线段相交时如何绘制焦点
+            * bevel
+            * round
+            * miter 默认值
     - miterLimit
     - shadowBlur
     - shadowColor
@@ -39,6 +54,16 @@ CanvasRenderingContext2D
     - strokeStyle
     - textAlign
     - textBaseline
+
+# canvas状态的保存与恢复
+
+- save()
+    * 将当前canvas的状态推送到一个保存canvas状态的堆栈顶部。canvas状态包括了当前的坐标变换信息、剪辑区域以及所有canvas绘图环境对象的属性。不包括当前的路径或位图。只能通过调用beginPath()来重置路径。至于位图，它是canvas本身的一个属性，并不属于绘图环境对象。尽管位图是canvas对象本身的属性，也可以通过绘图环境对象来访问它（getImageData()方法）
+
+- restore()
+    * 将canvas状态堆栈顶部的条目弹出。
+
+
 #绘制方框
 * fillRect(L,T,W,H)
 
