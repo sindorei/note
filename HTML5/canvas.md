@@ -18,42 +18,43 @@
 - getContext()
 - toDataURL(type,quality)
 - toBlob(callback,tyupe,args)
+
 #绘制环境
 getContext('2d')
 
 CanvasRenderingContext2D
 
-    - canvas
-        * 指向该绘图环境所属的canvas对象
-        * 获取canvas的宽度和高度  canvas.width cnavas.height
-    - fillStyle
-        * 指定该绘图环境在后续的图形填充操作中所使用的颜色、渐变色或图案
-    - font
-        * 设定在调用绘图环境对象的fillText() 或 strokeText()方法时，所使用的字体
-    - globalAlpha
-        * 全局透明 0 ~ 1
-    - globalCompsiteOperation
-    - lineCap
-        * 线段的端点
-            * butt 默认
-            * round
-            * square
-    - lineWidth
-        * 线段的宽度
-            * 默认 1
-    - lineJoin
-        * 两条线段相交时如何绘制焦点
-            * bevel
-            * round
-            * miter 默认值
-    - miterLimit
-    - shadowBlur
-    - shadowColor
-    - shadowOffsetX
-    - shadowOffsetY
-    - strokeStyle
-    - textAlign
-    - textBaseline
+- canvas
+    * 指向该绘图环境所属的canvas对象
+    * 获取canvas的宽度和高度  canvas.width cnavas.height
+- fillStyle
+    * 指定该绘图环境在后续的图形填充操作中所使用的颜色、渐变色或图案
+- font
+    * 设定在调用绘图环境对象的fillText() 或 strokeText()方法时，所使用的字体
+- globalAlpha
+    * 全局透明 0 ~ 1
+- globalCompsiteOperation
+- lineCap
+    * 线段的端点
+        * butt 默认
+        * round
+        * square
+- lineWidth
+    * 线段的宽度
+        * 默认 1
+- lineJoin
+    * 两条线段相交时如何绘制焦点
+        * bevel
+        * round
+        * miter 默认值
+- miterLimit
+- shadowBlur
+- shadowColor
+- shadowOffsetX
+- shadowOffsetY
+- strokeStyle
+- textAlign
+- textBaseline
 
 # canvas状态的保存与恢复
 
