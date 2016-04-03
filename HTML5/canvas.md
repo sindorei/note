@@ -3,6 +3,7 @@
 - 直接设置属性实际是同时修改了元素本身的大小与元素绘图表面的大小
 - 设置css修改的是元素本身的大小，而不会影响绘图表面
 - 浏览器会自动缩放canvas（元素大小与canvas绘图表面大小不相符合时）
+
 ## canvas 元素的属性
 - width
     *  canvas元素绘图表面的宽度
@@ -12,6 +13,7 @@
 - height
     * canvas元素绘图表面的高度。
     * 默认值： 150
+
 ## canvas 元素的方法
 - getContext()
 - toDataURL(type,quality)
@@ -20,6 +22,7 @@
 getContext('2d')
 
 CanvasRenderingContext2D
+
     - canvas
     - fillStyle
     - font
