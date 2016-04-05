@@ -139,3 +139,8 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
         * top 和 left 起效果
 - 层级
     * 提高层叠上下文
+        * z-index 为auto 不会限制层叠 ie6、7除外
+- 最小化影响原则
+    * 尽量降低relative属性对其他元素或布局的影响
+        * 尽量避免使用relative
+        * relative最小化
