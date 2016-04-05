@@ -20,7 +20,7 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
 - 不同浏览器的滚动条样式不同
 - 宽度设定机制
   - ie7 宽度100%，会把滚动条宽度算进去
-  
+
 ## 起作用的前提条件
 - 非 display:inline
 - 对应方位的尺寸限制
@@ -32,7 +32,7 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
 - 对于td等，需要设置table的`table-layout:fixed`
 
 ## overflow:visible妙用
-- IE7浏览器，文字越多，两侧padding留白越大的bug 
+- IE7浏览器，文字越多，两侧padding留白越大的bug
 
 ## 滚动条出现的条件
 - overflow:auto 或scroll
@@ -51,7 +51,7 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
 - `padding-left: calc(100vw-100%)` 浏览器宽度减去可用内容宽度  ie9+浏览器支持
 
 ## 自定义滚动条(webkit)
-- 整体部分 
+- 整体部分
   * ::-webkit-scrollbar
 - 两端按钮
   * ::-webkit-scrollbar-button
@@ -59,7 +59,7 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
   * ::-webkit-scrollbar-track
 - 内层轨道
   * ::-webkit-scrollbar-track-piece
-- 滚动滑块 
+- 滚动滑块
   * ::-webkit-scrollbar-thumb
 - 边角
   * ::-webkit-scrollbar-corner
@@ -68,7 +68,7 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
 
 - `-webkit-overflow-scrolling:touch`
 
-## BFC（block formatting context） 
+## BFC（block formatting context）
 - 块级格式化上下文
 - 页面之结界，内部元素不会影响到外部
 
@@ -83,17 +83,17 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
    * `display:table-cell;width2000px;//iE8+ BFC特性
       *display:inline-block;*width:auto; // iE7- 伪BFC特性
      `
- 
+
  ## overflow与绝对定位
  - 设置绝对定位后，overflow:hidden的隐藏失效
  - 设置绝对定位后，滚动失效
- 
+
  绝对定位元素不总是被父级overflow属性裁剪，尤其当overflow在绝对定位元素及包含块之间的时候
- 
+
  - 包含块指“含position:relative/absolute/fixed声明的父级元素，没有则body元素”
- 
+
  如何避免？
- 
+
  - 设置overflow的元素自身为包含块
  - 设置overflow的元素子元素为包含块
  - transform声明当做包含块
@@ -103,12 +103,12 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
    * overflow子元素transform
      - IE9+、Firefox  可以
      - chrome、Safari（win）、opera 可以
-     
+
 ## 依赖overflow的样式表现
 
 - css3 的resize属性要有效，overflow不能为visible
   * resize 拖拽区域大小 17px*17px 和滚动条宽度一样
-  
+
 ## overflow 与 锚点
 - 容器可滚动
 - 锚点元素在容器内
@@ -120,3 +120,22 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
 
 
 # Float
+
+# relative
+- relvative 与 absolute
+    * 限制作用
+        * 限制left/top/right/bottom 定位
+        * 限制z-index层级
+            * 父元素relative，子元素absolute，子元素的层级受到父元素的影响
+        * 限制overflow下的显示
+            * overflow为hidden的父元素不能隐藏position为absolute的子元素，除非父元素position为relative
+- relavtive 与 fixed
+    * 限制z-index层级
+- 定位
+    * 相对自身
+    * 无侵入
+        * 不会影响其他元素的布局
+    * 同时设置top和bottom left 和 right
+        * top 和 left 起效果
+- 层级
+    * 提高层叠上下文
