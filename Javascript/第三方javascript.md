@@ -14,3 +14,16 @@
     - 表明被下载的脚本不会调用`document.write`语句
     - 处理页面时，同时下载该脚本
     - 一旦下载完毕就会被执行
+- 动态脚本插入
+    - 可通过动态创建script元素并插入到DOM中来实现async属性的行为
+        - 浏览器在此情况下不会按照javascript加载的顺序执行，执行顺序不固定，所以浏览器会并行下载
+
+   ```javascript
+   (function(){
+       var script = document.createElement('script');
+       script.src = 'http://test.com/test.js';
+       script.async = true; // 为了在Opera和Firefox的旧版中，脚本下载完毕后能尽快执行。否则，按顺序执行类似defer属性
+       var entry = document.getElementsByTagName('script')[0];
+       entry.parentNode.insertBefore(script,entry);
+   })();
+   ```
