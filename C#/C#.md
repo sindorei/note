@@ -313,8 +313,19 @@ as
 - 装箱用什么数据类型装，拆箱就要用什么类型拆
 
 # 文件操作
-- File
-    * 操作文件，静态类，对文件整体操作。拷贝、删除、剪切等。
+- File   操作文件，静态类，对文件整体操作。拷贝、删除、剪切等。
+    * Exists() 判断文件是否存在
+    * Copy() 拷贝一个文件
+    * Move() 移动（剪切）文件
+    * Create() 创建一个文件
+    * Delete() 删除一个文件 ， 文件不存在不会报异常
+    * WriteAllText()
+    * WriteAllLines() 传入字符串数组，每个数组的元素作为一行
+    * WriteAllBytes() 写入字节数组
+    * ReadAllText()
+    * ReadAllLines()
+    * ReadAllBytes()
+
 - Directory  操作目录（文件夹），静态类
     * GetFiles()
         * 获得指定目录下的所有子文件
