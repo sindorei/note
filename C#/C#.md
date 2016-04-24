@@ -315,13 +315,24 @@ as
 # 文件操作
 - File
     * 操作文件，静态类，对文件整体操作。拷贝、删除、剪切等。
-- Directory
-    * 操作目录（文件夹），静态类
+- Directory  操作目录（文件夹），静态类
+    * GetFiles()
+        * 获得指定目录下的所有子文件
+    * GetDirectories()
+        * 获得指定目录下的所有子目录
+    * Exists()
+        * 判断某个目录是否存在
+    * Delete()
+        * 删除指定的目录，不存在会报异常
+        * 第二个参数是否递归删除
 - DirectoryInfo
     *  文件夹类 用来描述一个文件夹对象
 - FileInfo
     * 文件类，用来描述一个文件对象。获取指定目录下的所有文件时，返回一个FileInfo数组
 - Path
-    * 对文件或目录的路径进行操作
+    * 对文件或目录的路径（字符串）进行操作
 - Stream 文件流，抽象类
-    *
+    * FlieStream 文件流
+    * StreamReader
+    * StreamWriter
+    * GZipStream
