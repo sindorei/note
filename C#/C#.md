@@ -347,3 +347,9 @@ as
     * StreamReader
     * StreamWriter
     * GZipStream
+- 编码
+    * Encoding.GetEncodings() 获取所有编码 返回EncodingInfo 对象数组
+    * Encoding.GetEncoding()
+- FileStream 文件流
+    * Write()
+    * 当把一个对象放到using()中时，超出using的作用域范围后会自动调用该对象的`dispose()方法
