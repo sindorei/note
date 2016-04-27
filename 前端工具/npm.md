@@ -27,3 +27,62 @@
 
 # cnpm
 - `npm install cnpm -g --registry=https://registry.npm.taobao.org`
+
+# package.json
+## name
+    - 必须,没有则无法install
+    - name和version一起组成以为的标识
+    - 不要包含js和node，默认npm包就是node.js程序，可以通过`engines`字段来指定
+    - 会作为在URL的一部分、命令行的参数或者文件夹的名字。任何non-url-safe的字符都是不能用的。
+    - 可能会作为参数被传入`require()`，所以应该简明。
+    - [npm registry](http://registry.npmjs.org/)中没有重名，字母全部小写。
+
+## version
+    -
+## description
+
+## keywords
+## bugs
+## license
+
+## author
+
+## contributors,maintainers
+
+## files
+
+## main
+
+## man
+
+## directories
+
+## repository
+
+## scripts
+
+## config
+
+## dependencies
+
+## devDependencies
+
+## peerDependencies
+
+## bundledDependencies
+
+## optionalDependencies
+
+## engines
+
+## engineStrict
+
+## os
+
+## cpu
+
+## preferGlobal
+
+## private
+
+## publishConfig
