@@ -53,12 +53,12 @@
 ## bugs
 
 - 包的bug跟踪主页地址，应该如下设置：
-
+```
     bugs: {  
         "url": "http://github.com/ijse/project/issues",
         "email": "my@ijser.cn"
     }
-
+```
 ## license
 
 - 包的开源协议名称
@@ -66,15 +66,15 @@
 ## author
 
 - 包的作者，可以是字符串或对象：
-
+```
     author: {  
         "name": "ijse",
         "email": "my@ijse.cn",
         "url": "http://www.ijser.cn"
     }
-
+```
 或：
-    author: "ijse <my@ijser.cn> (http://www.ijser.cn)"
+    `author: "ijse <my@ijser.cn> (http://www.ijser.cn)"`
 
 ## contributors,maintainers
 
@@ -92,11 +92,11 @@
 ## bin
 
 - 如果你的包里包含可执行文件，通过设置这个字段可以将它们包含到系统的PATH中，这样直接就可以运行，很方便。如：
-
+```
     "bin": {
         "iapp": "./cli.js"
     }
-
+```
 当包被安装后，NPM将创建一个cli.js文件的链接到/usr/local/bin/iapp下。
 
 ## man
@@ -112,16 +112,16 @@
 ## config
 
 - 添加一些设置，可以供scripts读取用，同时这里的值也会被添加到系统的环境变量中。
-
+```
     "name": "foo",
     "config": {
       "port": "8080"
     }
-
+```
 - npm start的时候会读取到npm_package_config_port环境变量。
 - 也可以使用npm config命令来修改设置：
 
-    npm config set foo:port 8001
+    `npm config set foo:port 8001`
 
 ## dependencies
 
