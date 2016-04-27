@@ -53,7 +53,7 @@
 ## bugs
 
 - 包的bug跟踪主页地址，应该如下设置：
-```
+```json
     bugs: {  
         "url": "http://github.com/ijse/project/issues",
         "email": "my@ijser.cn"
