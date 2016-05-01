@@ -85,3 +85,21 @@ CONNECT proxy.hello.com:8080 HTTP/1.1
 - 方法名要用大写字母
 
 ## 持久连接节省通信量
+- 持久连接
+    * 只要任意一端没有明确提出断开连接，则保持TCP连接状态
+- 管线化
+
+## 使用Cookie的状态管理
+
+# HTTP报文内的HTTP信息
+## HTTP报文
+- 报文首部
+    * 服务器端或客户端需处理的请求或响应的内容及属性
+- CR +　LF
+    * CR Carriage Return 回车 16进制 0x0d
+    * LF Line Feed 换行符 16进制 0x0a
+- 报文主体
+    * 应被发送的数据
+    * 并不一定要有报文主体
+
+![](images/message.png)
