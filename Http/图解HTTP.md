@@ -5,11 +5,11 @@
 - 网络层
 - 数据链路层
 
-## 与HTTP关系密切的协议
-### 负责传输的IP协议
+# 与HTTP关系密切的协议
+## 负责传输的IP协议
 - 使用ARP协议凭借MAC地址进行通信
 
-### 确保可靠性的TCP协议
+## 确保可靠性的TCP协议
 - 三次握手
     * 发送端首先发送一个带有SYN标识的数据包给对方
     * 接收端收到后，回传一个带有SYN/ACK标识的数据包以示传达确认信息
@@ -20,7 +20,15 @@
 
 ![三次握手](images/threeway.png)
 
-### 负责域名解析的DNS服务
+## 负责域名解析的DNS服务
 - Domain Name System
 - 应用层协议
 - 提供域名到IP地址之间的解析服务
+
+# URI 和 URL
+- Uniform Resource Identifier 统一资源标识符
+- Uniform Resource Locator 统一资源定位符
+
+URI用字符串标识某一互联网资源，URL表示资源的地点
+
+![URI格式](images/URI.png)
