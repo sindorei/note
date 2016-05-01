@@ -91,8 +91,7 @@ CONNECT proxy.hello.com:8080 HTTP/1.1
 
 ## 使用Cookie的状态管理
 
-# HTTP报文内的HTTP信息
-## HTTP报文
+# HTTP报文
 - 报文首部
     * 服务器端或客户端需处理的请求或响应的内容及属性
 - CR +　LF
@@ -103,3 +102,36 @@ CONNECT proxy.hello.com:8080 HTTP/1.1
     * 并不一定要有报文主体
 
 ![](images/message.png)
+
+# 请求报文及响应报文的结构
+- 请求报文首部
+    * 请求行
+        - 包含用于请求的方法，请求URI和HTTP版本
+    * 请求首部字段
+        - 包含表示请求和响应的各种条件和属性的各类首部
+    * 通用首部字段
+    * 实体首部字段
+    * 其他
+        - 可能包含HTTP的RFC里未定义的首部（Cookie等）
+- 响应报文首部
+    * 状态行
+        - 包含表明响应结果的状态码，原因短语和HTTP版本
+    * 响应首部字段
+    * 通用首部字段
+    * 实体首部字段
+    * 其他
+
+# 编码提升传输速率
+常用的内容编码
+- gzip （GNU zip）
+- compress(UNIX 系统的标准压缩)
+- deflate（zlib）
+- identity（不进行编码）
+
+## 分块传输编码（Chunked Transfer Coding）
+
+# 发送多种数据的多部分对象集合
+- multipart/form-data
+    * 在web表单文件上传时使用
+- multipart/byteranges
+    * 状态码206（Partial Content，部分内容）响应报文包含了多个范围的内容时使用
