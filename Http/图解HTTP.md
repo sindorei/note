@@ -32,3 +32,21 @@
 URI用字符串标识某一互联网资源，URL表示资源的地点
 
 ![URI格式](images/URI.png)
+
+# HTTP协议
+## HTTP协议用于客户端和服务器端之间的通信
+## 通过请求和响应的交换达成通信
+## HTTP是不保存状态的协议
+- 协议自身不具备保存之前发送过的请求或响应的功能
+
+## 请求URI定位资源
+- URI为完整的请求URI
+
+`GET http://hello.com/index.html HTTP/1.1`
+
+- 在首部字段Host中写明域名或IP地址
+
+```HTTP
+GET /index.html HTTP/1.14
+Host: hello.com
+```
