@@ -42,7 +42,9 @@ URI用字符串标识某一互联网资源，URL表示资源的地点
 ## 请求URI定位资源
 - URI为完整的请求URI
 
-`GET http://hello.com/index.html HTTP/1.1`
+```HTTP
+GET http://hello.com/index.html HTTP/1.1
+```
 
 - 在首部字段Host中写明域名或IP地址
 
@@ -50,3 +52,36 @@ URI用字符串标识某一互联网资源，URL表示资源的地点
 GET /index.html HTTP/1.14
 Host: hello.com
 ```
+
+- 对服务器本身发起请求，可用`*`来代替请求的URI
+
+```HTTP
+OPTIONS * HTTP/1.1
+```
+## 告知服务器意图的HTTP方法
+- GET 获取资源
+- POST 传输实体主体
+- PUT 传输文件
+    * HTTP/1.1 的PUT方法自身不带验证机制，存在安全性问题。
+- HEAD 获得报文首部
+    * 用于确认URI的有效性及资源更新的日期时间等
+- DELETE 删除文件
+- OPTIONS 询问支持的方法
+    * 用来查询针对请求URI指定的资源支持的方法
+- TRACE 追踪路径
+    * 发送请求时，在Max-Forwards首部字段填入数值，每经过一个服务器减1，减到0时，停止传输，最后接受到请求的服务器则返回状态码200 OK的响应
+    * 不常用，且会引发XST（Cross-Site Tracing，跨站追踪）攻击
+- CONNECT 要求用隧道协议连接代理
+    * 要求在与代理服务器通信时建立隧道
+    * 主要使用SSL（Secure Sockets Layer，安全套接层）、TSL（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输
+
+```HTTP
+CONNECT 代理服务器名 : 端口号 HTTP版本
+
+CONNECT proxy.hello.com:8080 HTTP/1.1
+```
+
+## 使用方法下达命令
+- 方法名要用大写字母
+
+## 持久连接节省通信量
