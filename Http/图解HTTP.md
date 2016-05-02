@@ -135,3 +135,23 @@ CONNECT proxy.hello.com:8080 HTTP/1.1
     * 在web表单文件上传时使用
 - multipart/byteranges
     * 状态码206（Partial Content，部分内容）响应报文包含了多个范围的内容时使用
+
+# 获取部分内容的范围请求
+- 用首部字段Range来指定资源的byte范围
+- 响应会返回状态码为206 Partial Content的响应报文
+```HTTP
+Range: bytes=5001-10000
+
+Range: bytes=5001-
+
+Range: bytes=-3000, 5000-7000
+```
+
+# 内容协商返回最合适的内容
+- 内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准
+- 内容协商有3中类型
+    * 服务器驱动协商 Server-driven Negotiation
+        + 以请求的首部字段为参考，在服务器端自动处理
+    * 客户端驱动协商 Agent-driven Negotiation
+    * 透明协商 Transparent Negotiation
+        + 服务器驱动和客户端驱动的结合体，由服务器和客户端各自进行内容协商
