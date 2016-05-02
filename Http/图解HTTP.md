@@ -155,3 +155,28 @@ Range: bytes=-3000, 5000-7000
     * 客户端驱动协商 Agent-driven Negotiation
     * 透明协商 Transparent Negotiation
         + 服务器驱动和客户端驱动的结合体，由服务器和客户端各自进行内容协商
+
+# 状态码
+- 以3位数字和原因短语组成  `200 OK`
+- 数字第一位指定了响应类别，后两位无分类
+    * 1XX information（信息性状态码） 接受的请求正在处理
+    * 2XX success （成功状态码） 请求正常处理完毕
+        + 200 OK 请求正常处理
+        + 204 No Content 请求处理成功，但没有资源可返回 （返回的响应报文不含实体的主体部分）
+        + 206 Partial Content 客户端进行了范围请求。响应报文中有Content-Range 指定范围的实体内容
+
+    * 3XX redirection（重定向状态码）需要进行附加操作以完成请求
+        + 301 Moved Permanently 永久重定向 表示请求的资源已被分配了新的URI，以后应使用资源现在所指的URI。
+            * 如果把资源对象的URI保存为书签，这时应该按Location首部字段提示的URI重新保存
+        + 302 Found 临时性重定向 表示请求的资源已被分配了新的URI，希望用户本次能使用新的URI访问
+        + 303 See Other 表示由于请求对应的资源存在着另一个URI，应使用GET方法定向获取请求的资源
+            * 返回301、302、303状态码，几乎所有的浏览器都会把POST改成GET，并删除请求报文内的主体，之后请求会自动再次发送。301、302标准是禁止将POST方法改变成GET方法的，但实际使用时大家都会这么做
+        + 304 Not Modified 表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但因发生请求未满足条件，直接返回304.（服务器端资源为改变，可直接使用客户端未过期的缓存）
+            * 附带条件的请求时指采用GET方法的请求报文中包含：If-Math、If-Modified-Since、If-None-Match、If-Range、If-Unmodified-Since中任一首部
+        + 307 Temporary Redirect 临时重定向，跟302有相同含义。302禁止POST变换成GET，但实际使用时大家并不遵守。307标准不会从POST变成GET
+    * 4XX client error （客户端错误状态码）服务器无法处理请求
+        + 400 Bad Request 请求报文中存在语法错误
+        + 401 Unauthorized 表示发送的请求需要通过HTTP认证（BASIC认证、DIGEST认证）的认证信息
+        + 403 Forbidden 表明对请求资源的访问被服务器拒绝了
+        + 404 Not Found 服务器上无法找到请求的资源。也可以再服务端拒绝请求，且不想说明理由时使用
+    * 5XX server error （服务器错误状态码）服务器处理请求出错
