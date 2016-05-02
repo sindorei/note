@@ -180,3 +180,5 @@ Range: bytes=-3000, 5000-7000
         + 403 Forbidden 表明对请求资源的访问被服务器拒绝了
         + 404 Not Found 服务器上无法找到请求的资源。也可以再服务端拒绝请求，且不想说明理由时使用
     * 5XX server error （服务器错误状态码）服务器处理请求出错
+        + 500 Internal Server Error 服务器端再执行请求发生了错误
+        + 503 Service Unavailable 服务器暂时处于超负载或正在进行停机维护，现在无法处理请求
