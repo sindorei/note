@@ -38,7 +38,12 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
 - overflow:auto 或scroll
 
 ## html与滚动条
-- 浏览器滚动条来自于html，不是body
+- 无论什么浏览器默认滚动条来自于html，不是body
+
+## js获取滚动条高度
+- chrome `document.body.scrollTop`
+- 其他： `document.documentElement.scrollTop`
+- 兼容写法：`var scrollTop = document.documentElement.scrollTop || document.body.scrollTop`
 
 ##overflow的padding-bottom的缺失现象
 - 导致不一样的scrollHeight
