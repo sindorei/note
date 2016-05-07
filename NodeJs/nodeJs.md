@@ -52,6 +52,8 @@ require 返回值就是被加载对象的module.exports对象
 # process 对象
 全局对象，对当前运行程序的进程进行访问和控制
 
+可以截获进程的异常、退出等事件。也可以获取进程的当前目录、环境变量、内存占用等信息。还可以执行进程退出、目录切换等操作。
+
 - argv
   - node
   - 运行的文件
@@ -68,12 +70,23 @@ require 返回值就是被加载对象的module.exports对象
 - chdir(directory) 改变当前进程的工作目录
 - memoryUsage() 返回node进程的内存使用情况，单位是byte
 - exit(code) 退出
+    * 杀死进程退出程序
+    * code 为退出后返回的代码，省略则默认为0
 - kill(pid) 向进程发送信息
 
 - stdin 、stdout 标准输入输出 IO
   - process.stdin.write()
   - 默认输入流是关闭的，要监听处理输入流数据，要先开启输入流 process.stdin.resume()
-
+  - 用注册事件的方式获取输入的内容
+- stderr
+    * 标准错误流，用来打印错误信息
+- on
+    * 监听进程事件
+        * exit事件，进程退出之前会触发exit事件
+        * uncaughtException 进程发生了未捕获的异常时触发
+- 设置编码
+    * process.stdin.setEncoding()
+    * process.stdout.setEncoding()
 
 # Buffer 类
 - new Buffer(size)
