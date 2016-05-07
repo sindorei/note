@@ -169,23 +169,34 @@ var fs = require('fs');
 - close(fd,callback)
 
 - writeFile(filename,data,[options],callback)
+    * 异步将数据写入一个文件，如果文件已存在则会被替换
+    * 数据参数可以是string或者是Buffer
+    * 编码格式参数可选，默认为“utf8”
+    * 回调函数只有一个参数err
 
 - appendFile()
+    * 将新的内容追加到已有的文件中
+    * 如果文件不存在会创建一个新的文件
+    * 参数： 文件名，数据，编码，回调函数
 
 - exists(filename,callback)
   * 文件是否存在
+  * 回调函数只有一个参数，布尔型，true为存在，false为不存在
 
-- readFile()
+- readFile(filename,[encoding],callback)
   * 要读取的文件路径
+  * 编码（可选）
   * 回调函数
     * 错误信息
     * 读取的数据 buffer对象
 
 - unlink()
   * 删除文件
+  * 参数： 文件 ， 回调函数(err)
 
-- rename(oldPath,newPath)
+- rename(oldPath,newPath,callback)
   * 重命名
+  * 可以用来移动文件
 - stat(path,callback)
   * 读取文件信息
 - watch(filename,[options],[listener])
@@ -193,7 +204,13 @@ var fs = require('fs');
   * 不稳定的
 
 - mkdir() 创建文件夹
+    * mkdir(路径,权限,回调函数(err))
+    * 权限参数，可选，只在linux下有效，默认为0777
 
-- rmdir(） 删除文件夹
+- rmdir() 删除文件夹
+    * rmdir(路径,回调函数(err))
 
 - readdir()
+    * 读取指定目录下所有文件
+    * readdir(目录,回调函数(err,files))
+    * 回调函数接受两个参数，其中第二个参数是一个存储目录中所包含的文件名称的数组，数组中不包括‘.’和‘..’
