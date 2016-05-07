@@ -5,7 +5,7 @@
 - 顶层对象
   - javascript ： window
   - nodejs ： global
-  
+
 # 模块
 - 一个文件就是一个模块
 - 每个模块都有自己的作用域
@@ -42,10 +42,17 @@ require 返回值就是被加载对象的module.exports对象
 
 模块作用域中有个exports对象，和module.exports对象指向同一个引用
 
+# os模块
+- 提供操作系统的一些基本信息
+- platform() 查看操作系统平台
+- release() 查看操作系统版本
+- type() 查看操作系统名称
+- arch() 查看操作系统CPU架构
+
 # process 对象
 全局对象，对当前运行程序的进程进行访问和控制
 
-- argv 
+- argv
   - node
   - 运行的文件
   - 命令行传入的参数
@@ -66,7 +73,8 @@ require 返回值就是被加载对象的module.exports对象
 - stdin 、stdout 标准输入输出 IO
   - process.stdin.write()
   - 默认输入流是关闭的，要监听处理输入流数据，要先开启输入流 process.stdin.resume()
-  
+
+
 # Buffer 类
 - new Buffer(size)
   * size [Number] 创建一个Buffer对象，并为这个对象分配一个大小
@@ -76,7 +84,7 @@ require 返回值就是被加载对象的module.exports对象
 - new Buffer(string,[encoding])
   * 编码默认utf-8
 - length 属性 Buffer的bytes大小
-- buf[index] 
+- buf[index]
   * 获取或者设置在指定index索引位置的8位字节内容
 - write() 方法
   * 参数：
@@ -100,7 +108,7 @@ require 返回值就是被加载对象的module.exports对象
     * 返回指定字符串的真是byte长度
   * concat(list,[totalLength])
     * 将字节数组拼接成一个buffer对象
-    
+
 # File
 需引入fs模块
 
@@ -110,7 +118,7 @@ var fs = require('fs');
 *  fs.open(path,flags, [mode] , callback)
 *  path : 要打开的文件的路径
 *  flags：打开文件的方式 读/写  r r+
-*  model：设置文件的模式 读/写/执行 
+*  model：设置文件的模式 读/写/执行
 *  callback：回调
 *          err ： 文件打开失败的错误
 *          fd ： 被打开文件的标识
@@ -119,22 +127,22 @@ var fs = require('fs');
 ```
 - open()
   * 打开一个文件（异步的）
-  
+
 - openSync()
   * 打开一个文件（同步的）
-  
+
 - read()
   * fd: 成功打开文件返回的编号
   * buffer: buffer对象
   * offset: 新内容添加到buffer中的起始位置
-  * length： 
+  * length：
   * position
   * callback
-  
+
 - readSync()
   * 同步
   * 返回bytesRead的个数
-  
+
 - write()
   * fd 打开的文件
   * buffer 要写入的数据
@@ -142,7 +150,7 @@ var fs = require('fs');
   * length 写入数据的长度
   * position fd的起始位置
   * callback 回调
-  
+
 - write(fd,data[,position[,encoding]],callback)
 
 - close(fd,callback)
@@ -153,17 +161,17 @@ var fs = require('fs');
 
 - exists(filename,callback)
   * 文件是否存在
-  
+
 - readFile()
   * 要读取的文件路径
   * 回调函数
     * 错误信息
     * 读取的数据 buffer对象
-    
+
 - unlink()
   * 删除文件
-  
-- rename(oldPath,newPath) 
+
+- rename(oldPath,newPath)
   * 重命名
 - stat(path,callback)
   * 读取文件信息
@@ -175,4 +183,4 @@ var fs = require('fs');
 
 - rmdir(） 删除文件夹
 
-- readdir() 
+- readdir()
