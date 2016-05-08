@@ -249,3 +249,60 @@ var fs = require('fs');
 - parse
     * 反序列化字符串（默认是由"="、"&"拼接而成），转换得到一个对象类型
     * querystring.parse("字符串"，"分隔符"，"分配符")
+
+```
+var qs = require('querystring');
+var str = 'foo@bar$cool@xux$cool@yys';
+var obj = qs.parse(str,'$','@');
+
+console.log(obj); // { foo: 'bar', cool: [ 'xux', 'yys' ] }
+```
+
+# util模块
+
+Node.js核心模块，提供常用函数的集合，用于弥补核心javascript的一些功能
+
+并提供了一系列常用工具，用来对数据的输出和验证。
+
+- inspect
+    * util.inspect(object,[showHidden],[depth],[colors])
+    * 将任意对象转换为字符串的函数，通常用于调试和错误输出。
+
+```javascript
+var util = require('util');
+var obj = { username:'哈斯卡', age: 23 };
+var res = util.inspect(obj);
+console.log(res); // { username: '哈斯卡', age: 23 }
+```
+- format
+    * 根据第一个参数，，返回一个格式化字符串
+    * 第一个参数是一个可包含零个或多个占位符的字符串
+    * 每一个占位符被替换为与其对应的转换后的值
+    * 支持的占位符有："%s(字符串)"、"%d(数字<整型和浮点型>)"、"%j(JSON)"、"%(单独一个百分号则不作为一个参数)"
+    * 如果占位符没有相应的参数，占位符将不会被替换
+    * 如果参数多于占位符，额外的参数会调用`util.inspect()`转化为字符串。这些字符串用空格分隔连接
+    * 如果第一个参数是一个非格式化字符串，则会把所有的参数转换成字符串并以空格隔开拼接在一起，并返回
+
+```javascript
+var util = require('util');
+var res = util.format('%s:%s','hello','world');
+console.log(res); // hello:world
+console.log(util.format('%d:%s:%s',1,'hello')); // 1:hello:%s
+util.format('%d:%s:%s',1,'hello','world','露娜');//1:hello:world 露娜
+console.log(util.format(1,'hello','world','露娜')); // 1 'hello' 'world' '露娜'
+```
+
+- isArray
+    * 判断是否为数组类型，是返回true ， 否 返回false
+
+```javascript
+var util = require('util');
+var arr = [1,2,3];
+var str = 'hello nodejs';
+console.log(util.isArray(arr)); // true
+console.log(util.isArray(str)); // false
+```
+- isDate
+    * 判断是否为日期类型
+- isRegExp
+    * 判断是否为正则类型
