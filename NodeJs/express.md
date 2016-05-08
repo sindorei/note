@@ -79,3 +79,31 @@ res.send(200); // OK
 res.send(404); // Not Found
 res.send(500); // Internal Server Error
 ```
+# 模板引擎
+- ejs
+    * `npm install ejs` 安装ejs
+    * `app.set('view engine', 'ejs');`
+    * 修改模板文件后缀名
+
+```javascript
+// 修改模板文件的后缀名为html
+app.set( 'view engine', 'html' );
+// 运行ejs模块
+app.engine( '.html', require( 'ejs' ).__express );
+```
+- 静态资源
+    * `app.use(express.static(require('path').join(__dirname, 'public')));`
+    * `express.static` 指定静态文件的查找目录
+
+- 添加视图
+    * 设置views存放的目录
+```javascript
+// 设定views变量，意为视图存放的目录
+app.set('views', __dirname);
+```
+- 访问视图
+    * render 对网页模板进行渲染
+        * 格式： res.render(view,[locals],callback);
+- redirect
+    * 默认302
+    * 格式： res.redirect([status],url);
