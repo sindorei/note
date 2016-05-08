@@ -306,3 +306,15 @@ console.log(util.isArray(str)); // false
     * 判断是否为日期类型
 - isRegExp
     * 判断是否为正则类型
+
+# child_process 子进程
+- spawn
+    * 用给定的命令发布一个子进程
+- exec
+    * 与spawn 不同之处： 可接受一个回调函数作为参数
+    * 回调函数有三个参数：err ，stdout，stderr
+- execFile
+    * 可直接执行所指的的文件
+- fork
+    * 可直接运行Node.js模块
+    * 该方法是spawn()的特殊情景，用于派生Node进程。除了普通ChildProcess实例所具有的所有方法，所返回的对象还具有内建的通讯通道
