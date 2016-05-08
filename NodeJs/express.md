@@ -107,3 +107,21 @@ app.set('views', __dirname);
 - redirect
     * 默认302
     * 格式： res.redirect([status],url);
+
+- Post 请求
+    * body
+        * 引入express的两个中间件 body-parser和 multer
+```Node
+npm install body-parser
+npm install multer
+```
+```javascript
+var bodyParser = require('body-parser');
+var multer = require('multer');
+   ......
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
+```
+
+# 路由
