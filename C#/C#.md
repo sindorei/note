@@ -348,6 +348,16 @@ as
     * StreamReader
     * StreamWriter
     * GZipStream
+
+拷贝文件的两种方式：
+
+- 将源文件内容全部读取到内存中，再写到目标文件中
+- 读取源文件的1KB内存，写入到目标文件中，再读取源文件的1KB内存，再写到目标文件中。此时方式，就是一种流的操作
+
+Steam不会将所有内容一次性读取到内存中，有一个指针，指到哪里才能读、写到哪里
+
+
+
 - 编码
     * Encoding.GetEncodings() 获取所有编码 返回EncodingInfo 对象数组
     * Encoding.GetEncoding() 获取指定的编码
