@@ -322,9 +322,10 @@ as
     * WriteAllText()
     * WriteAllLines() 传入字符串数组，每个数组的元素作为一行
     * WriteAllBytes() 写入字节数组
-    * ReadAllText()
-    * ReadAllLines()
+    * ReadAllText()  读取文本文件到字符串中
+    * ReadAllLines() 读取文本文件到字符串数组中  每一行作为一个数组元素
     * ReadAllBytes()
+    * AppendAllText(string path, string contents) 将文本contents附加到文件path中
 
 - Directory  操作目录（文件夹），静态类
     * GetFiles()
@@ -349,7 +350,12 @@ as
     * GZipStream
 - 编码
     * Encoding.GetEncodings() 获取所有编码 返回EncodingInfo 对象数组
-    * Encoding.GetEncoding()
+    * Encoding.GetEncoding() 获取指定的编码
+    * 产生乱码的原因（只有文本文件才会出现乱码）
+        * 文本文件存储时采用的编码，与读取时采用的编码不一致，就会导致乱码
+    * 将字符串以什么样的形式保存为二进制，这个就是编码
+    * Encoding.Default 获取系统默认编码
+    * Encoding.UTF8
 - FileStream 文件流
     * Write()
     * 当把一个对象放到using()中时，超出using的作用域范围后会自动调用该对象的`dispose()方法
