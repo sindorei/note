@@ -118,3 +118,33 @@ ES6中允许这样赋值
 - 模板字符串中支持字符串插值
 - 模板字符串可以包含多行
 - \`\`
+
+```javascript
+let username = '哈斯卡';
+document.write(`这个英雄的名字叫${username}`);
+
+let multiLine = `
+    This is
+    a string
+    with multiple
+    lines`;
+document.write(multiLine);  
+```
+
+## 标签模板
+```javascript
+var a = 5;
+var b = 10;
+tag`Hello ${ a + b } world ${ a * b }`;
+```
+上面代码中，模板字符串前面有一个标识名`tag`。  它是一个函数。整个表达式的返回值，就是tag函数处理模板字符串后的返回值。
+
+tag函数所有参数的实际值如下：
+- 第一个参数： ['Hello ',' world ']
+- 第二个参数: 15
+- 第三个参数： 50
+
+tag函数实际是以下面的形式调用的
+```javascript
+tag(['Hello ', ' world '], 15, 50)
+```
