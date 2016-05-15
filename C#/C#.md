@@ -368,4 +368,8 @@ Steam不会将所有内容一次性读取到内存中，有一个指针，指到
     * Encoding.UTF8
 - FileStream 文件流
     * Write()
-    * 当把一个对象放到using()中时，超出using的作用域范围后会自动调用该对象的`dispose()方法
+    * 清空缓冲区  Flush()
+    * 关闭文件流  Close()
+    * 释放资源　Dispose()
+    * 当把一个对象放到using()中时，超出using的作用域范围后会自动调用该对象的`dispose()`方法
+        * using 语句中使用的类型必须可隐式转换为`System.IDisposable`(实现了IDisposable接口)
