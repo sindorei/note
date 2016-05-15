@@ -176,3 +176,17 @@ tag(['Hello ', ' world '], 15, 50)
 - `Math.hypot()` 返回所有参数的平方和的平方根
     * 参数不是数值，会将其转为数值
     * 只要有一个参数无法转换为数值，则返回 `NaN`
+
+- 对数方法
+    * `Math.expm1()`
+    * `Math.log1p()`
+    * `Math.log10()`
+    * `Math.log2()`
+
+- 三角函数方法
+    * `Math.sinh()` 双曲正弦
+    * `Math.cosh()` 双曲余弦
+    * `Math.tanh()` 双曲正切
+    * `Math.asinh()` 反双曲正弦
+    * `Math.acosh()` 反双曲余弦
+    * `Math.atanh()` 反双曲正切
