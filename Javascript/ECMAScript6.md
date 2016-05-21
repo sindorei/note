@@ -380,3 +380,38 @@ function f(x){
     * `WeakSet.prototype.delete(value)`：清除WeakSet实例的指定成员。
     * `WeakSet.prototype.has(value)`：返回一个布尔值，表示某个值是否在
 - WeakSet没有size属性，没有办法遍历它的成员。
+
+## map
+- Map是一个超对象，其key除了可以是String类型之外，还可以是其他类型（如：对象）
+- 方法
+    * size：返回成员总数。
+    * set(key, value)：设置一个键值对。返回整个Map结构
+    * get(key)：读取一个键。
+    * has(key)：返回一个布尔值，表示某个键是否在Map数据结构中。
+    * delete(key)：删除某个键。
+    * clear()：清除所有成员。
+    * keys()：返回键名的遍历器。
+    * values()：返回键值的遍历器。
+    * entries()：返回所有成员的遍历器。
+    * forEach()
+- Map转为数组，可结合使用扩展运算符`...` `[...map.keys()]`
+
+## WeakMap
+- WeakMap结构与Map结构基本类似，唯一的区别是它只接受对象作为键名（null除外），不接受原始类型的值作为键名，而且键名所指向的对象，不计入垃圾回收机制。set()和get()分别用来添加数据和获取数据:
+```javascript
+var map = new WeakMap(),
+    element = document.querySelector(".element");
+
+map.set(element, "Original");
+
+// 下面就可以使用了
+var value = map.get(element);
+document.write(value);             // "Original"
+```
+
+- WeakMap与Map在API上的区别主要是两个:
+
+    * 一是没有遍历操作（即没有key()、values()和entries()方法），也没有size属性；
+    * 二是无法清空，即不支持clear方法。这与WeakMap的键不被计入引用、被垃圾回收机制忽略有关。
+
+因此，WeakMap只有四个方法可用：get()、set()、has()、delete()。
