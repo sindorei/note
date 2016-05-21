@@ -338,3 +338,45 @@ sayHello.apply(null,people);   //输出：Hello 张三,李四,王五
     * 函数体内的this对象，绑定定义时所在的对象，而不是使用时所在的对象。
     * 不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
     * 不可以使用arguments对象，该对象在函数体内不存在。
+
+## 函数绑定
+- 函数绑定运算符`::`， 左边是一个对象，右边是一个函数
+
+## 尾调用优化
+- 尾调用
+    * 某个函数的最后return的是调用另一个函数
+
+```javascript
+function f(x){
+  return g(x);
+}
+```
+
+## 数据结构Set
+- 类似数组，但是成员的值都是 **唯一** 的
+- 可以接受一个数组作为参数，用来初始化
+- Set实例的属性
+    * `Set.prototype.constructor`：构造函数，默认就是Set函数。
+    * `Set.prototype.size`：返回Set实例的成员总数。
+- Set 实例的方法
+    * 操作方法
+        - add(value)：添加某个值，返回Set结构本身。
+        - delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+        - has(value)：返回一个布尔值，表示该值是否为Set的成员。
+        - clear()：清除所有成员，没有返回值。
+    * 遍历方法
+        - keys()：返回一个键名的遍历器
+        - values()：返回一个键值的遍历器
+        - entries()：返回一个键值对的遍历器
+        - forEach()：使用回调函数遍历每个成员
+
+由于Set结构没有键名，只有键值（或者说键名和键值是同一个值），所以key方法和value方法的行为完全一致。
+
+## WeakSet
+- 和Set一样都不存储重复的元素
+- WeakSet的成员只能是对象，而不能是其他类型的值
+- 三个方法
+    * `WeakSet.prototype.add(value)`：向WeakSet实例添加一个新成员。
+    * `WeakSet.prototype.delete(value)`：清除WeakSet实例的指定成员。
+    * `WeakSet.prototype.has(value)`：返回一个布尔值，表示某个值是否在
+- WeakSet没有size属性，没有办法遍历它的成员。
