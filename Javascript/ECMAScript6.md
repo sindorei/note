@@ -260,3 +260,39 @@ ES6允许字面量定义对象是，用表达式作为对象的属性名，把�
     * 与`===`的区别
         * +0 不等于-0
         * NaN等于自身
+
+## 源对象的所有可枚举属性，复制到目标对象
+- `Object.assign`
+- 至少需要两个对象，第一个参数是目标对象，后面的参数都是源对象
+- 目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性
+
+##　proto属性
+- 读取或设置当前对象的`prototype`对象
+- ？
+
+## Symbol 类型
+- 表示独一无二的ID
+- 凡是属性名属于Symbol类型，都是独一无二的，可以保证不会与其他属性名产生冲突
+- Symbol类型的值不能与其他类型的值进行运算，会报错
+- Symbol类型的值可以转为字符串
+
+## 内置代理
+- `new Proxy(target , handler)`
+    * `get(target,propKey,receiver)` 拦截对象属性的读取，返回类型不限。最后一个参数receiver可选，，当target对象设置了propKey属性的get函数时，receiver对象会绑定get函数的this对象
+    *  `set(target , propKey , value , receiver)` 拦截对象属性的设置，返回一个布尔值
+    * `has(target , propKey)` 拦截`propKey in proxy`的操作，返回一个布尔值
+    * `deleteProperty(target , propKey)` 拦截`delete proxy[propKey]`的操作，返回一个布尔值
+    * `enumerate(target)` 拦截 `for(var x in proxy)` ， 返回一个遍历器
+    * hasOwn(target, propKey)：拦截proxy.hasOwnProperty('foo')，返回一个布尔值。
+    * ownKeys(target)：拦截Object.getOwnPropertyNames(proxy)、Object.getOwnPropertySymbols(proxy)、Object.keys(proxy)，返回一个数组。该方法返回对象所有自身的属性，而Object.keys()仅返回对象可遍历的属性。
+    * getOwnPropertyDescriptor(target, propKey) ：拦截Object.getOwnPropertyDescriptor(proxy, propKey)，返回属性的描述对象。
+    * defineProperty(target, propKey, propDesc)：拦截Object.defineProperty(proxy, propKey, propDesc）、Object.defineProperties(proxy, propDescs)，返回一个布尔值。
+    * preventExtensions(target)：拦截Object.preventExtensions(proxy)，返回一个布尔值。
+    * getPrototypeOf(target) ：拦截Object.getPrototypeOf(proxy)，返回一个对象。
+    * isExtensible(target)：拦截Object.isExtensible(proxy)，返回一个布尔值。
+    * setPrototypeOf(target, proto)：拦截Object.setPrototypeOf(proxy, proto)，返回一个布尔值。
+
+如果目标对象是函数，那么还有两种额外操作可以拦截。
+
+* apply(target, object, args)：拦截Proxy实例作为函数调用的操作，比如proxy(...args)、proxy.call(object, ...args)、proxy.apply(...)。
+* construct(target, args, proxy)：拦截Proxy实例作为构造函数调用的操作，比如new proxy(...args)。
