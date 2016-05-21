@@ -296,3 +296,45 @@ ES6允许字面量定义对象是，用表达式作为对象的属性名，把�
 
 * apply(target, object, args)：拦截Proxy实例作为函数调用的操作，比如proxy(...args)、proxy.call(object, ...args)、proxy.apply(...)。
 * construct(target, args, proxy)：拦截Proxy实例作为构造函数调用的操作，比如new proxy(...args)。
+
+## 默认参数
+- 可以在定义函数的时候指定参数的 **默认值**
+
+## rest参数
+- 形式为 "...变量名" ， 可以称为不定参数，用户获取函数多于的参数
+```javascript
+function add(...values) {
+    let sum = 0;
+    for(var val of values) {
+        sum += val;
+    }
+
+    return sum;
+}
+
+add(1, 2 ,3);
+```
+## 扩展运算符
+- `...` 将一个数组转为用逗号分隔的参数序列
+```javascript
+var people=['张三','李四','王五'];
+
+//sayHello函数本来接收三个单独的参数people1，people2和people3
+function sayHello(people1,people2,people3){
+    document.write(`Hello ${people1},${people2},${people3}`);
+}
+
+//但是我们将一个数组以拓展参数的形式传递，它能很好地映射到每个单独的参数
+sayHello(...people);   //输出：Hello 张三,李四,王五
+
+//而在以前，如果需要传递数组当参数，我们需要使用函数的apply方法
+sayHello.apply(null,people);   //输出：Hello 张三,李四,王五
+```
+
+## 箭头函数
+- 使用`=>`语法的函数简写形式
+- 与普通函数不同的是：箭头函数和其山下文中的代码共享同一个具有词法作用域的`this`
+- 注意点
+    * 函数体内的this对象，绑定定义时所在的对象，而不是使用时所在的对象。
+    * 不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+    * 不可以使用arguments对象，该对象在函数体内不存在。
