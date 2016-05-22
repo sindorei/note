@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //𝔅𝔢𝔱𝔴𝔢𝔢𝔫 𝔱𝔥𝔢 𝓡𝔞𝔦𝔫
+        // function searchSame(str1 , str2) {
+        //     var same = [];
+        //     str1 = removeSame(str1);
+        //     str2 = removeSame(str2);
+        //     for (var i = 0; i < str1.length; i++) {
+        //         for (var j = 0; j < str2.length; j++) {
+        //             if(str1[i] == str2[j]) {
+        //                 same.push(str1[i]);
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //
+        //     return same;
+        // }
+        //
+        // function removeSame(str) {
+        //     var arr = [],
+        //         flag = {};
+        //
+        //     for(var i = 0; i < str.length; i++) {
+        //         if(!flag[str[i]]) {
+        //             arr.push(str[i]);
+        //             flag[str[i]] = 1;
+        //         }
+        //     }
+        //
+        //     return arr.join('');
+        // }
+        function searchSameStr(str1, str2) {
+            var arr1 = Array.from(str1),
+                arr2 = Array.from(str2),
+                same = [];
+
+            arr1 = removeSame(arr1);
+            arr2 = removeSame(arr2);
+
+            for(var i = 0; i < arr1.length; i++) {
+                for(var j = 0; j< arr2.length; j++) {
+                    if(arr1[i] == arr2[j]) {
+                        same.push(arr1[i]);
+                        break;
+                    }
+                }
+            }
+
+            return same.join('');
+
+
+        }
+
+        function removeSame(arr) {
+            var newArr = [],
+                flag = {};
+            for( var i = 0; i < arr.length; i++) {
+                if(!flag[arr[i]]) {
+                    newArr.push(arr[i]);
+                    flag[arr[i]] = 1;
+                }
+            }
+            return newArr;
+        }
+
+        function searchSameStr2(str1 , str2) {
+            var arr1 = Array.from(str1),
+                arr2 = Array.from(str2),
+                flag = {},
+                newArr = [],
+                result = [];
+            arr1 = removeSame(arr1);
+            arr2 = removeSame(arr2);
+            newArr = arr1.concat(arr2);
+
+            for (var i = 0; i < newArr.length; i++) {
+                if(!flag[newArr[i]]) {
+                    flag[newArr[i]] = [newArr[i]];
+                } else {
+                    flag[newArr[i]].push(newArr[i]);
+                }
+            }
+
+            console.log(flag);
+            for(var item in flag ){
+                if(flag[item].length == arguments.length) {
+                    result.push(item);
+                }
+            }
+            return result.join('');
+        }
+
+        function searchSameStr3(str1 , str2) {
+            var arr1 = Array.from(str1),
+                arr2 = Array.from(str2),
+                flag = {},
+                newArr = [],
+                result = [];
+            arr1 = removeSame(arr1);
+            arr2 = removeSame(arr2);
+
+            
+        }
+
+        console.log(searchSameStr2('𝔫呀呼呼声器一','一呀哈𝓡𝔞𝔦𝔫'));
+    </script>
+</body>
+</html>
