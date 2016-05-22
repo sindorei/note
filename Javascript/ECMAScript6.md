@@ -447,3 +447,26 @@ it.next().value // '0'
 it.next().value // '1'
 it.next().value // '2'
 ```
+- 数据结构的默认Iterator接口
+    * ES6中，可迭代数据结构（如数组），都必须实现一个名为Symbol.iterator的方法，该方法返回一个该结构元素的迭代器。
+```javascript
+let arr = ['a', 'b', 'c'];
+let iter = arr[Symbol.iterator]();
+
+iter.next() // { value: 'a', done: false }
+iter.next() // { value: 'b', done: false }
+iter.next() // { value: 'c', done: false }
+iter.next() // { value: undefined, done: true }
+```
+arr是一个数组，原生就具有遍历器接口，在arr的 `Symbol.iterator`属性上。调用这个属性就得到遍历器。
+
+- 调用默认Iterator接口的场合
+    * 解构赋值
+    * 扩展运算符
+    * yield
+    * Array.from()
+    * Map(),Set(),WeakMap(),WeakSet()
+    * Promise.all(),Promise.race()
+
+- 原生具备Iterator接口的数据结构
+    * 
