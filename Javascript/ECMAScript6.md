@@ -231,7 +231,7 @@ Array(3,11,8) // [3, 11, 8]
     * 对键值对的遍历
 - `keys()`
     * 对键名的遍历
-- `values`
+- `values()`
     * 对键值的遍历
 
 用 for...of循环进行遍历
@@ -469,4 +469,4 @@ arr是一个数组，原生就具有遍历器接口，在arr的 `Symbol.iterator
     * Promise.all(),Promise.race()
 
 - 原生具备Iterator接口的数据结构
-    * 
+    *
