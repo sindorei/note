@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>策略模式</title>
+</head>
+<body>
+    <script>
+        var validator = {
+            types: {},
+            message:[],
+            config:{},
+            validate: function(data) {
+                var i,
+                    msg,
+                    type,
+                    checker,
+                    result_ok;
+                 this.message = [];
+
+                 for(i in data) {
+                     if(data.hasOwnProperty(i)) {
+                         type = this.config[i]; // 根据key查询是否有存在的验证规则
+                         checker = this.types[type]; //获取验证规则的验证类
+
+                         if(!type) {
+                             continue; // 验证规则不存在，不处理
+                         }
+                         if(!checker) {
+                             throw {
+                                 name: "ValidationError",
+                                 message: "No handler to validate type " + type
+                             }
+                         }
+
+                         result_ok = checker.validate(data[i]);
+                         if(!result_ok) {
+                             msg = "Invalid value for *" + i + "*, " + checker.instructions;
+                             this.messages.push(msg);
+                         }
+                     }
+                 }
+
+                 return this.hasErrors();
+            },
+            hasErrors: function() {
+                return this.messages.length !==0;
+            }
+        };
+
+        validator.types.isNonEmpty = {
+            validate: function(value) {
+                return value !== "";
+            },
+            instructions: "传入的值不能为空"
+        }
+
+
+        var data = {
+            first_name: "Tom",
+            last_name: "hehe"
+        }
+
+        validator.config = {
+            first_name : 'isNonEmpty'
+        };
+
+        validator.validate(data);
+
+        if(validator.hasErrors()) {
+            console.log(validator.messages.join('\n'));
+        }
+    </script>
+</body>
+</html>
