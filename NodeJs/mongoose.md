@@ -98,6 +98,15 @@ TestEntity.save(function( error , doc ) {
 - find 查询
     * obj.find(查询条件,callback);
     * 返回符合条件一个、多个或者空数组文档结果。
+    * 属性过滤 find(Conditions,field,callback);
+        * 只需要把显示的属性设置为大于零的数就可以
+        * \_id是默认返回，如果不要显示加上("\_id":0)，但是，对其他不需要显示的属性且不是\_id，如果设置为0的话将会抛异常或查询无果
+- findOne
+    * findOne(Conditions,callback);
+    * 当查询到即一个符合条件的数据时，将停止继续查询，并返回查询结果
+- findeById
+    * findById(\_id, callback);
+    * 只接收文档的_id作为参数，返回单个文档。
 
 ```javascript
 Model.find({},function(error,docs){
