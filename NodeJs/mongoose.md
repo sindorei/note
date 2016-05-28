@@ -68,3 +68,60 @@ var TestEntity = new TestModel({
 
 console.log(TestEntity.name)
 ```
+
+```javascript
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://127.0.0.1:27017/test');
+var TestSchema = new mongoose.Schema({
+	name: { type: String },
+    age : { type: Number, default:0 },
+    email : { type: String },
+    time : { type: Date , default: Date.now }
+});
+
+var TestModel = db.model("test1" , TestSchema);
+var TestEntity = new TestModel({
+	name : "哈斯卡",
+    age : 24,
+    email: "hsk@qq.com"
+});
+TestEntity.save(function( error , doc ) {
+	if(error) {
+        console.log("error:" + error);
+    } else {
+        console.log(doc);
+    }
+});
+```
+
+## 查询
+- find 查询
+    * obj.find(查询条件,callback);
+    * 返回符合条件一个、多个或者空数组文档结果。
+
+```javascript
+Model.find({},function(error,docs){
+   //若没有向find传递参数，默认的是显示所有文档
+});
+```
+
+## 保存
+- Model 保存方法
+    * Model.create(文档数据, callback))
+```javascript
+Model.create({ name:"model_create", age:26}, function(error,doc){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(doc);
+    }
+});
+```
+- Entity 保存方法
+    *  Entity.save(文档数据, callback))
+
+## 更新
+- obj.update(查询条件,更新对象,callback);
+
+## 删除数据
+- obj.remove(查询条件,callback);
