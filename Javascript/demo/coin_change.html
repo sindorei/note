@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>coin change</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var coins = [1 , 4 , 6 ,10],
+            amount = 8;
+        function coinChange(coins , amount) {
+
+            var max = amount + 1;
+            var dp = new Array(amount + 1);
+            dp.fill(max);
+            dp[0] = 0;
+            for (var i = 1; i <= amount; i++) {
+                for (var j = 0; j < coins.length; j++) {
+                    if (coins[j] <= i) {
+                        dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+                    }
+                }
+            }
+            return dp[amount] > amount ? -1 : dp[amount];
+        }
+
+        console.log(coinChange(coins , amount));
+
+    </script>
+</body>
+</html>
