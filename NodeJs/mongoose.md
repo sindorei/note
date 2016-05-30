@@ -150,6 +150,7 @@ TestModel.find({email:{$exists:true}},function(error,docs){
 })
 ```
 - $all
+
 ## 游标
 
 数据库使用游标返回find的执行结果。客户端对游标的实现通常能够对最终结果进行有效的控制。可以限制结果的数量，略过部分结果，根据任意键按任意顺序的组合对结果进行各种排序，或者是执行其他一些强的操作。
@@ -171,3 +172,14 @@ TestModel.find({},{name:1,age:1,_id:0},{sort:{age:1}},function(err,docs) {
 	console.log(docs);
 });
 ```
+
+## ObjectId 类型
+
+存储在mongodb集合中的每个文档（document）都有一个默认的主键_id，这个主键名称是固定的，它可以是mongodb支持的任何数据类型，默认是ObjectId。该类型的值由系统自己生成，从某种意义上几乎不会重复，生成过程比较复杂，有兴趣的朋友可以查看源码。
+
+ObjectId是一个12字节的 JSON 类型字符串。
+
+- 4字节：UNIX时间戳
+- 3字节：表示运行MongoDB的机器
+- 2字节：表示生成此_id的进程
+- 3字节：由一个随机数开始的计数器生成的值
