@@ -144,4 +144,30 @@ Model.create({ name:"model_create", age:26}, function(error,doc){
 - $in 可单值和多个值的匹配
 - $or 查询多个键值的任意给定值
 - $exists 表示是否存在
+```javascript
+TestModel.find({email:{$exists:true}},function(error,docs){
+	console.log(docs)
+})
+```
 - $all
+## 游标
+
+数据库使用游标返回find的执行结果。客户端对游标的实现通常能够对最终结果进行有效的控制。可以限制结果的数量，略过部分结果，根据任意键按任意顺序的组合对结果进行各种排序，或者是执行其他一些强的操作。
+
+- limit 显示数量
+    * find(Conditions,fields,options,callback);
+- skip
+    * 略过指定数量的匹配结果，返回余下的查询结果
+    * find(Conditions,fields,options,callback);
+```javascript
+TestModel.find({age:27},null,{skip:1},function(err,docs){
+	console.log(docs);
+})
+```
+- sort
+    * 该函数的参数是一个或多个键/值对，键代表要排序的键名，值代表排序的方向，1是升序，-1是降序。
+```javascript
+TestModel.find({},{name:1,age:1,_id:0},{sort:{age:1}},function(err,docs) {
+	console.log(docs);
+});
+```
