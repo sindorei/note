@@ -134,3 +134,14 @@ Model.create({ name:"model_create", age:26}, function(error,doc){
 
 ## 删除数据
 - obj.remove(查询条件,callback);
+
+## 条件查询
+- $lt 小于
+- $lte 小于等于
+- $gt 大于
+- $gte 大于等于
+- $ne 不等于
+- $in 可单值和多个值的匹配
+- $or 查询多个键值的任意给定值
+- $exists 表示是否存在
+- $all

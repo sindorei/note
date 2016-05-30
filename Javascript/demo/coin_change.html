@@ -6,6 +6,11 @@
 </head>
 <body>
     <script type="text/javascript">
+    /**
+    * F(S) 最少硬币数
+    * S 金额
+    * F(S) = F(S-C) + 1
+    */
         var coins = [1 , 4 , 6 ,10],
             amount = 8;
         function coinChange(coins , amount) {
