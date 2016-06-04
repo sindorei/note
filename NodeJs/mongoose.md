@@ -183,3 +183,69 @@ ObjectId是一个12字节的 JSON 类型字符串。
 - 3字节：表示运行MongoDB的机器
 - 2字节：表示生成此_id的进程
 - 3字节：由一个随机数开始的计数器生成的值
+
+### Schema 先定义，再通过add方法添加属性
+### Schema下创建实例方法（通过method方法）
+```javascript
+var mongoose = require('mongoose');
+
+var saySchema = new mongoose.Schema({name : String});
+
+saySchema.method('say', function () {
+  console.log('Trouble Is A Friend');
+})
+
+var say = mongoose.model('say', saySchema);
+
+var lenka = new say();
+
+lenka.say(); //Trouble Is A Friend
+```
+
+## Schema静态方法
+```javascript
+var mongoose = require("mongoose");
+
+var db = mongoose.connect("mongodb://127.0.0.1:27017/test");
+
+var TestSchema = new mongoose.Schema({
+    name : { type:String },
+    age  : { type:Number, default:0 },
+    email: { type:String, default:"" },
+    time : { type:Date, default:Date.now }
+});
+
+TestSchema.static('findByName', function (name, callback) {
+    return this.find({ name: name }, callback);
+});
+
+var TestModel = db.model("test1", TestSchema );
+
+TestModel.findByName('tom', function (err, docs) {
+ //docs所有名字叫tom的文档结果集
+});
+```
+
+## Schema追加方法
+```javascript
+var mongoose = require("mongoose");
+
+var db = mongoose.connect("mongodb://127.0.0.1:27017/test");
+
+var TestSchema = new mongoose.Schema({
+    name : { type:String },
+    age  : { type:Number, default:0 },
+    email: { type:String, default:"" },
+    time : { type:Date, default:Date.now }
+});
+
+TestSchema.methods.speak = function(){
+  console.log('我的名字叫'+this.name);
+}
+
+var TestModel = db.model('test1',TestSchema);
+
+var TestEntity = new TestModel({name:'Lenka'});
+
+TestEntity.speak();//我的名字叫Lenka
+```
