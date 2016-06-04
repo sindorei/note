@@ -20,3 +20,24 @@
 - querystring
 - url
 - fs
+
+## Node.js中的数据流
+- 应用在处理数据的时候还可以同时接收数据
+- 默认情况Node.js使用buffer来处理流
+
+## 调试nodejs
+- debuger
+    * next ， n ： 单步执行
+    * cont ， c：继续执行，知道遇到下一个断点
+    * step ， s: 单步执行并进入函数
+    * out ， o: 从函数中跳出
+    * watch(expression) : 把表达式expression加入监视列表
+
+- Node Inspector
+    * 安装 `npm install -g node-inspector`
+
+## 监听文件变化
+- forever
+- node-dev
+- nodemon
+- supervisor
