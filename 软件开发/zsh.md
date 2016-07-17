@@ -3,7 +3,7 @@
 － linux／unix有很多shell，常用的有bash、sh、csh等
 － 想知道系统有哪些shell，可运行命令`cat /etc/shells`
   * mac os 显示
-  ```
+```
 /bin/bash
 /bin/csh
 /bin/ksh
