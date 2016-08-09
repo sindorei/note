@@ -1,0 +1,54 @@
+// 变量
+$color: #333;
+
+body {
+    color: $color;
+}
+
+// 嵌套
+nav {
+    ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+// 导入
+@import "reset";
+
+// mixin
+@mixin box-sizing($sizing) {
+    -webkit-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+.box-border {
+    border: 1px solid #ccc;
+    @include box-sizing(border-box);
+}
+// 继承
+.message {
+    border: 1px solid #ccc;
+    padding: 8px;
+    color: #333;
+}
+.error {
+    @extend .message;
+    border-color: red;
+}
+.success {
+    @extend .message;
+    border-color: green;
+}
+.warning {
+    @extend .message;
+    border-color: yellow;
+}
