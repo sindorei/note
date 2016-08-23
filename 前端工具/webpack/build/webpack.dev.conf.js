@@ -10,7 +10,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
-module.exports = merge(baseWebpackConfig, {
+var devConf = merge(baseWebpackConfig, {
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
@@ -25,18 +25,17 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    })
+
   ]
 })
 
-utils.getTpls('weixin').forEach(function(tpl) {
-  module.exports.plugins.push(new HtmlWebpackPlugin({
-    filename: tpl.filename,
+utils.getTpls(config.site).forEach(function(tpl) {
+  devConf.plugins.push(new HtmlWebpackPlugin({
+    filename: tpl.filename + '.html',
     template: tpl.template,
-    inject: true
+    inject: true,
+    chunks: [tpl.filename]
   }))
 })
+
+module.exports = devConf

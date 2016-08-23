@@ -56,26 +56,31 @@ exports.styleLoaders = function (options) {
   return output
 }
 
-exports.getEntries = function (site) {
-  var filePath = './src/' + site + '/views/*/*.js'
-  var files = glob.sync(filePath)
+var getFiles = function(globPath) {
+  var files = glob.sync(globPath)
   var entry = {}
   var fileName = ''
   files.forEach(function(file) {
     fileName = path.basename(file).match(/(\w+).js$/)[1]
     entry[fileName] = file
   })
-
   return entry
 }
 
+//获取入口文件
+exports.getEntries = function (site) {
+  var filePath = './src/' + site + '/views/*/*.js'
+  return getFiles(filePath)
+}
+
+//获取模板配置信息 -- 模板路径等
 exports.getTpls = function (site) {
   var filePath = './src/' + site + '/views/*/*.html'
   var files = glob.sync(filePath)
   var tpls = []
   var fileName = ''
   files.forEach(function(file) {
-    fileName = path.basename(file)
+    fileName = fileName = path.basename(file).match(/(\w+).html$/)[1]
     tpls.push({
       filename: fileName,
       template: file
