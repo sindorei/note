@@ -1,13 +1,13 @@
 <template>
-    <div class="dialog">
-        <div class="dialog-main">
-            <p class="dialog-main-title">温馨提示</p>
+    <div class="dialog" v-show="show" :transition="maskTransition" transition-mode="in-out">
+        <div class="dialog-main" :transition="dialogTransition">
+            <p class="dialog-main-title">{{ title }}</p>
             <div class="dialog-main-con">
-                剩余票量不足，请选择其他航班剩余票量不足，请选择其他航班剩余票量不足，请选择其他航班剩余票量不足，请选择其他航班剩余票量不足，请选择其他航班
+                <slot></slot>
             </div>
             <p class="dialog-main-bottom">
-                <span>取消</span>
-                <span>确认</span>
+                <span v-if="cancelBtn" @click="cancel">{{ cancelBtn }}</span>
+                <span @click="confirm">{{ confirmBtn }}</span>
             </p>
         </div>
     </div>
@@ -15,17 +15,45 @@
 
 <script>
     export default {
-        pops () {
+        props: {
            show: {
-               type: String,
-               required: true,
+               type: Boolean,
                default: false
+           },
+           title: {
+               type: String,
+               default: '温馨提示'
+           },
+           cancelBtn: {
+               type: String
+           },
+           confirmBtn: {
+               type: String,
+               default: '确定'
+           },
+           maskTransition: {
+               type: String,
+               default: 'mask-fade'
+           },
+           dialogTransition: {
+               type: String,
+               default: 'dialog'
            }
+        },
+        methods: {
+            cancel () {
+                this.show = false
+                this.$emit('dialog-cancel')
+            },
+            confirm () {
+                this.show = false
+                this.$emit('dialog-confirm')
+            }
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .dialog {
     position: fixed;
     top: 0;
@@ -104,5 +132,32 @@
             }
         }
     }
+}
+.mask-fade-transition {
+  opacity: 1;
+  transition: opacity linear 0.2s;
+}
+
+.mask-fade-enter, .mask-fade-leave {
+  opacity: 0;
+}
+
+.dialog-transition {
+  opacity: 1;
+  transition-duration: .4s;
+  transform: translate(-50%, -50%) scale(1)!important;
+  transition-property: transform, opacity!important;
+}
+
+.dialog-enter, dialog-leave {
+  opacity: 0;
+}
+
+.dialog-enter {
+  transform: translate(-50%, -50%) scale(1.185)!important;
+}
+
+.dialog-leave {
+  transform: translate(-50%, -50%) scale(1)!important;
 }
 </style>
