@@ -2,7 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <p>
+    <p @click＝"clickButton">
       Welcome to your Vue.js app!
     </p>
     <p>
@@ -24,10 +24,26 @@
 
 <script>
 import Hello from './components/Hello'
+import Socket from 'vue-socket.io'
+import Vue from 'vue'
+Vue.use(Socket, 'http://localhost:8360')
 
 export default {
+  sockets: {
+    connect: function () {
+      console.log('socket connected')
+    },
+    customEmit: function () {
+      console.log('this method fired by socket server. eg: io.emit("customEmit", data)')
+    }
+  },
   components: {
     Hello
+  },
+  methods: {
+    clickButton () {
+      this.$socket.emit('name', '我 来 啦！')
+    }
   }
 }
 </script>
