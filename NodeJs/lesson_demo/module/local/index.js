@@ -1,0 +1,1 @@
+console.log('lcoal/index.js')

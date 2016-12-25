@@ -16,3 +16,9 @@
 // console.log(require('./exports'))
 
 // require('./exports')()
+
+
+// 测试查找顺序
+//require('./local')
+
+console.log(require('local'))
