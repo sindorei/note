@@ -17,4 +17,10 @@
 
 // require('./exports')()
 
+
 require('test')
+
+// 测试查找顺序
+//require('./local')
+
+console.log(require('local'))
