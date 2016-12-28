@@ -16,3 +16,5 @@
 // console.log(require('./exports'))
 
 // require('./exports')()
+
+require('test')
