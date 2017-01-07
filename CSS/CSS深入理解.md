@@ -149,3 +149,47 @@ overflow-x 与 overflow-y 值相等 ， 则等同于overflow
     * 尽量降低relative属性对其他元素或布局的影响
         * 尽量避免使用relative
         * relative最小化
+
+# border
+- 不支持百分比
+- 支持关键字：thin 1px medium 3px thick 5px （ie7除外）
+- 默认值是 medium 3px
+
+## border-style 类型
+- solid 实线
+- dashed 虚线
+  * chrome/firefox 实的部分宽高3：1，实虚 1：1
+  * ie 实的部分宽高2：1，实虚 2：1
+- dotted 点线
+  * chrome/firefox 点是方的
+  * ie 点是圆的，可以利用在ie7，8下实现圆角
+- double 双线
+  * 双线宽度永远相等，中间间隔±1
+- inset 内凹
+  * 没啥用
+- outset 外凸
+  * 没啥用
+- groove 沟槽 没啥用
+- ridge 山脊 没啥用 各个浏览器效果也不一样
+
+## border-color
+- border默认颜色与color一致，类似的还有box-shadow等
+  * 可用于 hover与图形变色案例
+
+## background定位的局限
+- background-position 默认相对于左上方定位（css2.1时）
+- 可配合 border使用 ，右侧指定固定透明边框。因为background-position 默认不算border宽度
+
+## 构建图形
+- dotted ie7、8实现圆角
+- double 三道杠
+- solid 三角 梯形
+
+## border 的transparent
+- 三角形
+- 优雅增加响应区域大小 - 复选框
+- 解决drop-shadow chrome下 元素不显示drop-shadow也不显示的问题
+
+## 布局中的应用
+- 有限标签下的标题栏
+- 等高布局
