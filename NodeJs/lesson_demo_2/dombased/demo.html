@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <input type="text" id="txt" value="" />
+    <input type="button" id="btn" value="确定" onclick="test()">
+    <script>
+        // document.querySelector('#btn').addEventListener('click', function () {
+        //     var str = document.querySelector('#txt').value
+        //     document.querySelector('#p').innerHTML = '<a target="_blank" href="' + str + '">同程旅游</a>'
+        // })
+
+
+        function test() {
+            var str = document.querySelector('#txt').value
+            document.querySelector('#p').innerHTML = '<a target="_blank" href="' + str + '">同程旅游</a>'
+        }
+    </script>
+</body>
+</html>
