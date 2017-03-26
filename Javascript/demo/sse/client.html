@@ -1,0 +1,21 @@
+<doctype html>
+<html>
+	<head>
+		<title>sse test</title>
+	</head>
+	<body>
+		
+		<script>
+			var se = new EventSource('http://localhost:8001');
+			se.onmessage = function(event) {
+				console.log(event.data);	
+			}
+			se.onopen = function () {
+				console.log('open...')
+			}
+			se.onerror = function () {
+				console.log('error')
+			}
+		</script>
+	</body>
+</html>
