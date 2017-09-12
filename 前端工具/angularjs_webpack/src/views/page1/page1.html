@@ -1,0 +1,37 @@
+<div class="page1">
+	<div>
+		我是page1
+	</div>
+
+
+	<!-- 指令ng-bind和AngularJS表达式{{}}有异曲同工之妙，但不同之处就在于ng-bind是在angular解析渲染完毕后才将数据显示出来的。 -->
+	<input type="text" ng-model="inputVal">
+
+	<p>{{inputVal | change }}</p>
+	<p ng-bind="inputVal | change "></p>
+
+	
+	<!-- 条件 -->
+	<div ng-init="show=true">
+		<p ng-hide="!show">1</p>
+		<p ng-hide="show">2</p>
+	</div>
+
+	<!-- 循环 -->
+	<div ng-init="names=['Jani','Hege','Kai']">
+		<p>使用 ng-repeat 来循环数组</p>
+		<ul>
+			<li ng-repeat="x in names">
+				{{ x }}
+			</li>
+		</ul>
+	</div>
+
+	<!-- 指令 -->
+	<a-link></a-link>
+	<div class="a-link"></div>
+	<div a-link></div>
+	<!-- directive: a-link -->
+	<!-- replace 不为true的时候不显示 -->
+	<button ng-click="jump()">点我跳转页面</button>
+</div>
