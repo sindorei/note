@@ -1,34 +1,34 @@
-module.exports = function (ngModule) {
+
+export default ngModule => {
   ngModule.config([
       '$stateProvider',
       "$urlRouterProvider",
-      function ($stateProvider, $urlRouterProvider) {
+      '$controllerProvider',
+      function ($stateProvider, $urlRouterProvider, $controllerProvider) {
         $urlRouterProvider.otherwise("/page1/226");
         $stateProvider
           .state({
             name: 'page1',
             url: '/page1/:cityId',
             templateProvider: ['$q', function ($q) {
-              var deferred = $q.defer();
+              var deferred = $q.defer()
               require.ensure([], function () {
-                var template = require('../views/page1/page1.html');
-                deferred.resolve(template);
+                var template = require('../views/page1/page1.html')
+                deferred.resolve(template)
               });
-              return deferred.promise;
+              return deferred.promise
             }],
             controller: 'page1Ctrl',
             resolve: {
-              foo: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                var deferred = $q.defer();
-                require.ensure([], function () {
-                  var module = require('../views/page1/page1Ctrl.js')(ngModule);
-                  $ocLazyLoad.load({
-                    name: 'page4App'
-                  });
-                  deferred.resolve(module);
-                });
+              foo: ['$q', function ($q) {
+                console.log($controllerProvider)
+                var deferred = $q.defer()
+                import('../views/page1').then((data) => {
+                  $controllerProvider.register('page1Ctrl', data.default)
+                  deferred.resolve()
+                })
 
-                return deferred.promise;
+                return deferred.promise
               }]
             }
           })

@@ -1,18 +1,23 @@
+/**
+ * angular 和 uirouter 都在页面中用script方式引入了文件
+ *
+ */
 
-var angular = require('angular')
-require('@uirouter/angularjs')
-var app = angular.module('app', ['ui.router'])
+import angular from 'angular'
+let app = angular.module('app', ['ui.router'])
+let ngModule = angular.module('app', ['ui.router'])
 
-// require('./directive/aLink.js')
-// require('./services/API.js')
-// require('./filter/filter.js')
+import filter from './filter/filter'
+import directive from './directive/aLink.js'
+import service from './services/API.js'
+import page2 from './views/page2'
+import router from './router/route'
 
-require('oclazyload')
-
-var ngModule = angular.module('app', ['ui.router', 'oc.lazyLoad'])
-
-require('./views/page2')(ngModule)
-require('./router/route')(ngModule, angular)
+filter(ngModule)
+directive(ngModule)
+service(ngModule)
+page2(ngModule)
+router(ngModule, angular)
 
 app.run([
     '$rootScope',
@@ -24,7 +29,6 @@ app.run([
       $rootScope.jump = function(){
 			  console.log("rootScope点我了");
 		  }
-
     }
 ])
 

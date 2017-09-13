@@ -1,4 +1,4 @@
-module.exports = function (ngModule) {
+export default ngModule => {
   ngModule.controller("page2Ctrl", [
     "$rootScope",
     "$scope",
@@ -8,7 +8,7 @@ module.exports = function (ngModule) {
       console.log($rootScope);
       console.log($scope);
       console.log($q);
-      console.log($stateParams);
+      console.log('123');
     }
   ])
 }
