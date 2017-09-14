@@ -3,7 +3,7 @@ const merge = require('webpack-merge')
 let base = require('./webpack.base.config')
 let config = merge(base, {
   entry: {
-    app: ['webpack-hot-middleware/client', './src/app.js']
+    app: ['webpack-hot-middleware/client?reload=true', './src/app.js']
   },
   module: {
     loaders: [
