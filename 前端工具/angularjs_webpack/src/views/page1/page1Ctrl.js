@@ -8,14 +8,14 @@ export default [
     console.log($rootScope);
     console.log($scope);
     console.log($q);
-    console.log('12345');
+    console.log('nihaoa');
 
 
     $scope.show = false;
 
     $scope.jump = function(){
 
-      console.log(location.href.split("#")[0] + '#/page2/');
+      console.log('wolegequ');
 
       location.href = location.href.split("#")[0] + '#/page2/';
     }

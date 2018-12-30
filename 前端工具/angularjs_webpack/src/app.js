@@ -2,7 +2,6 @@
  * angular 和 uirouter 都在页面中用script方式引入了文件
  *
  */
-
 import angular from 'angular'
 let app = angular.module('app', ['ui.router'])
 let ngModule = angular.module('app', ['ui.router'])
