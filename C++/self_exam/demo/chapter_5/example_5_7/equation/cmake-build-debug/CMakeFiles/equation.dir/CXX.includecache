@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sindorei/GitProj/note/C++/self_exam/demo/chapter_5/example_5_7/equation/equation.cpp
+equation.h
+/Users/sindorei/GitProj/note/C++/self_exam/demo/chapter_5/example_5_7/equation/equation.h
+
+/Users/sindorei/GitProj/note/C++/self_exam/demo/chapter_5/example_5_7/equation/equation.h
+iostream
+-
+cmath
+-
+
+/Users/sindorei/GitProj/note/C++/self_exam/demo/chapter_5/example_5_7/equation/main.cpp
+equation.h
+/Users/sindorei/GitProj/note/C++/self_exam/demo/chapter_5/example_5_7/equation/equation.h
+
