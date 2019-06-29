@@ -70,3 +70,57 @@ outline: .6em solid #655;
 ## 相关规范
 - [CSS背景与边框](http://w3.org/TR/css-backgrounds)
 - [CSS基本UI特性](http://w3.org/TR/css3-ui)
+
+
+# 条纹背景
+> 背景知识：CSS线性渐变、background-size
+
+## 难题
+- 一般都是用图片
+
+
+## 解决方案
+- 使用线性渐变，将两个色标重合
+- 如果多个色标具有相同的位置，他们会产生一个无限小的过渡区域，过渡的起止色分别是第一个和最后一个指定值。从效果上看，颜色会从那个位置突然变化，而不是一个平滑的渐变过程
+- 避免每次改动条纹宽度时都要修改两个数字，可以从规范里找到捷径
+  * 如果某个色标的位置值比整个列表中在它之前的色标的位置都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值
+
+## 垂直条纹
+- 调整渐变方向
+
+```
+background: linear-gradient(to right, #fb3 50%, #58a 0);
+background-size: 30px 100%;
+```
+
+## 斜向条纹
+- 增加一些颜色，旋转，实现无缝对接
+- 条纹的宽度可以根据勾股定理计算然后设置`background-size`的值
+
+## 更好的斜向条纹
+- 循环式加强版：`repeating-linear-gradient()`和`repeating-radial-gradient()`
+- 色标是无限循环重复的，直到填满整个背景
+
+```
+background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+```
+
+- 创建双色条纹时都需要用到四个色标
+- 最好用前面的方法实现水平或垂直的条纹
+- 用这种方法来实现斜向条纹
+- 45°条纹可以用两种方法结合，通过重复线性渐变来简化贴片的代码
+
+```
+background: repeating-linear-gradient(45deg, #fb3 0, #fb3 25%, #58a 0, #58a 50%);
+background-size: 42.426406871px, 42.426406871px;
+```
+
+## 灵活的同色系条纹
+- 大多数情况下想要的条纹图案并不是由差异极大的几种颜色组成的，这些颜色往往属于同一色系，只是在明度方面有着轻微的差异，如下
+
+```
+background: repeating-linear-gradient(30deg, #79b, #79b 15px, #58a 0, #58a 30px);
+```
+
+- 
+
