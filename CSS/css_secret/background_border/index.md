@@ -237,6 +237,23 @@ background-size: 42.426406871px, 42.426406871px;
 ```
 background: repeating-linear-gradient(30deg, #79b, #79b 15px, #58a 0, #58a 30px);
 ```
+![](images/subtle-stripes.jpg)
 
-- 
+- 不为每种条纹单独指定颜色，而是把最深的颜色指定为背景色，同时把半透明白色的条纹叠加在背景色上来得到浅色条纹
 
+```
+background: #58a;
+background-image: repeating-linear-gradient(30deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 30px);
+```
+- 这样只需要修改一个地方就可以改变所有颜色，对于不支持css渐变的浏览器，背景色还起到了回退的作用
+
+## 相关规范
+- [CSS图像](http://w3.org/TR/css-images)
+- [CSS背景与边框](http://w3.org/TR/css-backgrounds)
+- [CSS图像第四版](http://w3.org/TR/css4-images)
+
+
+# 复杂的背景图案
+> 背景知识：CSS渐变，条纹背景
+
+## 难题
