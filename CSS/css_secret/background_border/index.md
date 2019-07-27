@@ -10,11 +10,14 @@ body {
 div {
     width: 100px;
     height: 100px;
+    margin: 100px;
     border: 10px solid hsla(0, 0%, 100%, .5);
     background: white;
 }
 ```
 - 结果并没有透过半透明的边框看到body的背景色
+
+![](images/tanslucent-borders-1.jpg)
 
 ## 解决方案
 - css2.1 中 背景会延伸到边框所在区域下层
@@ -26,12 +29,13 @@ body {
 div {
     width: 100px;
     height: 100px;
+    margin: 100px;
     border: 10px solid hsla(0, 0%, 100%, .5);
     background: white;
     background-clip: padding-box;
 }
 ```
-
+![](images/tanslucent-borders-2.jpg)
 
 # 多重边框
 > 背景知识：box-shadow的基本用法
