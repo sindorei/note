@@ -17,7 +17,7 @@ div {
 ```
 - 结果并没有透过半透明的边框看到body的背景色
 
-![](images/tanslucent-borders-1.jpg)
+![](images/translucent-borders-1.jpg)
 
 ## 解决方案
 - css2.1 中 背景会延伸到边框所在区域下层
@@ -35,7 +35,7 @@ div {
     background-clip: padding-box;
 }
 ```
-![](images/tanslucent-borders-2.jpg)
+![](images/translucent-borders-2.jpg)
 
 # 多重边框
 > 背景知识：box-shadow的基本用法
