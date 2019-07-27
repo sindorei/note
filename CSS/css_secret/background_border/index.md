@@ -1,3 +1,41 @@
+# 半透明边框
+> 背景知识：RGBA/HSLA 颜色
+
+## 难题
+- 给一个容器设置一个白色背景和半透明的白色边框，body设置为非白色的背景
+```CSS
+body {
+    background: dodgerblue;
+}
+div {
+    width: 100px;
+    height: 100px;
+    border: 10px solid hsla(0, 0%, 100%, .5);
+    background: white;
+}
+```
+- 结果并没有透过半透明的边框看到body的背景色
+
+## 解决方案
+- css2.1 中 背景会延伸到边框所在区域下层
+- 从背景与边框第三版开始，可以通过`background-clip`属性来调整，初始值是`border-box`，设置为`padding-box`可以解决上述问题
+```CSS
+body {
+    background: dodgerblue;
+}
+div {
+    width: 100px;
+    height: 100px;
+    border: 10px solid hsla(0, 0%, 100%, .5);
+    background: white;
+    background-clip: padding-box;
+}
+```
+
+
+# 多重边框
+> 背景知识：box-shadow的基本用法
+
 # 灵活的背景定位
 
 ## 难题
