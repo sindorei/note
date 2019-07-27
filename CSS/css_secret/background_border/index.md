@@ -40,6 +40,34 @@ div {
 # 多重边框
 > 背景知识：box-shadow的基本用法
 
+## 难题
+- 目前还不能像使用多重背景那样使用多重边框
+
+
+## box-shadow方案
+- 设置两个为零的偏移量以及为零的模糊值，设置第四个参数扩张半径，得到像一道实线的边框
+- 支持逗号分隔语法，既可以创建任意数量的投影
+- 需要注意box-shadow是层层叠加，第一层投影位于最顶层，依次类推
+```
+div {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: yellowgreen;
+    box-shadow: 0 0 0 10px #655;
+}
+```
+![](images/multiple-borders-1.jpg)
+```
+div {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: yellowgreen;
+    box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink;
+}
+```
+![](images/multiple-borders-2.jpg)
 # 灵活的背景定位
 
 ## 难题
