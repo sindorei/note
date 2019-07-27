@@ -37,6 +37,10 @@ div {
 ```
 ![](images/translucent-borders-2.jpg)
 
+
+## 相关规范
+- [CSS背景与边框](http://w3.org/TR/css-backgrounds)
+
 # 多重边框
 > 背景知识：box-shadow的基本用法
 
@@ -78,6 +82,30 @@ div {
 
 ## outline方案
 - 只需要两层边框，可以设置一层常规边框，再加上outline来产生外层的边框
+```CSS
+ div {
+    width: 300px;
+    height: 300px;
+    margin: 100px;
+    background: yellowgreen;
+    border: 10px solid #655;
+    outline: 5px solid deeppink;
+}
+```
+
+### 优点
+- 可以模拟虚线边框
+- 可通过`outline-offset`属性来控制它跟元素边缘之间的间距
+
+### 注意事项
+- `outline`并不能接受用逗号分隔的多个值
+- 边框不一定会贴合`border-radius`属性产生的圆角（未来可能会改成贴合`border-radius`圆角
+- 根据CSS基本UI特性（第三版）规范所述，描边可以不是矩形。尽管在绝大数情况下，描边都是矩形，最好在不同浏览器中完整地测试最终效果
+
+
+## 相关规范
+- [CSS背景与边框](http://w3.org/TR/css-backgrounds)
+- [CSS基本UI特性](http://w3.org/TR/css3-ui)
 
 # 灵活的背景定位
 
@@ -87,14 +115,22 @@ div {
 - 允许指定背景图片距离任意角的偏移量，只要在便宜量前面指定关键字
 
 ```CSS
-background:url(code-priate.svg) no-repeat #58a;
-background-positon:right 20px bottom 10px;
+div {
+    width: 200px;
+    height: 200px;
+    background: url(code-priate.svg) no-repeat #58a;
+    background-positon:right 20px bottom 10px;
+}
 ```
 - 回退方案：将老套的bottom right定位值写进background的简写属性中
 
 ```CSS
-background:url(code-priate.svg) no-repeat bottom right #58a;
-background-positon:right 20px bottom 10px;
+div {
+    width: 200px;
+    height: 200px;
+    background:url(code-priate.svg) no-repeat bottom right #58a;
+    background-positon:right 20px bottom 10px;
+}
 ```
 
 ## background-origin 方案
@@ -158,7 +194,6 @@ outline: .6em solid #655;
 
 ## 难题
 - 一般都是用图片
-
 
 ## 解决方案
 - 使用线性渐变，将两个色标重合
