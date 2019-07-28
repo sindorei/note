@@ -231,6 +231,8 @@ background: repeating-linear-gradient(45deg, #fb3 0, #fb3 25%, #58a 0, #58a 50%)
 background-size: 42.426406871px, 42.426406871px;
 ```
 
+> 包含两个位置信息的色标，CSS图像第四版新增了一个简写语法，可以在同一个色标上指定两个位置值
+
 ## 灵活的同色系条纹
 - 大多数情况下想要的条纹图案并不是由差异极大的几种颜色组成的，这些颜色往往属于同一色系，只是在明度方面有着轻微的差异，如下
 
@@ -337,3 +339,17 @@ div {
 - 可用预处理器的mixin，减少维护成本
 
 ## 棋盘
+- 只用一层CSS渐变无法创建四周有空隙的方块
+- 可以用连个直角三角形来拼合出想要的方块
+- 角向渐变
+
+
+## 相关规范
+- [CSS图像](http://w3.org/TR/css-images)
+- [CSS背景与边框](http://w3.org/TR/css-backgrounds)
+- [可缩放矢量图像（SVG）](http://w3.org/TR/SVG)
+- [CSS图像（第四版）](http://w3.org/TR/css4-images)
+
+## 其他
+- 可和混合模式（blending mode）结合
+- [Bennett Feely图案库](http://bennettfeely.com/gradients)
