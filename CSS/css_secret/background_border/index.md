@@ -257,3 +257,54 @@ background-image: repeating-linear-gradient(30deg, hsla(0, 0%, 100%, .1), hsla(0
 > 背景知识：CSS渐变，条纹背景
 
 ## 难题
+- 还需要很多其他不同类型的团，比如：网格、波点、棋盘等
+
+
+## 网格
+- 多个渐变图案组合起来
+```CSS
+div {
+    width: 200px;
+    height: 200px;
+    margin: 100px;
+    background:white;
+    background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0), linear-gradient(rgba(200,0,0,.5) 50%, transparent 0);
+    background-size: 30px 30px;
+}
+```
+![](images/grid-1.jgp)
+- 某些情况希望 * 网格中每个格子的大小可以调整，而网格线条的粗细同时保持固定 * ，可以*使用长度而不是百分比*作为色标
+```CSS
+div {
+    width: 200px;
+    height: 200px;
+    margin: 100px;
+    background: #58a;
+    background-image: linear-gradient(white 1px, transparent 0), linear-gradient(90deg, white 1px, transparent 0);
+    background-size: 30px 30px;
+}
+```
+![](images/grid-2.jpg)
+
+- 可以把两幅不同线宽、不同颜色的网格团叠加起来，得到一个更加逼真的蓝图网格
+```CSS
+ div {
+    width: 200px;
+    height: 200px;
+    margin: 100px;
+    background: #58a;
+    background-image: linear-gradient(white 2px, transparent 0),
+    linear-gradient(90deg, white 1px, transparent 0),
+    linear-gradient(hsla(0,0%,100%,.3) 1px, transparent 0),
+    linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
+    background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+}
+```
+![](images/blueprint.jpg)
+
+[试一试](blueprint.html)
+
+[CSS3图案库](https://leaverou.github.io/css3patterns/)
+
+
+## 波点
