@@ -300,11 +300,40 @@ div {
     background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
 }
 ```
-![](images/blueprint.jpg)
-
-[试一试](blueprint.html)
+![](images/blueprint.png)
 
 [CSS3图案库](https://leaverou.github.io/css3patterns/)
 
 
 ## 波点
+- 径向渐变能创建的最简单的图案是远点的阵列
+```CSS
+div {
+    width: 300px;
+    height: 300px;
+    margin: 100px;
+    background: #655;
+    background-image: radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+}
+```
+![](images/polka-1.png)
+- 生成两层圆点阵列图案，并将背景定位错开
+```CSS
+div {
+    width: 300px;
+    height: 300px;
+    margin: 100px;
+    background: #655;
+    background-image: radial-gradient(tan 30%, transparent 0),
+                        radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+```
+![](images/polka-2.png)
+- 为了达到效果，第二层背景的偏移定位值必须是贴片宽高的一半
+- 这意味着改动贴片的尺寸需要改动四处
+- 可用预处理器的mixin，减少维护成本
+
+## 棋盘
