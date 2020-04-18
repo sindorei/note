@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setter getter</title>
+</head>
+<body>
+    <script>
+        function convert(obj) {
+            let keys = Object.keys(obj)
+            keys.forEach(item => {
+                let interValue = obj[item]
+                Object.defineProperty(obj, item, {
+                    set(val) {
+                        console.log('setting key %s to :%s', item, val)
+                        interValue = val
+                    },
+                    get() {
+                        console.log('getting key %s :%s', item, interValue)
+                        return interValue
+                    }
+                })
+            })
+        }
+        let test = {
+            name: '张三',
+            age: 20
+        }
+        convert(test)
+        test.age = 30
+        let age = test.age
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini observer</title>
+</head>
+<body>
+    <script>
+        let activeUpdate
+        window.Dep = class Dep {
+            constructor() {
+                this.subscribers = new Set()
+            }
+            depend() {
+                if (activeUpdate) {
+                    this.subscribers.add(activeUpdate)
+                }
+            }
+            notify() {
+                this.subscribers.forEach(sub => sub())
+            }
+
+        }
+        function autorun(update) {
+            function wrappedUpdate() {
+                activeUpdate = wrappedUpdate
+                update()
+                activeUpdate = null
+            }
+            wrappedUpdate()
+        }
+
+        function convert(obj) {
+            Object.keys(obj).forEach(item => {
+                let interValue = obj[item]
+                let dep = new Dep()
+                Object.defineProperty(obj, item, {
+                    set(val) {
+                        interValue = val
+                        dep.notify()
+                    },
+                    get() {
+                        dep.depend()
+                        return interValue
+                    }
+                })
+            })
+        }
+
+        function observe(obj) {
+            convert(obj)
+        }
+
+        const state = {
+            count: 0
+        }
+        observe(state)
+        autorun(() => {
+            console.log(state.count)
+        })
+        state.count++
+    </script>
+</body>
+</html>

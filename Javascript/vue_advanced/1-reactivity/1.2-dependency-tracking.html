@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dependency tracking</title>
+</head>
+<body>
+    <script>
+        let activeUpdate
+        window.Dep = class Dep {
+            constructor() {
+                this.subscribers = new Set()
+            }
+            depend() {
+                if (activeUpdate) {
+                    this.subscribers.add(activeUpdate)
+                }
+            }
+            notify() {
+                this.subscribers.forEach(sub => sub())
+            }
+
+        }
+        function autorun(update) {
+            function wrappedUpdate() {
+                activeUpdate = wrappedUpdate
+                update()
+                activeUpdate = null
+            }
+            wrappedUpdate()
+        }
+        // function autorun(update) {
+        //     activeUpdate = update
+        //     update()
+        //     activeUpdate = null
+        // }
+
+        let dep = new Dep()
+
+        autorun(() => {
+            dep.depend()
+            console.log('updated')
+        })
+        dep.notify()
+
+
+    </script>
+</body>
+</html>
