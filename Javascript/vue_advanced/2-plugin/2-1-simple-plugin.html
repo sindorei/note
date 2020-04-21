@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simple plugin</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    
+    <script>
+        const RulesPlugin = {
+            install(Vue) {
+                Vue.mixin({
+                    created() {
+                        const rules = this.$options.rules
+                        if (rules) {
+                            Object.keys(rules).forEach(key => {
+                                this.$watch(key, newVal => {
+                                    const rule = rules[key]
+                                    const res = rule.validate(newVal)
+                                    if (!res) {
+                                        console.log(rule.message)
+                                    }
+                                })
+                            })
+                        }
+                    }
+                })
+            }
+        }
+        Vue.use(RulesPlugin)
+
+        const vm = new Vue({
+            data: {
+                foo: 10
+            },
+            rules: {
+                foo: {
+                    validate: value => value > 1,
+                    message: 'foo must be greater than one'
+                }
+            }
+        })
+        vm.foo = 2
+    </script>
 </body>
 </html>

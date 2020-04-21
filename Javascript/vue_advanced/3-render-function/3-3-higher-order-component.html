@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <smart-avatar username="vue"></smart-avatar>
+    </div>
+    <script>
+        const Atavar = {
+            props: ['src'],
+            template: `<img :src="src" />`
+        }
+
+        // mock API
+        function fetchURL(username, cb) {
+            setTimeout(() => {
+                cb('https://avatars3.githubusercontent.com/u/6230236?s=400&u=3cd79bb994494f9a669e98a216ae265421317f34&v=4')
+            }, 500)
+        }
+
+        function withAtavarUrl(InnerComponent) {
+            return {
+                props: ['username'],
+                data() {
+                    return {
+                        url: ''
+                    }
+                },
+                render(h) {
+                    return h(InnerComponent, {props: { src: this.url }})
+                },
+                created() {
+                    fetchURL(this.username, src => {
+                        this.url = src
+                    })
+                }
+            }
+        }
+        const SmartAvatar = withAtavarUrl(Atavar)
+        new Vue({
+            el: '#app',
+            components: {
+                SmartAvatar
+            }
+        })
+    </script>
+</body>
+</html>
