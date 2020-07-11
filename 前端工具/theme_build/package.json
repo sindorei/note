@@ -1,15 +1,15 @@
 {
-  "name": "flight",
+  "name": "theme_buile_test",
   "version": "1.0.0",
   "private": true,
-  "description": "国内机票静态资源",
+  "description": "test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.17usoft.com:flightfrontend/TC.Flight.Frontend.Resource.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",

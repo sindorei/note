@@ -71,7 +71,7 @@ export default {
             let self = this
             return {
                 title: {
-                    text: '航段预测'
+                    text: '预测'
                 },
                 tooltip: {
                     trigger: 'axis'

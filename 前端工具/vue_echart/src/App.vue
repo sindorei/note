@@ -82,8 +82,8 @@ export default {
       return /tabbar/.test(this.route.path)
     },
     title () {
-      if (this.route.path === '/') return '国内机票bi系统'
-      if (this.route.path === '/forecast') return '航段预测'
+      if (this.route.path === '/') return '系统'
+      if (this.route.path === '/forecast') return '预测'
       // return this.componentName ? `Demo/${this.componentName}` : 'Demo/~~'
     }
   }

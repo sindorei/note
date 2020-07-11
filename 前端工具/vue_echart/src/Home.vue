@@ -2,7 +2,7 @@
   <div>
     
     <group>
-      <cell title="航段预测" link="/forecast" value="">
+      <cell title="预测" link="/forecast" value="">
       </cell>
     </group>
   </div>
