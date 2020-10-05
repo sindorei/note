@@ -4,7 +4,7 @@
 
 
 # 基本结构
-```
+```go
 package main
 
 import "fmt"
@@ -23,7 +23,9 @@ func main() {
 
 # 编写测试程序
 - 源码文件以`_test`结尾：`xxx_test.go`
+- 引入测试包`import "testing"`
 - 测试方法以`Test`开头：`func TestXXX(t *testing.T) { ... }`
+- 运行测试 `go test -v`
 
 # 与其他主要编程语言差异
 
@@ -41,7 +43,7 @@ func main() {
 
 ## 常量设置
 - 快速设置连续值
-```
+```go
 const (
     Monday = iota + 1
     Tuesday
@@ -55,6 +57,10 @@ const (
 )
 ```
 
+## 类型转换
+- Go语言不允许隐式类型转换
+- 别名和原有类型也不能进行隐式类型转换
+
 
 # 基本数据类型
 - bool
@@ -65,3 +71,62 @@ const (
 - rune // alias for int32, represents a Unicode code point
 - float32 float64
 - complex64 complex128
+
+
+
+# 类型的预定义值
+- `math.MaxInt64`
+- `math.MaxFloat64`
+- `math.MaxUint32`
+
+# 指针类型
+- 不支持指针运算
+- `string`是值类型，其默认的初始值为空字符串，而不是`nil`
+
+
+# 运算符
+
+## 算术运算符
+- 没有前置 `++`、 `--`
+
+## 比较运算符
+- 用`==`比较数组
+  * 相同维数且含有相同个数元素的数组才可以比较
+  * 每个元素都相同的才相等
+
+
+## 位运算符
+- `&^` 按位置零
+
+
+# 循环
+- Go语言仅支持循环关键字`for`
+```go
+n := 5
+for n < 5 {
+    n++
+}
+```
+
+# if 条件
+- condition 表达式结果必须为布尔值
+- 支持变量赋值
+```go
+if condition1 {
+
+} else if condition2 {
+
+} else {
+
+}
+
+if var declaration; condition {
+
+}
+```
+
+# switch条件
+- 条件表达式不限制为常量或整数
+- 单个case中可以出现多个结果选项，使用逗号分隔
+- 与C语言等规则相反，Go语言不需要break来明确退出一个case
+- 可以不设定switch之后的条件表达式，在此种情况下，整个switch结构与多个if... else...的逻辑作用等同
