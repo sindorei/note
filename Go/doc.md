@@ -148,3 +148,29 @@ c := [2][2]int{{1, 2}, {3, 4}}
 ## 数组截取
 - `a[开始索引（包含）:结束索引(不包含)]`
 - `a[1:3]`
+
+
+# 切片
+```go
+var s0 []int
+s0 = append(s0, 1)
+s := []int{}
+s1 := []int {1, 2, 3}
+s2 := make([]int, 2, 4) // type len cap
+```
+
+## 与数组相比
+- 容量是否可伸缩
+  * 切片可伸缩，数组长度固定
+- 是否可以进行比较
+  * 数组可以比较，切片不行
+
+
+# Map
+```go
+m := Map[string]int{"one": 1, "two": 2}
+
+m1 := Map[string]int {}
+m1["one"] = 1
+m2 := make(map[string]int, 10) // type, initial capacity
+```
