@@ -10,3 +10,10 @@ func TestArray(t *testing.T) {
 
 	t.Log(a, b, c)
 }
+
+
+func TestArraySection(t *testing.T) {
+	a := [...]int {4, 5, 6, 1, 2, 3}
+	b := a[1:2]
+	t.Log(b)
+}
