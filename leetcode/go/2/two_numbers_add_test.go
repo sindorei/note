@@ -21,7 +21,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
- func addTwoNumbers1(l1 *ListNode, l2 *ListNode) *ListNode {
+ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	 var head *ListNode
 	 tail := new (ListNode)
 	 head = tail
@@ -62,7 +62,7 @@ func TestAddTwoNumber(t * testing.T)  {
 		Val: 5,
 		Next: &ListNode { Val: 6}}
 
-	res := addTwoNumbers1(l1, l2)
+	res := addTwoNumbers(l1, l2)
 
 	str := "["
 	for res != nil {
