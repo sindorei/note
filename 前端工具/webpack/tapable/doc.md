@@ -4,7 +4,7 @@
 
 # 用法
 - 所有的Hook构造函数都采用一个可选参数，该参数是字符串形式的参数名称的列表。
-- 根据Hook Type不同它们的实例最多有4个方法`tap`、`tapAsync`、`tapPromise`、`intercept`
+- 根据Hook Type不同它们的实例有`tap`、`tapAsync`、`tapPromise`、`intercept`、`call`、`callAsync`、`promise`等方法
 
 ```javascript
 const { SyncHook } = require('tapable')
