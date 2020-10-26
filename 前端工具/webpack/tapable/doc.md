@@ -48,9 +48,9 @@ syncHookTest.call('张三')
   * `AsyncSeries`开头
   * 可以通过`tap()`方法注册同步插件, `tapAsync(name: string | Tap, fn: (context?, ...args, callback: (err, result: Result) => void) => void) => void`注册callback-based的插件 以及`tapPromise()`注册promise-based 的插件(插件返回`Promise`)。
   * 通过`callAsync: (...args, callback: (err, Result) => void) => void`方法触发，或者 `promise: (...args) => Promise<Result>` 触发,
-  * 各插件按照注册顺序依次执行。会等待异步插件完成后再执行下一个。`tapAsync`注册的某个插件调用`callback`的第一个参数为[Truthy](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)则执行结束,不再继续执行后面的插件（in a row）
+  * 各插件按照注册顺序串行执行。会等待异步插件完成后再执行下一个。`tapAsync`注册的某个插件调用`callback`的第一个参数为[Truthy](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)则执行结束,不再继续执行后面的插件（in a row）
 - AsyncParallel
-  * 使用方式基本跟`AsyncSeries`类似，但是各插件是按注册顺序执行，不相互依赖（不会按注册顺序等待上一个异步插件完成后再执行下一个插件），某个插件抛出错误后不会影响下一个插件，所以没有Waterfall、Loop钩子
+  * 使用方式基本跟`AsyncSeries`类似，但是各插件是按注册顺序平行执行，不相互依赖（不会按注册顺序等待上一个异步插件完成后再执行下一个插件），某个插件抛出错误后不会影响下一个插件，所以没有Waterfall、Loop钩子
 
 # interception API
   - call:`(...args) => void` 
