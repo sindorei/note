@@ -44,13 +44,18 @@ syncHookTest.call('张三')
   * 以`Sync`开头的
   * 只能通过`tap(）`方法注册同步插件
   * `call: (...args) => Result`方法触发
-- AsyncSeries
-  * `AsyncSeries`开头
-  * 可以通过`tap()`方法注册同步插件, `tapAsync(name: string | Tap, fn: (context?, ...args, callback: (err, result: Result) => void) => void) => void`注册callback-based的插件 以及`tapPromise()`注册promise-based 的插件(插件返回`Promise`)。
-  * 通过`callAsync: (...args, callback: (err, Result) => void) => void`方法触发，或者 `promise: (...args) => Promise<Result>` 触发,
-  * 各插件按照注册顺序串行执行。会等待异步插件完成后再执行下一个。`tapAsync`注册的某个插件调用`callback`的第一个参数为[Truthy](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)则执行结束,不再继续执行后面的插件（in a row）
-- AsyncParallel
-  * 使用方式基本跟`AsyncSeries`类似，但是各插件是按注册顺序平行执行，不相互依赖（不会按注册顺序等待上一个异步插件完成后再执行下一个插件），某个插件抛出错误后不会影响下一个插件，所以没有Waterfall、Loop钩子
+- Async
+    -  可以通过`tap()`方法注册同步插件, `tapAsync(name: string | Tap, fn: (context?, ...args, callback: (err, result: Result) => void) => void) => void`注册callback-based的插件 以及`tapPromise()`注册promise-based 的插件(插件返回`Promise`)。
+    - 通过`callAsync: (...args, callback: (err, Result) => void) => void`方法触发，或者 `promise: (...args) => Promise<Result>` 触发
+    - AsyncSeries
+        * `AsyncSeries`开头
+        * 各插件按照注册顺序串行执行。会等待异步插件完成后再执行下一个。`tapAsync`注册的某个插件调用`callback`的第一个参数为[Truthy](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)或promise`reject`则执行结束,不再继续执行后面的插件
+        * `AsyncSeriesBailHook` 按顺序某个插件 `callback`第一个参数Falsy第二个参数Truthy或promise`resolve` 则后面插件不再执行，结束
+        * 结束后调用`callAsync`的回调或promise的`then`
+        * `tapAsync` 别忘记调用回调否则不知道异步是否结束
+    - AsyncParallel
+        * 使用方式基本跟`AsyncSeries`类似，但是各插件是按注册顺序平行执行，不相互依赖（不会按注册顺序等待上一个异步插件完成后再执行下一个插件），某个插件抛出错误后不会影响下一个插件，所以没有Waterfall、Loop钩子
+        * `AsyncParallelBailHook` 都执行完成后，调用通知结束的回调，并按顺序将第一个有返回值（或失败的错误信息）通知到结果（`callAsync`的回调或promise的`then`）
 
 # interception API
   - call:`(...args) => void` 

@@ -10,13 +10,12 @@ hook.tap('go',(n, cb) => {
 hook.tapAsync('rust',(n, cb) => {
     setTimeout(() => {
          console.log(n + " rust")
-         cb(true)
+         cb()
     }, 1000)
  })
 
 hook.tap('swift',(n, cb) => {
   console.log(n + " swift")
-//   cb()
 })
 
 
