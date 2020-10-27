@@ -59,7 +59,7 @@ syncHookTest.call('张三')
 
 # interception API
   - call:`(...args) => void` 
-    * hook被调用时被调用
+    * hook被调用时被调用(调`call()`,`callAsync()`,`promise()`时)
   - tap: `(tap: Tap) => void`
     * hook的插件被调用时被调用
     * 参数会拿到`Tap`对象，此对象不能被改变

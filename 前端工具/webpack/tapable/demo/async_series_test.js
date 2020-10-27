@@ -18,6 +18,11 @@ hook.tap('swift',(n, cb) => {
   console.log(n + " swift")
 })
 
+hook.intercept({
+  call(n) {
+    console.log('call...: %s', n)
+  }
+})
 
 // hook.callAsync('lang', err => {
 //     console.log('err: %o', err)
