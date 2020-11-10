@@ -19,7 +19,7 @@ hook.intercept({
     console.log('call...: %s', n)
   },
   tap(context, t) {
-    console.log('tap...: %o', t)
+    console.log('tap...: %o, context: %o', t, context)
   },
   register(t) {
     console.log('register...: %o', t)
