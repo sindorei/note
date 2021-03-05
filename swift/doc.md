@@ -79,12 +79,65 @@ print(arr6[0]) // str1
 ```
 
 ## 集合
+- 按照某种有效的随机顺序存储，非有序
+- 元素唯一
+- 可进行交集、并集操作
 
+```swift
+var fruits = Set<String>()
+var colors = Set<String>.init()
+fruits.insert("banana")
+var animals: Set<String> = []
+var plants = Set(["tree", "flower"])
+```
 
 ## 字典
 
+```swift
+var scores = [
+  "Bob": 43,
+  "Alice": 23,
+  "Daisy": 10
+]
+var heights: [String:Double] = [:]
+heights["zs"] = 1.78
 
+```
 ## 元组
+- 初始化完成后无法添加和删除元素、修改元素类型，可修改元素的值
+- 可以使用数字位置或命名来访问
 
+```swift
+let lang = ("C", 1)
+print("\(lang.0)------\(lang.1)") // C------1
+let airline = (code: "HO", name: "吉祥航空")
+print("code: \(airline.0),name: \(airline.name)") // code: HO,name: 吉祥航空
+```
 
 ## 枚举
+- first-class 类型，采用了很多传统上只被类支持的特性
+- 不会被默认赋一个整型值
+- 可以设置枚举关联值
+- 访问原始值 `rawValue`
+```swift
+// 申明
+enum Fruit {
+  case apple
+  case orange
+}
+enum Weekday {
+  case monday, tuesday, wednesday
+}
+// 使用
+var today:Weekday = Weekday.monday // 或 .monday 或 var today = Weekday.monday
+
+// 遍历枚举
+enum Test: CaseIterable {
+  case test1
+  case test2
+  case test3
+}
+for test in Test.allCases {
+  print(test)
+}
+```

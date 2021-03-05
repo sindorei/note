@@ -20,3 +20,24 @@ let arr6 = [
 ]
 // 访问
 print(arr6[0]) // str1
+
+// 元组
+let lang = ("C", 1)
+print("\(lang.0)------\(lang.1)")
+
+let airline = (code: "HO", name: "吉祥航空")
+print("code: \(airline.0),name: \(airline.name)")
+
+enum Weekday {
+  case monday, tuesday, wednesday
+}
+
+// 遍历枚举
+enum Test: CaseIterable {
+  case test1
+  case test2
+  case test3
+}
+for test in Test.allCases {
+  print(test)
+}
