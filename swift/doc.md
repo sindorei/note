@@ -1,3 +1,7 @@
+# 官方文档
+- [swift](https://developer.apple.com/documentation/swift)
+- [swift-book](https://docs.swift.org/swift-book/)
+
 # 常量和变量
 - `let` 申明常量
 - `var` 申明变量
@@ -141,3 +145,52 @@ for test in Test.allCases {
   print(test)
 }
 ```
+
+# 运算符
+
+## 算术运算符
+- `+`、`-`、`*`、`/`、`%`
+- 不同数据类型不能进行运算
+- `isMultiple(of:)`方法可用来判断是否能整除
+```swift
+var number = 123
+let isMultiple = number.isMultiple(of: 7)
+```
+
+
+## 组合复制运算符
+- `+=`
+- `-=`
+- swift 不支持 `++`和`--`
+
+
+## 比较运算符
+- `==`
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `===` 恒等，用来判断2个对象是否是同一个实例
+- `!==`不恒等
+
+## 逻辑运算符
+- `!`
+- `&&`
+- `||`
+
+## 三元运算符
+- `? :`
+
+## 区间操作符
+- `..<` 半开区间，不包含最后的值
+- `...` 闭区间，第一个和最后一个都包含
+
+# 条件语句
+- `if`、`elseif`、`else`
+- `switch`
+  * 不存在隐式的贯穿，即不需要再每个`case`的最后加上`break`
+  * 可食用`fallthrough`关键字进行显示贯穿
+  * `case` 分支可区间匹配
+
+
