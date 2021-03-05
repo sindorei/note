@@ -2,6 +2,9 @@
 - [swift](https://developer.apple.com/documentation/swift)
 - [swift-book](https://docs.swift.org/swift-book/)
 
+# 中文版教程
+- [swiftgg](https://swiftgg.gitbook.io/swift/huan-ying-shi-yong-swift)
+
 # 常量和变量
 - `let` 申明常量
 - `var` 申明变量
@@ -186,7 +189,8 @@ let isMultiple = number.isMultiple(of: 7)
 - `..<` 半开区间，不包含最后的值
 - `...` 闭区间，第一个和最后一个都包含
 
-# 条件语句
+# 控制流
+## 条件语句
 - `if`、`elseif`、`else`
 - `switch`
   * 不存在隐式的贯穿，即不需要再每个`case`的最后加上`break`
@@ -194,3 +198,36 @@ let isMultiple = number.isMultiple(of: 7)
   * `case` 分支可区间匹配
 
 
+## 循环
+
+### for-in 循环
+
+```swift
+// 遍历数组
+let names = ["Anna", "Alex", "Brian", "Jack"]
+for name in names {
+    print("Hello, \(name)!")
+}
+// 遍历字典
+let numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
+for (animalName, legCount) in numberOfLegs {
+    print("\(animalName)s have \(legCount) legs")
+}
+// 遍历区间
+for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+```
+
+### while 循环
+- while 循环，每次在循环开始时计算条件是否符合
+- repeat-while 循环，每次在循环结束时计算条件是否符合(类似其他语言的do while)
+```
+while condition {
+    statements
+}
+
+repeat {
+    statements
+} while condition
+```
