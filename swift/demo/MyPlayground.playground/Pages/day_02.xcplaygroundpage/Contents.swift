@@ -1,5 +1,3 @@
-import UIKit
-
 var arr = [Int]()
 var arr1: [Int] = []
 var arr2 = Array<Int>()

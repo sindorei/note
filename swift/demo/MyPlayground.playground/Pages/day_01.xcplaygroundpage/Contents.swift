@@ -1,5 +1,3 @@
-import UIKit
-
 
 var str = "str"
 var str2 = String.init()

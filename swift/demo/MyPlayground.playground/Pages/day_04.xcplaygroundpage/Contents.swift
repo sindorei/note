@@ -1,4 +1,3 @@
-import UIKit
 
 // 遍历数组
 let names = ["Anna", "Alex", "Brian", "Jack"]
