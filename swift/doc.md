@@ -1,4 +1,4 @@
-# 官方文档
+# 文档
 - [swift](https://developer.apple.com/documentation/swift)
 - [swift-book](https://docs.swift.org/swift-book/)
 
@@ -194,7 +194,7 @@ let isMultiple = number.isMultiple(of: 7)
 - `if`、`elseif`、`else`
 - `switch`
   * 不存在隐式的贯穿，即不需要再每个`case`的最后加上`break`
-  * 可食用`fallthrough`关键字进行显示贯穿
+  * 可使用`fallthrough`关键字进行显示贯穿
   * `case` 分支可区间匹配
 
 
@@ -545,3 +545,4 @@ reversedNames = names.sorted() { $0 > $1 }
 ```swift
 reversedNames = names.sorted { $0 > $1 }
 ```
+
