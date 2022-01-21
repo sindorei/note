@@ -6,3 +6,10 @@
 
 ## 工具
 - [git](./common/tools/git.md)
+
+
+
+# 编程语言
+
+## rust
+- [快速开始](./pl/rust/start.md)
