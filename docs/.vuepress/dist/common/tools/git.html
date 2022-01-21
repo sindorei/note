@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.33">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>常用命令 | 笔记</title><meta name="description" content="平时学习及练习是时的记录">
+    <link rel="modulepreload" href="/assets/app.db66e77f.js"><link rel="modulepreload" href="/assets/git.html.3b3abd9a.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js"><link rel="modulepreload" href="/assets/git.html.599e4732.js">
+    <link rel="stylesheet" href="/assets/style.fc8b2427.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="笔记"><span class="site-name can-hide">笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p class="sidebar-item sidebar-heading">常用命令 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/common/tools/git.html#clone-submodule" class="router-link-active router-link-exact-active sidebar-item" aria-label="clone Submodule"><!--[--><!--]--> clone Submodule <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/common/tools/git.html#删除-submodule" class="router-link-active router-link-exact-active sidebar-item" aria-label="删除 submodule"><!--[--><!--]--> 删除 submodule <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="常用命令" tabindex="-1"><a class="header-anchor" href="#常用命令" aria-hidden="true">#</a> 常用命令</h1><ul><li><code>git add .</code></li><li><code>git add -A</code></li><li><code>git commit -m </code></li><li><code>git fetch origin</code></li></ul><h1 id="git-submodule" tabindex="-1"><a class="header-anchor" href="#git-submodule" aria-hidden="true">#</a> git submodule</h1><ul><li>如果通用部分抽出做成一个公共代码库，用此命令</li><li>为当前工程添加submodule</li><li><code>git submodule add 仓库地址 路径</code></li><li>初始化时submodule的内容不会自动下载</li><li>需执行 <code>git submodule update --init --recursive</code></li></ul><h2 id="clone-submodule" tabindex="-1"><a class="header-anchor" href="#clone-submodule" aria-hidden="true">#</a> clone Submodule</h2><ul><li>采用递归参数 <code>--recursive</code></li><li>第二种方法先clone父项目，再初始化Submodule <ul><li><code>git submodule init</code></li><li><code>git submodule update</code></li></ul></li></ul><h2 id="删除-submodule" tabindex="-1"><a class="header-anchor" href="#删除-submodule" aria-hidden="true">#</a> 删除 submodule</h2><ul><li><code>git rm --cached submodulePath</code></li><li><code>rm -rf submodulePath</code></li><li><code>rm .gitmodules</code></li><li><code>vim .git/config</code> 删除submodule相关配置</li></ul><h1 id="配置多个git账号" tabindex="-1"><a class="header-anchor" href="#配置多个git账号" aria-hidden="true">#</a> 配置多个git账号</h1><ul><li><code>.ssh</code>目录新增config文件，添加以下内容</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Host git.17usoft.com
+  HostName git.17usoft.com
+  User wp10081
+  IdentityFile ~/.ssh/id_rsa
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h1 id="标签-tag" tabindex="-1"><a class="header-anchor" href="#标签-tag" aria-hidden="true">#</a> 标签（tag）</h1><ul><li>添加tag <ul><li><code>git tag -a tag名称 -m &quot;注释&quot;</code></li></ul></li><li>提交所有tag到远程仓库 <ul><li><code>git push origin --tags</code></li></ul></li><li>提交指定tag到远程仓库 <ul><li><code>git push origin &lt;tagname&gt;</code></li></ul></li><li>删除tag <ul><li><code>git tag -d </code></li></ul></li><li>查看tag <ul><li><code>git tag</code></li></ul></li><li>查看所有tag <ul><li><code>git tag -l</code></li></ul></li></ul><h1 id="指定git命令作用的目录" tabindex="-1"><a class="header-anchor" href="#指定git命令作用的目录" aria-hidden="true">#</a> 指定git命令作用的目录</h1><ul><li>git -C <code>&lt;path&gt;</code></li></ul><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>Building remotely on win-node-16-49 <span class="token keyword">in</span> workspace d:<span class="token punctuation">\</span>jk<span class="token punctuation">\</span>workspace<span class="token punctuation">\</span><span class="token number">1858</span>-gny.airtest
+ <span class="token operator">&gt;</span> <span class="token function">git</span> rev-parse --is-inside-work-tree <span class="token comment"># timeout=10</span>
+Fetching changes from the remote Git repository
+ <span class="token operator">&gt;</span> <span class="token function">git</span> config remote.origin.url git@git.17usoft.com:flightfrontend/tc-flight-flightbook.git <span class="token comment"># timeout=10</span>
+Cleaning workspace
+ <span class="token operator">&gt;</span> <span class="token function">git</span> rev-parse --verify HEAD <span class="token comment"># timeout=10</span>
+Resetting working tree
+ <span class="token operator">&gt;</span> <span class="token function">git</span> reset --hard <span class="token comment"># timeout=10</span>
+ <span class="token operator">&gt;</span> <span class="token function">git</span> clean -fdx <span class="token comment"># timeout=10</span>
+Fetching upstream changes from git@git.17usoft.com:flightfrontend/tc-flight-flightbook.git
+ <span class="token operator">&gt;</span> <span class="token function">git</span> --version <span class="token comment"># timeout=10</span>
+using GIT_SSH to <span class="token builtin class-name">set</span> credentials 
+ <span class="token operator">&gt;</span> <span class="token function">git</span> -c core.askpass<span class="token operator">=</span>true fetch --tags --progress git@git.17usoft.com:flightfrontend/tc-flight-flightbook.git +refs/heads/*:refs/remotes/origin/* --depth<span class="token operator">=</span><span class="token number">1</span>
+ <span class="token operator">&gt;</span> <span class="token function">git</span> rev-parse <span class="token string">&quot;origin/develop^{commit}&quot;</span> <span class="token comment"># timeout=10</span>
+Checking out Revision 20976ed9016e480c95ed0842a51852b2f8f3613d <span class="token punctuation">(</span>origin/develop<span class="token punctuation">)</span>
+ <span class="token operator">&gt;</span> <span class="token function">git</span> config core.sparsecheckout <span class="token comment"># timeout=10</span>
+ <span class="token operator">&gt;</span> <span class="token function">git</span> checkout -f 20976ed9016e480c95ed0842a51852b2f8f3613d
+ <span class="token operator">&gt;</span> <span class="token function">git</span> rev-list ee8b6f83d11659c2785605043586cc4c09cc842b <span class="token comment"># timeout=10</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>#　fetch</p><ul><li><code>git fetch</code>命令通常用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响。 默认情况下，git fetch取回所有分支（branch）的更新。如果只想取回特定分支的更新，可以指定分支名。</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>git fetch &lt;远程主机名&gt; &lt;分支名&gt;
+// 比如，取回origin主机的master分支。
+
+git fetch origin master
+// 所取回的更新，在本地主机上要用&quot;远程主机名/分支名&quot;的形式读取。比如origin主机的master，就要用origin/master读取。
+
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h1 id="rev-parse" tabindex="-1"><a class="header-anchor" href="#rev-parse" aria-hidden="true">#</a> rev-parse</h1><ul><li>https://git-scm.com/docs/git-rev-parse</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>git rev-parse --abbrev-ref HEAD // 当前分支名
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><h1 id="远程仓库" tabindex="-1"><a class="header-anchor" href="#远程仓库" aria-hidden="true">#</a> 远程仓库</h1><ul><li>查看远程仓库地址 <ul><li><code>git remote -v</code></li></ul></li><li>修改远程仓库地址 <ul><li><code>git remote set-url origin &lt;url&gt;</code></li></ul></li></ul><h1 id="git-log" tabindex="-1"><a class="header-anchor" href="#git-log" aria-hidden="true">#</a> git log</h1><ul><li><p>查找某段代码的提交记录可以用 <code>-S</code> 、<code>-G</code> 参数</p><ul><li><code>git log -S &#39;xixiha&#39;</code></li></ul></li><li><p><code>-p</code> 参数能看到代码的内容</p></li></ul><h1 id="删除本地的远程无效分支" tabindex="-1"><a class="header-anchor" href="#删除本地的远程无效分支" aria-hidden="true">#</a> 删除本地的远程无效分支</h1><ul><li><code>git remote prune origin</code></li></ul><h1 id="git-config" tabindex="-1"><a class="header-anchor" href="#git-config" aria-hidden="true">#</a> git config</h1><ul><li>查看配置 <code>git config --list</code></li><li>查看某项配置 <code>git config user.name</code></li><li>设置全局配置 <ul><li><code>git config --global user.name &quot;John Doe&quot;</code></li><li><code>git config --global user.email johndoe@example.com</code></li></ul></li></ul><h1 id="文件大小写" tabindex="-1"><a class="header-anchor" href="#文件大小写" aria-hidden="true">#</a> 文件大小写</h1><ul><li>修改了文件大小写想要提交上去 <ul><li>修改配置(不建议)，后面有些git操作可能会提示报错 <ul><li><code>git config core.ignorecase false</code></li></ul></li><li>运行 <code>git mv 修过前文件名 修过后文件名</code></li></ul></li></ul><h1 id="重新历史" tabindex="-1"><a class="header-anchor" href="#重新历史" aria-hidden="true">#</a> 重新历史</h1><ul><li>https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2</li><li>https://help.github.com/en/articles/changing-author-info</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>git filter-branch --env-filter &#39;
+OLD_NAME=&quot;xxx&quot;
+CORRECT_NAME=&quot;xxx&quot;
+CORRECT_EMAIL=&quot;xxx@foxmail.com&quot;
+
+if [ &quot;$GIT_COMMITTER_NAME&quot; = &quot;$OLD_NAME&quot; ]
+then
+    export GIT_COMMITTER_NAME=&quot;$CORRECT_NAME&quot;
+    export GIT_COMMITTER_EMAIL=&quot;$CORRECT_EMAIL&quot;
+fi
+if [ &quot;$GIT_AUTHOR_NAME&quot; = &quot;$OLD_NAME&quot; ]
+then
+    export GIT_AUTHOR_NAME=&quot;$CORRECT_NAME&quot;
+    export GIT_AUTHOR_EMAIL=&quot;$CORRECT_EMAIL&quot;
+fi
+&#39; --tag-name-filter cat -- --branches --tags
+
+git push --force --tags origin &#39;refs/heads/*&#39;
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h1 id="批量删除远程分支" tabindex="-1"><a class="header-anchor" href="#批量删除远程分支" aria-hidden="true">#</a> 批量删除远程分支</h1><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>git branch -r   --merged master --list &#39;origin/[^HEADReleasemasterhotfixdevelop]*&#39; | xargs -L 1 git push origin :
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><h1 id="git-blame-定位代码责任人" tabindex="-1"><a class="header-anchor" href="#git-blame-定位代码责任人" aria-hidden="true">#</a> git blame 定位代码责任人</h1><p>git blame 文件名</p><p>git blame -L 开始行,结束行 : <code>git blame -L 3,5</code></p><h1 id="git-bisect-查找问题引入版本" tabindex="-1"><a class="header-anchor" href="#git-bisect-查找问题引入版本" aria-hidden="true">#</a> git bisect 查找问题引入版本</h1><h1 id="git-log-查找指定内容的历史记录" tabindex="-1"><a class="header-anchor" href="#git-log-查找指定内容的历史记录" aria-hidden="true">#</a> git log 查找指定内容的历史记录</h1><h1 id="所有命令列表" tabindex="-1"><a class="header-anchor" href="#所有命令列表" aria-hidden="true">#</a> 所有命令列表</h1><ul><li><a href="https://git-scm.com/docs/git#_git_commands" target="_blank" rel="noopener noreferrer">git commands<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span></a></li></ul><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: wupan1030@foxmail.com">sindorei</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.db66e77f.js" defer></script>
+  </body>
+</html>

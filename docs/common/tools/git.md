@@ -46,10 +46,10 @@ Host git.17usoft.com
   
 
 # 指定git命令作用的目录
-- git -C <path>
+- git -C `<path>`
 
 
-```
+```shell
 Building remotely on win-node-16-49 in workspace d:\jk\workspace\1858-gny.airtest
  > git rev-parse --is-inside-work-tree # timeout=10
 Fetching changes from the remote Git repository
