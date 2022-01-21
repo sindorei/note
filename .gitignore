@@ -161,3 +161,4 @@ node_modules
 
 npm-debug.log
 .temp
+docs/.vuepress/dist
