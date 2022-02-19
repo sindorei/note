@@ -1,6 +1,6 @@
 
 # 前端
-- [JavaScript设计模式](./frontend/javascript/design_pattern/index.md)
+- [JavaScript设计模式](./frontend/javascript/design_pattern/)
 
 # nodejs
 - [eggjs](./nodejs/eggjs.md)
