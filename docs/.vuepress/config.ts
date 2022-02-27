@@ -49,6 +49,15 @@ export default defineUserConfig<DefaultThemeOptions>({
             link: '/pl/assembly/'
           }
         ]
+      },
+      {
+        text: '语言',
+        children: [
+          {
+            text: '英语',
+            link: '/language/english'
+          }
+        ]
       }
     ]
   },
