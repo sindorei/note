@@ -110,3 +110,14 @@ import 'regenerator-runtime/runtime';
 ```
 # 参考
 - https://babeljs.io/docs/en/next/usage
+
+
+
+# 6.x 升级到 7.x
+* @babel/core
+* @babel/preset-env
+* 插件 
+  * babel-plugin-transform-vue-jsx -> @vue/babel-plugin-transform-vue-jsx
+  * babel-plugin-syntax-jsx  -> @babel/plugin-syntax-jsx
+  * babel-helper-vue-jsx-merge-props -> @vue/babel-helper-vue-jsx-merge-props
+  

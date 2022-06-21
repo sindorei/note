@@ -17,6 +17,10 @@ export default defineUserConfig<DefaultThemeOptions>({
           {
             text: 'JavaScript设计模式',
             link: '/frontend/javascript/design_pattern/'
+          },
+          {
+            text: '工程化',
+            link: '/frontend/engineering/'
           }
         ]
       },
