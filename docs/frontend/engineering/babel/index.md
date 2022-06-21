@@ -3,7 +3,7 @@
   * babel主模块被其他模块peer dependency
 - @babel/preset-env
   * 根据指定的环境转换预发
-     * 可配置`useBuiltIns`为usage或entry自动引入pollyfill，需自行安装好core-js和regenerator-runtime模块到dependencies
+     * 可配置`useBuiltIns`为usage或entry自动引入polyfill，需自行安装好core-js和regenerator-runtime模块到dependencies
         * entry 需 在入口因UR`core-js/stable` 和 `regenerator-runtime/runtime`
      * useBuiltIns设为usage时需要注意第三方模块的风险
      * 注意core-js@3 才有实例方法如 `[].map`
@@ -30,7 +30,7 @@
 ## 方案三
 - @babel/core
 - @babel/preset-env useBuiltIns 为false（默认false
-- 代码里手动引入core-js@3和regenerator-runtime（代替之前的直接引入@babel/pollyfill）
+- 代码里手动引入core-js@3和regenerator-runtime（代替之前的直接引入@babel/polyfill）
 
 # 其他
 - 注意配置文件查找，如果项目中有子库需设置 `rootMode: 'upward'`,记得改js的babel-loader及vue-loader的
@@ -129,4 +129,4 @@ import 'regenerator-runtime/runtime';
 
 # 其他
 - `npx browserslist` 可查看当前的browserslist配置匹配到哪些浏览器，`npx browserslist >1%` 可用于方便查看匹配
-- `@babel/preset-env`的`debug`参数设为`true`可在控制台打印相关debug数据，方便查看哪些插件和pollyfill引入了
+- `@babel/preset-env`的`debug`参数设为`true`可在控制台打印相关debug数据，方便查看哪些插件和polyfill引入了
