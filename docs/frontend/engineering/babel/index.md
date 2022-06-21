@@ -121,3 +121,12 @@ import 'regenerator-runtime/runtime';
   * babel-plugin-syntax-jsx  -> @babel/plugin-syntax-jsx
   * babel-helper-vue-jsx-merge-props -> @vue/babel-helper-vue-jsx-merge-props
   
+
+# @babel/preset-env
+- corejs 的version设为 3.x时会使用`babel-plugin-polyfill-corejs3`插件，此插件会使用到 `core-js-compat`模块
+    * `core-js-compat/data.json` 中定义了各api在各浏览器中支持的最低版本，`core-js-compat/modules-by-versions.json`中定义了corejs中各版本对应引入的api
+
+
+# 其他
+- `npx browserslist` 可查看当前的browserslist配置匹配到哪些浏览器，`npx browserslist >1%` 可用于方便查看匹配
+- `@babel/preset-env`的`debug`参数设为`true`可在控制台打印相关debug数据，方便查看哪些插件和pollyfill引入了
