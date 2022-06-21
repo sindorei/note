@@ -37,7 +37,7 @@
 
 # 配置示例
 ## 示例1
-```
+```javascript
 {
   "presets": [
     [
@@ -58,7 +58,7 @@
 }
 ```
 ## 示例2
-```
+```javascript
 {
   "presets": [
     [
@@ -87,7 +87,7 @@ import 'regenerator-runtime/runtime';
 ```
 
 ## 示例3
-```
+```javascript
 
 {
   "presets": [

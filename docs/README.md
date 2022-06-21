@@ -1,10 +1,8 @@
 
 # 前端
 - [JavaScript设计模式](./frontend/javascript/design_pattern/)
+- [前端工程化](./frontend//engineering/index.md)
 
-
-# 前端工程
-- [babel](./nodejs/babel/index.md)
 # nodejs
 - [eggjs](./nodejs/eggjs.md)
 
