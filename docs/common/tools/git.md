@@ -23,9 +23,9 @@
 # 配置多个git账号
 - `.ssh`目录新增config文件，添加以下内容
 ```
-Host git.17usoft.com
-  HostName git.17usoft.com
-  User wp10081
+Host git.xxx.com
+  HostName git.xxx.com
+  User yourusername
   IdentityFile ~/.ssh/id_rsa
 ```
 
@@ -53,16 +53,16 @@ Host git.17usoft.com
 Building remotely on win-node-16-49 in workspace d:\jk\workspace\1858-gny.airtest
  > git rev-parse --is-inside-work-tree # timeout=10
 Fetching changes from the remote Git repository
- > git config remote.origin.url git@git.17usoft.com:flightfrontend/tc-flight-flightbook.git # timeout=10
+ > git config remote.origin.url git@git.xxx.com:xxx.git # timeout=10
 Cleaning workspace
  > git rev-parse --verify HEAD # timeout=10
 Resetting working tree
  > git reset --hard # timeout=10
  > git clean -fdx # timeout=10
-Fetching upstream changes from git@git.17usoft.com:flightfrontend/tc-flight-flightbook.git
+Fetching upstream changes from git@git.xxx.com:xxx.git
  > git --version # timeout=10
 using GIT_SSH to set credentials 
- > git -c core.askpass=true fetch --tags --progress git@git.17usoft.com:flightfrontend/tc-flight-flightbook.git +refs/heads/*:refs/remotes/origin/* --depth=1
+ > git -c core.askpass=true fetch --tags --progress git@git.xxx.com:xxx.git +refs/heads/*:refs/remotes/origin/* --depth=1
  > git rev-parse "origin/develop^{commit}" # timeout=10
 Checking out Revision 20976ed9016e480c95ed0842a51852b2f8f3613d (origin/develop)
  > git config core.sparsecheckout # timeout=10
