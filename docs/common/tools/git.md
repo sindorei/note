@@ -3,6 +3,11 @@
 - `git add -A`
 - `git commit -m `
 - `git fetch origin`
+- `git stash` [详见](https://git-scm.com/docs/git-stash)
+- `git reset --soft`
+- `git cherry-pick`
+- `git revert`
+- `git reflog`
 
 # git submodule
 - 如果通用部分抽出做成一个公共代码库，用此命令
