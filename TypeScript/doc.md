@@ -7,3 +7,10 @@
 
 # 类型进阶
 - [type-challenges](https://github.com/type-challenges/type-challenges)
+  * Generics 泛型
+  * `key of ` Keyof Type Operator 
+  * `x extends xx ? xxx : xxxx` Conditional Types
+  * `infer`(搭配条件类型使用)
+  * `in`
+  * `in keyof` Mapped Types
+  *  数组 `T[number]` 、 `...`
