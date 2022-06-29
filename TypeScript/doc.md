@@ -14,3 +14,5 @@
   * `in`
   * `in keyof` Mapped Types
   *  数组 `T[number]` 、 rest `...`
+  * Template Literal Types
+    * ```type TrimLeft<S extends string> = S extends `${' ' | '\n' | '\t'}${infer R}` ? TrimLeft<R> : S```
