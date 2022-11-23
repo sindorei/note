@@ -12,3 +12,10 @@
 - 数组
 - 结构
 - 类
+
+
+# 查看类内存布局
+- Visual Studio
+  * 在开发人员命令提示工具内运行 `cl -d1 reportSingleClassLayout<类名> <文件路径>`
+- clang
+  * `clang -Xclang -fdump-record-layouts <文件路径>`
