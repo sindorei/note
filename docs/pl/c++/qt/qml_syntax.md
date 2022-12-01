@@ -105,7 +105,7 @@ Text {
 
 > 可通过`default`关键字将某个属性申明为默认属性. 如果在一个元素内创建了另一个元素，但未显式绑定到某个属性，则它会绑定到默认属性。例如，当您添加子元素时，如果子元素是可见元素，它们将自动添加到默认属性`children`中。
 
-- (5) 另一种申明属性的重要方式是通过`alias`关键字 (property alias <name>: <reference>). `alias`关键字允许我们将对象的属性或对象本身从类型内部转发到外部范围。稍后我们将在定义组件时使用此技术以将内部属性或元素 ID 导出到根级别。属性别名不需要类型，它使用引用的属性或对象的类型
+- (5) 另一种申明属性的重要方式是通过`alias`关键字 (`property alias <name>: <reference>`). `alias`关键字允许我们将对象的属性或对象本身从类型内部转发到外部范围。稍后我们将在定义组件时使用此技术以将内部属性或元素 ID 导出到根级别。属性别名不需要类型，它使用引用的属性或对象的类型
 
 - (6) `text`属性依赖与自定义的`int`类型属性 `times`。 `int`类型值自动转成`string`类型. `times`变化时，`text`也会更新.
 
@@ -128,52 +128,50 @@ Text {
 
     x: 24; y: 24
 
-    // custom counter property for space presses
+    // 自定义计数属性，用于空格键按下时
     property int spacePresses: 0
 
     text: "Space pressed: " + spacePresses + " times"
 
-    // (1) handler for text changes. Need to use function to capture parameters
+    // (1) text 变化时的处理。需要使用函数捕获参数
     onTextChanged: function(text) { 
         console.log("text changed to:", text)
     }
 
-    // need focus to receive key events
+    // 获取键盘事件需要将focus设为true
     focus: true
 
-    // (2) handler with some JS
+    // (2) 当空格键被按下时滴啊用js方法进行处理
     Keys.onSpacePressed: {
         increment()
     }
 
-    // clear the text on escape
+    // ESC键按下时清除文本
     Keys.onEscapePressed: {
         label.text = ''
     }
 
-    // (3) a JS function
+    // (3) JS函数
     function increment() {
         spacePresses = spacePresses + 1
     }
 }
 ```
 
-- (1) The text changed handler onTextChanged prints the current text every time the text changed due to the space bar being pressed. As we use a parameter injected by the signal, we need to use the function syntax here. It's also possible to use an arrow function ((text) => {}), but we feel function(text) {} is more readable.
+- (1) 按下空格键`text`的值变化时，就会调用`onTextChanged`。 当我们使用信号注入的参数时，我们需要在这里使用函数语法。 也可以使用箭头函数 `((text) => {})`, 但是我们认为 `function(text) {}` 更可读。
 
-- (2) When the text element receives the space key (because the user pressed the space bar on the keyboard) we call a JavaScript function increment().
+- (2) 当空格键被按下是调用js 函数 `increment()`
 
-- (3) Definition of a JavaScript function in the form of function <name>(<parameters>) { ... }, which increments our counter spacePresses. Every time spacePresses is incremented, bound properties will also be updated.
+- (3) 定义JavaScript函数`function <name>(<parameters>) { ... }`
 
 ## 绑定
 
-The difference between the QML : (binding) and the JavaScript = (assignment) is that the binding is a contract and keeps true over the lifetime of the binding, whereas the JavaScript assignment (=) is a one time value assignment.
+QML` : `(绑定) 和 JavaScript`=`(赋值) 之间的区别在于，绑定是一个契约并且在绑定的整个生命周期内保持为真，而 JavaScript 赋值 (`=`) 是一次性值赋值。
 
-The lifetime of a binding ends when a new binding is set on the property or even when a JavaScript value is assigned to the property. For example, a key handler setting the text property to an empty string would destroy our increment display:
+当在属性上设置新绑定或者甚至将 JavaScript 值分配给属性时，绑定的生命周期结束。例如，将文本属性设置为空字符串的按键处理程序会破坏我们的增量显示
 ```
 Keys.onEscapePressed: {
     label.text = ''
 }
 ```
-After pressing escape, pressing the space bar will not update the display anymore, as the previous binding of the text property (text: “Space pressed: ” + spacePresses + ” times”) was destroyed.
-
-When you have conflicting strategies to change a property as in this case (text updated by a change to a property increment via a binding and text cleared by a JavaScript assignment) then you can’t use bindings! You need to use assignment on both property change paths as the binding will be destroyed by the assignment (broken contract!).
+按下ESC键后，再按空格键，将不会再更新 text属性的值， (`text: “Space pressed: ” + spacePresses + ” times”`) 的绑定销毁了.
