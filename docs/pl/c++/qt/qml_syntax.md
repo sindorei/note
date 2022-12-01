@@ -5,32 +5,31 @@
 
 import QtQuick
 
-// The root element is the Rectangle
+// 根元素 Rectangle
 Rectangle {
-    // name this element root
+    // id不加引号
     id: root
 
-    // properties: <name>: <value>
+    // 属性格式: <name>: <value>
     width: 120
 
-    // color property
+    // 颜色属性
     color: "#4A4A4A"
 
-    // Declare a nested element (child of root)
+    // 申明嵌套的子元素
     Image {
         id: triangle
 
-        // reference the parent
+        // 通过parent访问父原色
         x: (parent.width - width)/2; y: 40
 
         source: 'assets/triangle_red.png'
     }
 
-    // Another child of root
     Text {
-        // un-named element
+        // 未命名（无id）
 
-        // reference element by id
+        // 通过id访问元素
         y: triangle.y + triangle.height + 20
 
         // reference root element
