@@ -11,7 +11,8 @@ Rectangle {
     id: root
 
     // 属性格式: <name>: <value>
-    width: 120
+    // 写在一行需要加; 换行可不加
+    width: 120; height: 240
 
     // 颜色属性
     color: "#4A4A4A"
