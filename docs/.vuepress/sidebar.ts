@@ -47,7 +47,15 @@ export const sidebar: SidebarConfig = {
         {
             text: 'C++',
             children: [
-                '/pl/c++/11-20.md'
+                '/pl/c++/11-20.md',
+            ]
+        }
+    ],
+    '/pl/c++/qt': [
+        {
+            text: 'QT',
+            children: [
+                '/pl/c++/qt/qml.md',
             ]
         }
     ],

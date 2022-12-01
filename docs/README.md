@@ -23,6 +23,7 @@ home: true
 - [swift](./pl/swift/index.md)
 - [go](./pl/go.md)
 - [c++](./pl/c++/index.md)
+    * [qt](./pl/c++/qt/index.md)
 # 极客时间学习笔记
 - [后端存储实战课](./geektime/back-end-storage-practical-lession/index.md)
 
