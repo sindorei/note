@@ -55,7 +55,7 @@ export const sidebar: SidebarConfig = {
         {
             text: 'QT',
             children: [
-                '/pl/c++/qt/qml.md',
+                '/pl/c++/qt/qml_syntax.md',
             ]
         }
     ],
