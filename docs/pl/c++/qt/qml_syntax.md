@@ -41,10 +41,12 @@ Rectangle {
     }
 }
 ```
-- `import`申明导入的模块，可选择添加版本号，格式： `<major>.<minor>`
+- `import`申明导入的模块，可选择添加版本号(Qt5中是必需的)，格式： `<major>.<minor>`
 - 像 C/C++ and JavaScript一样， `//` 为单行注释 `/* */` 为多行注释
 - 像HTML一样，每个QML文件都需要一个根元素
-- 通过类型名称申明元素，后面跟 `{ }`
+- 通过元素的名称申明元素，后面跟 `{ }`
 - 元素属性格式为`name: value`
 - QML文档中的任意元素都可以通过id（无引号的标识符）访问
 - 元素可以嵌套。子元素可以通过`parent`关键字访问到父元素
+
+> 可通过 `$QTDIR/bin/qml FileName.qml`($QTDIR为qt安装目录) 直接运行qml文件，或者通过QT Creator
