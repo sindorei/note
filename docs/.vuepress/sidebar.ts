@@ -59,6 +59,22 @@ export const sidebar: SidebarConfig = {
             ]
         }
     ],
+    '/pl/python/': [
+        {
+            text: 'Python',
+            children: [
+                '/pl/python/quick_start.md'
+            ]
+        }
+    ],
+    '/pl/lua/': [
+        {
+            text: 'Lua',
+            children: [
+                '/pl/lua/start.md'
+            ]
+        }
+    ],
     '/language/': [
         {
             text: '英语',
