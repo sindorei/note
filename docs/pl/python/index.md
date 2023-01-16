@@ -7,9 +7,9 @@
 # 基础语法示例
 
 ```python
-# 注释以#开头。变量初始化时直接赋值，无需专门申明，也没有专门的申明关键字
+# 注释以#开头。变量直接赋值，无需类型声明。
 x = int(input("Please enter an integer: "))
-# 每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块。如果没有缩进会报错。
+# 每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块。必须包含相同的缩进空白数量
 if x < 0:
     x = 0
     print('Negative changed to zero')
@@ -28,6 +28,36 @@ else:
 <<      >>      &       |       ^       ~       :=
 <       >       <=      >=      ==      !=
 ```
+
+
+# 数据类型
+- Numeric Types 数字类型
+    * `int`（有符号整型）
+        * Python2.X 版本中，在 2.2 以后的版本中还有`long` 类型。在 Python3.X 版本中 `long` 类型被移除，使用 `int` 替代。
+    * `float`（浮点型）
+    * `complex`（复数）
+- Text Sequence Type  文本序列类型（字符串）
+  * `str`
+- 布尔 `bool`
+  * `True` 、`False` 注意是大写开头
+- The Null Object `NoneType`
+  * `None`
+- Sequence Types 序列类型
+  * `list`
+  * `tuple`
+  * `range`
+- Set Types集合类型
+  * `set`,
+  * `frozenset`
+- Mapping Types 映射类型 
+  * `dict`
+- Binary Sequence Types 二进制序列类型
+  * `bytes`
+  * `bytearray`
+  * `memoryview`
+- [...](https://docs.python.org/zh-cn/3.11/library/stdtypes.html)
+
+
 
 # 语法描述格式
 
