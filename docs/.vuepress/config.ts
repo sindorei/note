@@ -8,5 +8,8 @@ export default defineUserConfig({
   theme: defaultTheme({
     sidebarDepth: 1,
     sidebar,
+    colorMode: 'dark',
+    colorModeSwitch: false,
   }),
+  
 })

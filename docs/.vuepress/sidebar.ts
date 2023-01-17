@@ -63,7 +63,7 @@ export const sidebar: SidebarConfig = {
         {
             text: 'Python',
             children: [
-                '/pl/python/quick_start.md'
+                '/pl/python/control_flow.md'
             ]
         }
     ],
