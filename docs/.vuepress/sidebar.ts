@@ -63,7 +63,12 @@ export const sidebar: SidebarConfig = {
         {
             text: 'Python',
             children: [
-                '/pl/python/control_flow.md'
+                '/pl/python/index.md',
+                '/pl/python/control_flow.md',
+                '/pl/python/function.md',
+                '/pl/python/module.md',
+                '/pl/python/class.md',
+                '/pl/python/error_except.md',
             ]
         }
     ],
@@ -71,9 +76,16 @@ export const sidebar: SidebarConfig = {
         {
             text: 'Lua',
             children: [
-                '/pl/lua/start.md'
+                '/pl/lua/index.md',
+                '/pl/lua/types.md',
+                '/pl/lua/operator.md',
+                '/pl/lua/control.md',
+                '/pl/lua/function.md',
+                '/pl/lua/module.md',
+                '/pl/lua/error_except.md',
+                '/pl/lua/coroutine.md',
             ]
-        }
+        },
     ],
     '/language/': [
         {
