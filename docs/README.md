@@ -13,9 +13,8 @@ home: true
 - [linux](./os/linux/index.md)
 
 # 通用
-
-## 工具
 - [git](./common/tools/git.md)
+- [oAuth](./common/tools/OAuth/index.md)
 
 
 # 编程语言

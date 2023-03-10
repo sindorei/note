@@ -101,4 +101,13 @@ export const sidebar: SidebarConfig = {
             ]
         }
     ],
+    '/common/tools/OAuth': [
+        {
+            text: 'OAuth',
+            children: [
+                '/common/tools/OAuth/index.md',
+                '/common/tools/OAuth/introduction.md',
+            ]
+        }
+    ]
 }
