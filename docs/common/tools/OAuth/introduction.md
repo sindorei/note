@@ -79,5 +79,5 @@ Figure 2: Refreshing an Expired Access Token
 
 当授权范围限于客户端控制下的受保护资源时，客户端凭据或其他形式的客户端身份验证（例如，用于签署 JWT 的私钥，如 [RFC7523](https://www.rfc-editor.org/info/rfc7523) 中所述）可用作权限授予或保护资源。当客户端请求访问先前授权服务器授权的受保护资源时，将使用客户端凭据。
 
-## 访问令牌
+## 访问令牌(Access Token)
 
