@@ -55,7 +55,7 @@ Host git.xxx.com
 
 
 ```shell
-Building remotely on win-node-16-49 in workspace d:\jk\workspace\1858-gny.airtest
+Building remotely on win-node-16-49 in workspace d:\jk\workspace\1858-abc.def
  > git rev-parse --is-inside-work-tree # timeout=10
 Fetching changes from the remote Git repository
  > git config remote.origin.url git@git.xxx.com:xxx.git # timeout=10
