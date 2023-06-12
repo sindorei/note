@@ -7,10 +7,12 @@
 ## 常见调整
 - npm-check-updates 升级相关依赖
   * 注意类似 @babel/core 7 之前包名不同
-  * 还有类似vue-loader 最新版本是vue3的；
-- node运行是添加`--trace-deprecation` 追踪废弃告警的栈堆信息，移除废弃的功能
-  * `node --trace-deprecation node_modules/webpack/bin/webpack.js`
+     * 如： babel-eslint 更换为 @babel/eslint-parser
+  * 还有类似vue-loader 最新版本是vue3的, vue2的是15.x；
+- node运行时添加`--trace-deprecation` 追踪废弃告警的栈堆信息，移除废弃的功能
+  * `node --trace-deprecation node_modules/webpack/bin/webpack.js` 或通过 `NODE_OPTIONS=--trace-deprecation`添加
 - `devtool`配置的值调整，没有了`#`
+  * `#cheap-module-source-map` -> `cheap-module-source-map`
 - `mini-css-extract-plugin`(vue ssr 使用会报错ReferenceError: document is not defined)或`extract-text-webpack-plugin` 插件升级
   * 如下示例，可配置mini-css-extract-plugin抽离成一个文件
 
@@ -26,7 +28,7 @@
     }
 }
 ```
-- 一些loader的写法调整，多个loader放use中
+- 一些loader的配置写法调整，多个loader放use中
 - optimization的一些配置调整，splitChunks的一些调整
 - vue ssr
   * clientCompiler.hooks.done 钩子变化
