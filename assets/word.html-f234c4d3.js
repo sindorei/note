@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-4af811f2","path":"/language/english/word.html","title":"单词的构成","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/word.md"}');export{a as data};

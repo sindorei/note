@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-a958e450","path":"/language/english/noun_phrase.html","title":"语言的构造级别","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/noun_phrase.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-aa8dd374","path":"/language/english/english_grammar_system.html","title":"简单句","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/english_grammar_system.md"}');export{a as data};

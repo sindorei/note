@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-24c84f42","path":"/language/english/zhangdaozhen.html","title":"概论","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/zhangdaozhen.md"}');export{a as data};

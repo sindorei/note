@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-93043eb8","path":"/language/english/vedios.html","title":"American English","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/vedios.md"}');export{e as data};

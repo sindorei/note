@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-674201c2","path":"/language/english/phonetic_symbol.html","title":"IPA、DJ、KK","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/phonetic_symbol.md"}');export{e as data};

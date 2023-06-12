@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4443ce92","path":"/geektime/back-end-storage-practical-lession/05.html","title":"分布式事务的解决方案","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":2}]},"filePathRelative":"geektime/back-end-storage-practical-lession/05.md"}');export{e as data};

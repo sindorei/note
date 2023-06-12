@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-49cf8426","path":"/pl/c__/","title":"参考文档","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1669861081000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":2}]},"filePathRelative":"pl/c++/index.md"}');export{e as data};

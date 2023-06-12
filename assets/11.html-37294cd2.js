@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0bf0f17c","path":"/geektime/back-end-storage-practical-lession/11.html","title":"更新缓存的最佳方式","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1644980618000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"geektime/back-end-storage-practical-lession/11.md"}');export{e as data};

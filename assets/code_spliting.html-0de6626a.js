@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7ece7161","path":"/frontend/engineering/webpack/code_spliting.html","title":"注意事项","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1655813973000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"frontend/engineering/webpack/code_spliting.md"}');export{e as data};

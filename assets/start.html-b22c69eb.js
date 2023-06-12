@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-38043530","path":"/pl/rust/start.html","title":"相关工具","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1642761569000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"pl/rust/start.md"}');export{t as data};

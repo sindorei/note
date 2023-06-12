@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-6be4f886","path":"/pl/c__/qt/","title":"参考文档","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1669878408000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"pl/c++/qt/index.md"}');export{t as data};

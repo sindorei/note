@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-ebb1076e","path":"/language/english/spoken_english.html","title":"没听清、没听懂，需要再说一遍","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/spoken_english.md"}');export{e as data};

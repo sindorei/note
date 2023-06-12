@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1426046e","path":"/frontend/mobile/","title":"vw 兼容方案","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"frontend/mobile/index.md"}');export{e as data};

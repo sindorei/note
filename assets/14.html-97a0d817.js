@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-110f7b59","path":"/geektime/back-end-storage-practical-lession/14.html","title":"为什么数据量越大数据库就越慢？","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":2}]},"filePathRelative":"geektime/back-end-storage-practical-lession/14.md"}');export{e as data};

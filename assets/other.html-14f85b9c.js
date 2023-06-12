@@ -1,0 +1,1 @@
+import{_ as t,p as l,q as o,R as e,t as n}from"./framework-5866ffd3.js";const s={},c=e("ul",null,[e("li",null,[n("It is a + 形容词 + 名词 + that "),e("ul",null,[e("li",null,"无论怎样的......也不......")])])],-1),_=[c];function a(r,u){return l(),o("div",null,_)}const d=t(s,[["render",a],["__file","other.html.vue"]]);export{d as default};

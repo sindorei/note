@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-11d63c04","path":"/language/english/grammar_club/","title":"在线文档","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/grammar_club/index.md"}');export{a as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-c5d69fb0","path":"/language/english/basic_sentence.html","title":"句子的基本构成要素","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/basic_sentence.md"}');export{e as data};

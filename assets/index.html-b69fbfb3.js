@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-ffc7ad92","path":"/common/tools/OAuth/","title":"参考","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1678438778000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"common/tools/OAuth/index.md"}');export{t as data};

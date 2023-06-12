@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1e241ebe","path":"/language/english/part_of_speech.html","title":"词类","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/part_of_speech.md"}');export{e as data};

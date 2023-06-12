@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-12e36dde","path":"/pl/lua/types.html","title":"数据类型","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"8中基本类型","slug":"_8中基本类型","link":"#_8中基本类型","children":[]}],"git":{"updatedTime":1674022245000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"pl/lua/types.md"}');export{e as data};

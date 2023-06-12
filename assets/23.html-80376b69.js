@@ -1,0 +1,1 @@
+import{_ as t,p as o,q as _,R as e}from"./framework-5866ffd3.js";const c={},n=e("blockquote",null,[e("p",null,"略")],-1),s=[n];function l(r,a){return o(),_("div",null,s)}const d=t(c,[["render",l],["__file","23.html.vue"]]);export{d as default};

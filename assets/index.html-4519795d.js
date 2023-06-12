@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-681d629d","path":"/geektime/back-end-storage-practical-lession/","title":"后端存储实战课","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1644980618000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"geektime/back-end-storage-practical-lession/index.md"}');export{e as data};

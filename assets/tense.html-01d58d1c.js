@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-411e2587","path":"/language/english/tense.html","title":"时间维度","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/tense.md"}');export{e as data};

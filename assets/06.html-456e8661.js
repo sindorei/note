@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-40da1d54","path":"/geektime/back-end-storage-practical-lession/06.html","title":"理解倒排索引机制","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1644980618000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"geektime/back-end-storage-practical-lession/06.md"}');export{e as data};

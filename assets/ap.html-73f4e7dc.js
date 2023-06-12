@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-bc194ea6","path":"/language/english/ap.html","title":"英语中最懒的两个音","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1645920694000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":1}]},"filePathRelative":"language/english/ap.md"}');export{a as data};
