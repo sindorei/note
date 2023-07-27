@@ -9,6 +9,14 @@ export const sidebar: SidebarConfig = {
         {
             text: '工程化',
             link: '/frontend/engineering/'
+        },
+    ],
+    '/frontend/css/methodology': [
+        {
+            text: 'methodology',
+            children: [
+                '/frontend/css/methodology/bem.md',
+            ]
         }
     ],
     '/nodejs/': [

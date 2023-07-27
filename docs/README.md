@@ -6,6 +6,10 @@ home: true
 - [前端工程化](./frontend/engineering/index.md)
 - vue
   * [vue ssr](./frontend/vue/ssr.md)
+  * [vue3](./frontend/vue/vue3.md)
+
+- css
+  * [methodology](./frontend/css/methodology/)
 
 # nodejs
 - [eggjs](./nodejs/eggjs.md)
