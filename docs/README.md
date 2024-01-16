@@ -13,6 +13,7 @@ home: true
 
 # nodejs
 - [eggjs](./nodejs/eggjs.md)
+- [深入剖析 Node.js 底层原理](./nodejs/deep_into_nodejs/index.md)
 
 
 # 操作系统

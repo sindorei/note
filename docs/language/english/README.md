@@ -7,6 +7,7 @@
 - [Pronunciation Respelling](./pronunciation_respelling.md)
 - APA
   * Americanist phonetic notation (also called [North] American[ist] Phonetic Alphabet, or APA)
+- [BBC Phonetic Respelling ](http://teach.files.bbci.co.uk/archive/BBC_Text_Spelling_guide.pdf)
 
 # 语法
 - [英语语法体系(重塑你的语法认知框架)](./english_grammar_system.md)
@@ -24,6 +25,7 @@
 - [旋元佑进阶文法](http://grammar.codeyu.com/#docs/preface)
 - 英语语法高手之路
 - 英语语法体系
+- [不一样的英语词汇书 音、形、意统一记忆法 [詹先觉著]](./yinxingyi.md)
 
 # english course online
 - [shaw english](https://www.youtube.com/channel/UC_OskgZBoS4dAnVUgJVexcw)

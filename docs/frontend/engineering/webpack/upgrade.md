@@ -41,3 +41,4 @@
 
 - 如果是webpack 3 升到5 ，需安装 `webpack-cli` 参数还略有不同
 - url-loader 、 css-loader 配置 `esModule: false`
+- raw-loader、url-loader、file-loader 可替换为 [asset module](https://webpack.docschina.org/guides/asset-modules/)

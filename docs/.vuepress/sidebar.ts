@@ -23,6 +23,20 @@ export const sidebar: SidebarConfig = {
         {
             text: 'eggjs',
             link: '/nodejs/eggjs.html'
+        },
+    ],
+    '/nodejs/deep_into_nodejs/': [
+        {
+            text: '深入剖析 Node.js 底层原理',
+            children: [
+                {
+                    text: 'libuv',
+                    children: [
+                        '/nodejs/deep_into_nodejs/libuv/data_struct.md',
+                        '/nodejs/deep_into_nodejs/libuv/eventloop.md',
+                    ]
+                }
+            ],
         }
     ],
     '/pl/': [
