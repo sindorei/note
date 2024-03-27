@@ -42,3 +42,41 @@
 - 如果是webpack 3 升到5 ，需安装 `webpack-cli` 参数还略有不同
 - url-loader 、 css-loader 配置 `esModule: false`
 - raw-loader、url-loader、file-loader 可替换为 [asset module](https://webpack.docschina.org/guides/asset-modules/)
+    * row-loader -> asset/source
+    * url-loader -> asset 或 asset/inline
+    * file-loader -> asset/resource
+
+```javascript
+{
+    module: {
+        rules: [
+            {
+				test: /\.(png|jpg|gif|svg)$/,
+				type: 'asset',
+				parser: {
+                    dataUrlCondition: {
+                        maxSize: 1024,
+                    }
+				},
+                generator: {
+                    filename: 'images/[name][ext]?[hash]'
+                }
+            },
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]?[hash]',
+                }
+            },
+
+        ]
+    }
+}
+```
+
+# 高版本nodejs，低版本webpack问题
+- nodejs17开始升级了openssl，webpack低版本会报错，解决方式：
+  1. 升级webpack（4.47.0+） 及 相应loader（最终解决方式）
+  2. 降级nodejs版本，如使用nodejs16版本最新的长期支持版本（临时方案）
+  3. nodejs启动添加`--openssl-legacy-provider` 选项，或添加环境变量`NODE_OPTIONS=--openssl-legacy-provider`（临时方案）
