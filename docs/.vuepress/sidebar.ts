@@ -1,6 +1,4 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
-
-export const sidebar: SidebarConfig = {
+export const sidebar = {
     '/frontend/': [
         {
             text: 'JavaScript设计模式',
