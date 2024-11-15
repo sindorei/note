@@ -94,9 +94,9 @@ flex-basis 属性的语法规则：
 
 `flex-basis: content | <width>`
 
-该属性的默认值是 auto ，它可以接受 content 和 <width> 值。
+该属性的默认值是 auto ，它可以接受 content 和 `<width>` 值。
 
-<width> 值指的是 CSS 的 width 属性（尺寸属性），可用于 width 属性的值都可以用
+`<width>` 值指的是 CSS 的 width 属性（尺寸属性），可用于 width 属性的值都可以用
 于 flex-basis ，比如我们熟悉的 px 、% 、vw 等，以及需要根据内容自动计算的属性
 值，比如 min-content 、max-content 和 fit-content 等。
 
