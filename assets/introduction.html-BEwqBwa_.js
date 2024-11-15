@@ -1,0 +1,42 @@
+import{_ as e,c as s,f as a,o as i}from"./app-LHpjaFTr.js";const l={};function r(c,n){return i(),s("div",null,n[0]||(n[0]=[a(`<h1 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍"><span>介绍</span></a></h1><h2 id="角色" tabindex="-1"><a class="header-anchor" href="#角色"><span>角色</span></a></h2><ul><li>资源所有者 resource owner</li><li>资源服务器 resource server</li><li>客户端 client</li><li>授权服务器 authorization server</li></ul><h2 id="协议流程" tabindex="-1"><a class="header-anchor" href="#协议流程"><span>协议流程</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">+--------+                               +---------------+</span>
+<span class="line">|        |--(1)- Authorization Request -&gt;|   Resource    |</span>
+<span class="line">|        |                               |     Owner     |</span>
+<span class="line">|        |&lt;-(2)-- Authorization Grant ---|               |</span>
+<span class="line">|        |                               +---------------+</span>
+<span class="line">|        |</span>
+<span class="line">|        |                               +---------------+</span>
+<span class="line">|        |--(3)-- Authorization Grant --&gt;| Authorization |</span>
+<span class="line">| Client |                               |     Server    |</span>
+<span class="line">|        |&lt;-(4)----- Access Token -------|               |</span>
+<span class="line">|        |                               +---------------+</span>
+<span class="line">|        |</span>
+<span class="line">|        |                               +---------------+</span>
+<span class="line">|        |--(5)----- Access Token ------&gt;|    Resource   |</span>
+<span class="line">|        |                               |     Server    |</span>
+<span class="line">|        |&lt;-(6)--- Protected Resource ---|               |</span>
+<span class="line">+--------+                               +---------------+</span>
+<span class="line"></span>
+<span class="line">              Figure 1: Abstract Protocol Flow</span>
+<span class="line">              图 1：抽象协议流程</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="授权许可" tabindex="-1"><a class="header-anchor" href="#授权许可"><span>授权许可</span></a></h2><p>OAuth2.1 去掉了隐式授权和资源所有者密码凭据</p><h3 id="授权码-authorization-code" tabindex="-1"><a class="header-anchor" href="#授权码-authorization-code"><span>授权码(Authorization Code)</span></a></h3><p>授权码（authorization code）是获得访问令牌（access token）的临时凭证。 客户端将资源所有者定向到授权服务器，然后授权服务器再将资源所有者定向回客户端，同时返回授权码。 然后客户端可以用授权码去交换访问令牌。 在将资源所有者引导回客户端之前，授权服务器对资源所有者进行身份验证，并可能请求资源所有者的同意或以其他方式告知他们此次客户端的请求。因为资源所有者仅通过授权服务器进行身份验证，资源所有者的凭据永远不会与客户端共享，并且客户端不需要了解任何额外的身份验证步骤。 授权代码提供了一些重要的安全优势，例如对客户端进行身份验证的能力，以及将访问令牌直接传输到客户端，而无需通过资源所有者的用户代理将其传递并可能将其暴露给其他人，包括资源所有者。</p><h3 id="刷新令牌-refresh-token" tabindex="-1"><a class="header-anchor" href="#刷新令牌-refresh-token"><span>刷新令牌(Refresh Token)</span></a></h3><div class="hint-container tip"><p class="hint-container-title">提示</p><p>可选</p></div><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text" data-title="text"><pre><code><span class="line">+--------+                                           +---------------+</span>
+<span class="line">|        |--(1)------- Authorization Grant ---------&gt;|               |</span>
+<span class="line">|        |                                           |               |</span>
+<span class="line">|        |&lt;-(2)----------- Access Token -------------|               |</span>
+<span class="line">|        |               &amp; Refresh Token             |               |</span>
+<span class="line">|        |                                           |               |</span>
+<span class="line">|        |                            +----------+   |               |</span>
+<span class="line">|        |--(3)---- Access Token ----&gt;|          |   |               |</span>
+<span class="line">|        |                            |          |   |               |</span>
+<span class="line">|        |&lt;-(4)- Protected Resource --| Resource |   | Authorization |</span>
+<span class="line">| Client |                            |  Server  |   |     Server    |</span>
+<span class="line">|        |--(5)---- Access Token ----&gt;|          |   |               |</span>
+<span class="line">|        |                            |          |   |               |</span>
+<span class="line">|        |&lt;-(6)- Invalid Token Error -|          |   |               |</span>
+<span class="line">|        |                            +----------+   |               |</span>
+<span class="line">|        |                                           |               |</span>
+<span class="line">|        |--(7)----------- Refresh Token -----------&gt;|               |</span>
+<span class="line">|        |                                           |               |</span>
+<span class="line">|        |&lt;-(8)----------- Access Token -------------|               |</span>
+<span class="line">+--------+           &amp; Optional Refresh Token        +---------------+</span>
+<span class="line">Figure 2: Refreshing an Expired Access Token</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="客户端凭据-client-credentials" tabindex="-1"><a class="header-anchor" href="#客户端凭据-client-credentials"><span>客户端凭据(Client Credentials)</span></a></h3><p>当授权范围限于客户端控制下的受保护资源时，客户端凭据或其他形式的客户端身份验证（例如，用于签署 JWT 的私钥，如 <a href="https://www.rfc-editor.org/info/rfc7523" target="_blank" rel="noopener noreferrer">RFC7523</a> 中所述）可用作权限授予或保护资源。当客户端请求访问先前授权服务器授权的受保护资源时，将使用客户端凭据。</p><h2 id="访问令牌-access-token" tabindex="-1"><a class="header-anchor" href="#访问令牌-access-token"><span>访问令牌(Access Token)</span></a></h2>`,15)]))}const d=e(l,[["render",r],["__file","introduction.html.vue"]]),o=JSON.parse('{"path":"/common/tools/OAuth/introduction.html","title":"介绍","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"角色","slug":"角色","link":"#角色","children":[]},{"level":2,"title":"协议流程","slug":"协议流程","link":"#协议流程","children":[]},{"level":2,"title":"授权许可","slug":"授权许可","link":"#授权许可","children":[{"level":3,"title":"授权码(Authorization Code)","slug":"授权码-authorization-code","link":"#授权码-authorization-code","children":[]},{"level":3,"title":"刷新令牌(Refresh Token)","slug":"刷新令牌-refresh-token","link":"#刷新令牌-refresh-token","children":[]},{"level":3,"title":"客户端凭据(Client Credentials)","slug":"客户端凭据-client-credentials","link":"#客户端凭据-client-credentials","children":[]}]},{"level":2,"title":"访问令牌(Access Token)","slug":"访问令牌-access-token","link":"#访问令牌-access-token","children":[]}],"git":{"updatedTime":1682067064000,"contributors":[{"name":"sindorei","email":"wupan1030@foxmail.com","commits":2,"url":"https://github.com/sindorei"}]},"filePathRelative":"common/tools/OAuth/introduction.md"}');export{d as comp,o as data};
