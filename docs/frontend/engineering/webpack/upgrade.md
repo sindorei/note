@@ -77,6 +77,6 @@
 
 # 高版本nodejs，低版本webpack问题
 - nodejs17开始升级了openssl，webpack低版本会报错，解决方式：
-  1. 升级webpack（4.47.0+） 及 相应loader（最终解决方式）
+  1. 升级webpack 及 相应loader（最终解决方式）
   2. 降级nodejs版本，如使用nodejs16版本最新的长期支持版本（临时方案）
   3. nodejs启动添加`--openssl-legacy-provider` 选项，或添加环境变量`NODE_OPTIONS=--openssl-legacy-provider`（临时方案）

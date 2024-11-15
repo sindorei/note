@@ -19,10 +19,13 @@ export const sidebar: SidebarConfig = {
             ]
         }
     ],
-    '/nodejs/': [
+    '/nodejs/egg/': [
         {
             text: 'eggjs',
-            link: '/nodejs/eggjs.html'
+            children: [
+                '/nodejs/egg/curl.md',
+                '/nodejs/egg/singleton.md',
+            ],
         },
     ],
     '/nodejs/deep_into_nodejs/': [

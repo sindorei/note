@@ -12,7 +12,7 @@ home: true
   * [methodology](./frontend/css/methodology/)
 
 # nodejs
-- [eggjs](./nodejs/eggjs.md)
+- [eggjs](./nodejs/egg/)
 - [深入剖析 Node.js 底层原理](./nodejs/deep_into_nodejs/index.md)
 
 
